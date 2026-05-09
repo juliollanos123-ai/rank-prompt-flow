@@ -4,7 +4,7 @@ import { CTA } from "@/components/site/CTA";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Reveal } from "@/components/site/Reveal";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — Blueprint, Scale & Landmark | Rank Your Brand" },
