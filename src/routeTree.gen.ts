@@ -9,38 +9,148 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesScaleRouteImport } from './routes/services.scale'
+import { Route as ServicesLandmarkRouteImport } from './routes/services.landmark'
+import { Route as ServicesBlueprintRouteImport } from './routes/services.blueprint'
 
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologyRoute = MethodologyRouteImport.update({
+  id: '/methodology',
+  path: '/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRoute = AuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesScaleRoute = ServicesScaleRouteImport.update({
+  id: '/scale',
+  path: '/scale',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesLandmarkRoute = ServicesLandmarkRouteImport.update({
+  id: '/landmark',
+  path: '/landmark',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesBlueprintRoute = ServicesBlueprintRouteImport.update({
+  id: '/blueprint',
+  path: '/blueprint',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/audit': typeof AuditRoute
+  '/methodology': typeof MethodologyRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/blueprint': typeof ServicesBlueprintRoute
+  '/services/landmark': typeof ServicesLandmarkRoute
+  '/services/scale': typeof ServicesScaleRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/audit': typeof AuditRoute
+  '/methodology': typeof MethodologyRoute
+  '/services/blueprint': typeof ServicesBlueprintRoute
+  '/services/landmark': typeof ServicesLandmarkRoute
+  '/services/scale': typeof ServicesScaleRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/audit': typeof AuditRoute
+  '/methodology': typeof MethodologyRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/blueprint': typeof ServicesBlueprintRoute
+  '/services/landmark': typeof ServicesLandmarkRoute
+  '/services/scale': typeof ServicesScaleRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/audit'
+    | '/methodology'
+    | '/services'
+    | '/services/blueprint'
+    | '/services/landmark'
+    | '/services/scale'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/audit'
+    | '/methodology'
+    | '/services/blueprint'
+    | '/services/landmark'
+    | '/services/scale'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/audit'
+    | '/methodology'
+    | '/services'
+    | '/services/blueprint'
+    | '/services/landmark'
+    | '/services/scale'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditRoute: typeof AuditRoute
+  MethodologyRoute: typeof MethodologyRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodology': {
+      id: '/methodology'
+      path: '/methodology'
+      fullPath: '/methodology'
+      preLoaderRoute: typeof MethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit': {
+      id: '/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +158,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/scale': {
+      id: '/services/scale'
+      path: '/scale'
+      fullPath: '/services/scale'
+      preLoaderRoute: typeof ServicesScaleRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/landmark': {
+      id: '/services/landmark'
+      path: '/landmark'
+      fullPath: '/services/landmark'
+      preLoaderRoute: typeof ServicesLandmarkRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/blueprint': {
+      id: '/services/blueprint'
+      path: '/blueprint'
+      fullPath: '/services/blueprint'
+      preLoaderRoute: typeof ServicesBlueprintRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesBlueprintRoute: typeof ServicesBlueprintRoute
+  ServicesLandmarkRoute: typeof ServicesLandmarkRoute
+  ServicesScaleRoute: typeof ServicesScaleRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesBlueprintRoute: ServicesBlueprintRoute,
+  ServicesLandmarkRoute: ServicesLandmarkRoute,
+  ServicesScaleRoute: ServicesScaleRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditRoute: AuditRoute,
+  MethodologyRoute: MethodologyRoute,
+  ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
