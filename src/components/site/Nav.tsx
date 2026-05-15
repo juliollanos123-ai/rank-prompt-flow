@@ -48,7 +48,7 @@ export function Nav() {
             to="/audit"
             className="ml-3 inline-flex items-center gap-2 rounded-full bg-prompt px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-primary-foreground transition-all hover:scale-[1.03] hover:shadow-elegant font-display"
           >
-            Free Audit
+            Free Diagnosis
             <span aria-hidden>→</span>
           </Link>
         </nav>
