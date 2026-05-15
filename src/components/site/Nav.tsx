@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import wordmark from "@/assets/brand/wordmark-color.svg";
 
 const links = [
-  { to: "/methodology", label: "Methodology" },
   { to: "/services", label: "Services" },
-  { to: "/audit", label: "Free Audit" },
+  { to: "/methodology", label: "Methodology" },
+  { to: "/contact", label: "Contact" },
+  { to: "/audit", label: "Free Diagnosis" },
 ] as const;
 
 export function Nav() {
