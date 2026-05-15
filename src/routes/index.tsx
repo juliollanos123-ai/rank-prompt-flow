@@ -83,7 +83,7 @@ function Hero() {
 
         <Reveal delay={1}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <CTA to="/audit">Get your free audit</CTA>
+            <CTA to="/audit">Get your free website diagnosis</CTA>
             <CTA to="/methodology" variant="ghost">See how we do it</CTA>
           </div>
         </Reveal>
