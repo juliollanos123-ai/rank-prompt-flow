@@ -8,16 +8,16 @@ import isotipo from "@/assets/brand/isotipo-color.svg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rank Your Brand — Be the answer your buyers find" },
+      { title: "Rank Your Brand — Be the answer your buyers find in ChatGPT" },
       {
         name: "description",
         content:
-          "AI-native SEO for B2B. We build visibility systems that get cited by ChatGPT, Perplexity, and Google AI. Free audit in 48 hours.",
+          "AI-native SEO for B2B. We build visibility systems that get cited by ChatGPT, Perplexity and Google AI. Free website diagnosis in 48 hours.",
       },
       { property: "og:title", content: "Rank Your Brand — AI-Native SEO for B2B" },
       {
         property: "og:description",
-        content: "Be the answer your buyers find. Free AI Visibility Audit in 48 hours.",
+        content: "Be the answer your buyers find. Free website diagnosis in 48 hours.",
       },
     ],
   }),
