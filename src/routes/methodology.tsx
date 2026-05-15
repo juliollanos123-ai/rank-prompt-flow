@@ -46,11 +46,14 @@ function Methodology() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pt-36 pb-24 lg:pt-48 lg:pb-28">
+      <section className="relative isolate overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-28">
         <div className="absolute inset-0 -z-10 bg-soft-glow" />
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
-            <Eyebrow>Methodology</Eyebrow>
+            <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Methodology" }]} />
+          </Reveal>
+          <Reveal delay={0.05}>
+            <div className="mt-8"><Eyebrow>Methodology</Eyebrow></div>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
