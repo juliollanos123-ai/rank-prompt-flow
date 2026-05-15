@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { CTA } from "@/components/site/CTA";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Reveal } from "@/components/site/Reveal";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 export const Route = createFileRoute("/methodology")({
   head: () => ({
