@@ -8,16 +8,16 @@ import isotipo from "@/assets/brand/isotipo-color.svg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rank Your Brand — Be the answer your buyers find" },
+      { title: "Rank Your Brand — Be the answer your buyers find in ChatGPT" },
       {
         name: "description",
         content:
-          "AI-native SEO for B2B. We build visibility systems that get cited by ChatGPT, Perplexity, and Google AI. Free audit in 48 hours.",
+          "AI-native SEO for B2B. We build visibility systems that get cited by ChatGPT, Perplexity and Google AI. Free website diagnosis in 48 hours.",
       },
       { property: "og:title", content: "Rank Your Brand — AI-Native SEO for B2B" },
       {
         property: "og:description",
-        content: "Be the answer your buyers find. Free AI Visibility Audit in 48 hours.",
+        content: "Be the answer your buyers find. Free website diagnosis in 48 hours.",
       },
     ],
   }),
@@ -83,7 +83,7 @@ function Hero() {
 
         <Reveal delay={1}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <CTA to="/audit">Get your free audit</CTA>
+            <CTA to="/audit">Get your free website diagnosis</CTA>
             <CTA to="/methodology" variant="ghost">See how we do it</CTA>
           </div>
         </Reveal>
@@ -361,27 +361,27 @@ function ServicesPreview() {
       tag: "Blueprint",
       to: "/services/blueprint" as const,
       kicker: "Foundation",
-      desc: "The technical foundation your site needs to rank — audit, architecture and SEO setup.",
-      price: "from $1,200",
-      meta: "Project-based",
+      desc: "Full website development + technical SEO foundation. Ready for organic growth and AI discovery.",
+      price: "$1,500 USD",
+      meta: "Project · 4–6 weeks",
       tone: "border-prompt/40 bg-prompt/5",
     },
     {
       tag: "Scale",
       to: "/services/scale" as const,
       kicker: "Growth",
-      desc: "Organic growth, month after month. Ongoing SEO + AI content engine + reporting.",
-      price: "from $1,800/mo",
-      meta: "Monthly retainer",
+      desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards.",
+      price: "$2,500/mo",
+      meta: "Retainer · 6-month minimum",
       tone: "border-ink/15 bg-ink text-canvas",
     },
     {
       tag: "Landmark",
       to: "/services/landmark" as const,
       kicker: "Authority",
-      desc: "The authority AI recommends. GEO + entity SEO + generative visibility.",
-      price: "from $3,500/mo",
-      meta: "Premium retainer",
+      desc: "The authority AI recommends. Everything in Scale + GEO + thought leadership.",
+      price: "$3,500/mo",
+      meta: "Retainer · 12-month engagement",
       tone: "border-flow/40 bg-flow/[0.06]",
     },
   ];
@@ -448,6 +448,7 @@ function FinalCTA() {
         <Reveal delay={0.2}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <CTA to="/audit" variant="outline-canvas">Find out free in 48h</CTA>
+            <CTA to="/contact" variant="outline-canvas">Talk to us</CTA>
           </div>
         </Reveal>
       </div>
