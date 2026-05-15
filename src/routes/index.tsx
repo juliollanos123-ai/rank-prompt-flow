@@ -448,6 +448,7 @@ function FinalCTA() {
         <Reveal delay={0.2}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <CTA to="/audit" variant="outline-canvas">Find out free in 48h</CTA>
+            <CTA to="/contact" variant="outline-canvas">Talk to us</CTA>
           </div>
         </Reveal>
       </div>
