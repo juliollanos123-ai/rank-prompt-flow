@@ -1,0 +1,208 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Rank Your Brand — Design System
+ *
+ * Brand palette (strict 55/35/15/5 rule):
+ *   Orange Prompt #d05206 — dominant (CTAs, accents)
+ *   Grey Rank    #3f3b39 — text & structure
+ *   Ivory Click  #f6fcee — canvas background
+ *   Blue Flow    #007ba7 — tech accent only
+ *
+ * The Diagonal Perfect: orange → blue from top-left to bottom-right.
+ */
+
+@font-face {
+  font-family: "Aglet Mono";
+  src: url("/src/assets/fonts/AgletMono-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aglet Mono";
+  src: url("/src/assets/fonts/AgletMono-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-display: "Aglet Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Aglet Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Brand semantic tokens */
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-canvas: var(--canvas);
+  --color-flow: var(--flow);
+  --color-prompt: var(--prompt);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand */
+  --prompt: oklch(0.605 0.184 41.5);     /* #d05206 Orange Prompt */
+  --ink: oklch(0.318 0.012 50);          /* #3f3b39 Grey Rank */
+  --ink-soft: oklch(0.45 0.012 50);
+  --canvas: oklch(0.985 0.018 120);      /* #f6fcee Ivory Click */
+  --flow: oklch(0.55 0.115 232);         /* #007ba7 Blue Flow */
+
+  /* shadcn semantic mapping */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--prompt);
+  --primary-foreground: var(--canvas);
+  --secondary: oklch(0.94 0.012 80);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--flow);
+  --accent-foreground: var(--canvas);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--canvas);
+  --border: oklch(0.88 0.012 70);
+  --input: oklch(0.88 0.012 70);
+  --ring: var(--prompt);
+
+  /* Gradient — The Diagonal Perfect */
+  --gradient-diagonal: linear-gradient(
+    135deg,
+    var(--prompt) 0%,
+    var(--prompt) 55%,
+    color-mix(in oklab, var(--prompt) 60%, var(--flow) 40%) 78%,
+    var(--flow) 100%
+  );
+  --gradient-soft: radial-gradient(
+    120% 80% at 0% 0%,
+    color-mix(in oklab, var(--prompt) 15%, transparent) 0%,
+    transparent 55%
+  ),
+  radial-gradient(
+    80% 60% at 100% 100%,
+    color-mix(in oklab, var(--flow) 22%, transparent) 0%,
+    transparent 60%
+  );
+
+  --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--prompt) 35%, transparent);
+  --shadow-card: 0 1px 0 color-mix(in oklab, var(--ink) 6%, transparent),
+                 0 12px 40px -20px color-mix(in oklab, var(--ink) 25%, transparent);
+}
+
+.dark {
+  --background: oklch(0.18 0.008 50);
+  --foreground: var(--canvas);
+  --card: oklch(0.22 0.01 50);
+  --card-foreground: var(--canvas);
+  --popover: oklch(0.22 0.01 50);
+  --popover-foreground: var(--canvas);
+  --primary: var(--prompt);
+  --primary-foreground: var(--canvas);
+  --secondary: oklch(0.28 0.01 50);
+  --secondary-foreground: var(--canvas);
+  --muted: oklch(0.28 0.01 50);
+  --muted-foreground: oklch(0.7 0.01 50);
+  --accent: var(--flow);
+  --accent-foreground: var(--canvas);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--prompt);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .bg-diagonal { background-image: var(--gradient-diagonal); }
+  .bg-soft-glow { background-image: var(--gradient-soft); }
+  .text-prompt { color: var(--prompt); }
+  .text-flow { color: var(--flow); }
+  .text-ink { color: var(--ink); }
+  .bg-canvas { background-color: var(--canvas); }
+  .bg-ink { background-color: var(--ink); }
+  .bg-prompt { background-color: var(--prompt); }
+  .bg-flow { background-color: var(--flow); }
+  .border-prompt { border-color: var(--prompt); }
+  .ring-flow { --tw-ring-color: var(--flow); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--ink) 7%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--ink) 7%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
