@@ -1,7 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import wordmark from "@/assets/brand/wordmark-color.svg";
 import isotipo from "@/assets/brand/isotipo-nuevo.svg";
 
 const links = [
@@ -35,9 +34,8 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="Rank Your Brand">
-          <img src={isotipo} alt="" aria-hidden className="h-8 w-auto" />
-          <img src={wordmark} alt="Rank Your Brand" className="h-6 w-auto" />
+        <Link to="/" className="flex items-center" aria-label="Rank Your Brand">
+          <img src={isotipo} alt="Rank Your Brand" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
