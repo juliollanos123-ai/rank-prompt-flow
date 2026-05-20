@@ -11,13 +11,23 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as EsRouteImport } from './routes/es'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as EsIndexRouteImport } from './routes/es.index'
 import { Route as ServicesScaleRouteImport } from './routes/services.scale'
 import { Route as ServicesLandmarkRouteImport } from './routes/services.landmark'
 import { Route as ServicesBlueprintRouteImport } from './routes/services.blueprint'
+import { Route as EsServiciosRouteImport } from './routes/es.servicios'
+import { Route as EsMetodologiaRouteImport } from './routes/es.metodologia'
+import { Route as EsContactoRouteImport } from './routes/es.contacto'
+import { Route as EsAuditoriaRouteImport } from './routes/es.auditoria'
+import { Route as EsServiciosIndexRouteImport } from './routes/es.servicios.index'
+import { Route as EsServiciosScaleRouteImport } from './routes/es.servicios.scale'
+import { Route as EsServiciosLandmarkRouteImport } from './routes/es.servicios.landmark'
+import { Route as EsServiciosBlueprintRouteImport } from './routes/es.servicios.blueprint'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -27,6 +37,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const MethodologyRoute = MethodologyRouteImport.update({
   id: '/methodology',
   path: '/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsRoute = EsRouteImport.update({
+  id: '/es',
+  path: '/es',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -49,6 +64,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const EsIndexRoute = EsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EsRoute,
+} as any)
 const ServicesScaleRoute = ServicesScaleRouteImport.update({
   id: '/scale',
   path: '/scale',
@@ -64,39 +84,107 @@ const ServicesBlueprintRoute = ServicesBlueprintRouteImport.update({
   path: '/blueprint',
   getParentRoute: () => ServicesRoute,
 } as any)
+const EsServiciosRoute = EsServiciosRouteImport.update({
+  id: '/servicios',
+  path: '/servicios',
+  getParentRoute: () => EsRoute,
+} as any)
+const EsMetodologiaRoute = EsMetodologiaRouteImport.update({
+  id: '/metodologia',
+  path: '/metodologia',
+  getParentRoute: () => EsRoute,
+} as any)
+const EsContactoRoute = EsContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => EsRoute,
+} as any)
+const EsAuditoriaRoute = EsAuditoriaRouteImport.update({
+  id: '/auditoria',
+  path: '/auditoria',
+  getParentRoute: () => EsRoute,
+} as any)
+const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
+const EsServiciosScaleRoute = EsServiciosScaleRouteImport.update({
+  id: '/scale',
+  path: '/scale',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
+const EsServiciosLandmarkRoute = EsServiciosLandmarkRouteImport.update({
+  id: '/landmark',
+  path: '/landmark',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
+const EsServiciosBlueprintRoute = EsServiciosBlueprintRouteImport.update({
+  id: '/blueprint',
+  path: '/blueprint',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
   '/contact': typeof ContactRoute
+  '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/es/auditoria': typeof EsAuditoriaRoute
+  '/es/contacto': typeof EsContactoRoute
+  '/es/metodologia': typeof EsMetodologiaRoute
+  '/es/servicios': typeof EsServiciosRouteWithChildren
   '/services/blueprint': typeof ServicesBlueprintRoute
   '/services/landmark': typeof ServicesLandmarkRoute
   '/services/scale': typeof ServicesScaleRoute
+  '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
+  '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
+  '/es/servicios/scale': typeof EsServiciosScaleRoute
+  '/es/servicios/': typeof EsServiciosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
   '/contact': typeof ContactRoute
   '/methodology': typeof MethodologyRoute
+  '/es/auditoria': typeof EsAuditoriaRoute
+  '/es/contacto': typeof EsContactoRoute
+  '/es/metodologia': typeof EsMetodologiaRoute
   '/services/blueprint': typeof ServicesBlueprintRoute
   '/services/landmark': typeof ServicesLandmarkRoute
   '/services/scale': typeof ServicesScaleRoute
+  '/es': typeof EsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
+  '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
+  '/es/servicios/scale': typeof EsServiciosScaleRoute
+  '/es/servicios': typeof EsServiciosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
   '/contact': typeof ContactRoute
+  '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/es/auditoria': typeof EsAuditoriaRoute
+  '/es/contacto': typeof EsContactoRoute
+  '/es/metodologia': typeof EsMetodologiaRoute
+  '/es/servicios': typeof EsServiciosRouteWithChildren
   '/services/blueprint': typeof ServicesBlueprintRoute
   '/services/landmark': typeof ServicesLandmarkRoute
   '/services/scale': typeof ServicesScaleRoute
+  '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
+  '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
+  '/es/servicios/scale': typeof EsServiciosScaleRoute
+  '/es/servicios/': typeof EsServiciosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -104,39 +192,68 @@ export interface FileRouteTypes {
     | '/'
     | '/audit'
     | '/contact'
+    | '/es'
     | '/methodology'
     | '/services'
+    | '/es/auditoria'
+    | '/es/contacto'
+    | '/es/metodologia'
+    | '/es/servicios'
     | '/services/blueprint'
     | '/services/landmark'
     | '/services/scale'
+    | '/es/'
     | '/services/'
+    | '/es/servicios/blueprint'
+    | '/es/servicios/landmark'
+    | '/es/servicios/scale'
+    | '/es/servicios/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/audit'
     | '/contact'
     | '/methodology'
+    | '/es/auditoria'
+    | '/es/contacto'
+    | '/es/metodologia'
     | '/services/blueprint'
     | '/services/landmark'
     | '/services/scale'
+    | '/es'
     | '/services'
+    | '/es/servicios/blueprint'
+    | '/es/servicios/landmark'
+    | '/es/servicios/scale'
+    | '/es/servicios'
   id:
     | '__root__'
     | '/'
     | '/audit'
     | '/contact'
+    | '/es'
     | '/methodology'
     | '/services'
+    | '/es/auditoria'
+    | '/es/contacto'
+    | '/es/metodologia'
+    | '/es/servicios'
     | '/services/blueprint'
     | '/services/landmark'
     | '/services/scale'
+    | '/es/'
     | '/services/'
+    | '/es/servicios/blueprint'
+    | '/es/servicios/landmark'
+    | '/es/servicios/scale'
+    | '/es/servicios/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuditRoute: typeof AuditRoute
   ContactRoute: typeof ContactRoute
+  EsRoute: typeof EsRouteWithChildren
   MethodologyRoute: typeof MethodologyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
 }
@@ -155,6 +272,13 @@ declare module '@tanstack/react-router' {
       path: '/methodology'
       fullPath: '/methodology'
       preLoaderRoute: typeof MethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es': {
+      id: '/es'
+      path: '/es'
+      fullPath: '/es'
+      preLoaderRoute: typeof EsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -185,6 +309,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/es/': {
+      id: '/es/'
+      path: '/'
+      fullPath: '/es/'
+      preLoaderRoute: typeof EsIndexRouteImport
+      parentRoute: typeof EsRoute
+    }
     '/services/scale': {
       id: '/services/scale'
       path: '/scale'
@@ -206,8 +337,100 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBlueprintRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/es/servicios': {
+      id: '/es/servicios'
+      path: '/servicios'
+      fullPath: '/es/servicios'
+      preLoaderRoute: typeof EsServiciosRouteImport
+      parentRoute: typeof EsRoute
+    }
+    '/es/metodologia': {
+      id: '/es/metodologia'
+      path: '/metodologia'
+      fullPath: '/es/metodologia'
+      preLoaderRoute: typeof EsMetodologiaRouteImport
+      parentRoute: typeof EsRoute
+    }
+    '/es/contacto': {
+      id: '/es/contacto'
+      path: '/contacto'
+      fullPath: '/es/contacto'
+      preLoaderRoute: typeof EsContactoRouteImport
+      parentRoute: typeof EsRoute
+    }
+    '/es/auditoria': {
+      id: '/es/auditoria'
+      path: '/auditoria'
+      fullPath: '/es/auditoria'
+      preLoaderRoute: typeof EsAuditoriaRouteImport
+      parentRoute: typeof EsRoute
+    }
+    '/es/servicios/': {
+      id: '/es/servicios/'
+      path: '/'
+      fullPath: '/es/servicios/'
+      preLoaderRoute: typeof EsServiciosIndexRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
+    '/es/servicios/scale': {
+      id: '/es/servicios/scale'
+      path: '/scale'
+      fullPath: '/es/servicios/scale'
+      preLoaderRoute: typeof EsServiciosScaleRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
+    '/es/servicios/landmark': {
+      id: '/es/servicios/landmark'
+      path: '/landmark'
+      fullPath: '/es/servicios/landmark'
+      preLoaderRoute: typeof EsServiciosLandmarkRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
+    '/es/servicios/blueprint': {
+      id: '/es/servicios/blueprint'
+      path: '/blueprint'
+      fullPath: '/es/servicios/blueprint'
+      preLoaderRoute: typeof EsServiciosBlueprintRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
   }
 }
+
+interface EsServiciosRouteChildren {
+  EsServiciosBlueprintRoute: typeof EsServiciosBlueprintRoute
+  EsServiciosLandmarkRoute: typeof EsServiciosLandmarkRoute
+  EsServiciosScaleRoute: typeof EsServiciosScaleRoute
+  EsServiciosIndexRoute: typeof EsServiciosIndexRoute
+}
+
+const EsServiciosRouteChildren: EsServiciosRouteChildren = {
+  EsServiciosBlueprintRoute: EsServiciosBlueprintRoute,
+  EsServiciosLandmarkRoute: EsServiciosLandmarkRoute,
+  EsServiciosScaleRoute: EsServiciosScaleRoute,
+  EsServiciosIndexRoute: EsServiciosIndexRoute,
+}
+
+const EsServiciosRouteWithChildren = EsServiciosRoute._addFileChildren(
+  EsServiciosRouteChildren,
+)
+
+interface EsRouteChildren {
+  EsAuditoriaRoute: typeof EsAuditoriaRoute
+  EsContactoRoute: typeof EsContactoRoute
+  EsMetodologiaRoute: typeof EsMetodologiaRoute
+  EsServiciosRoute: typeof EsServiciosRouteWithChildren
+  EsIndexRoute: typeof EsIndexRoute
+}
+
+const EsRouteChildren: EsRouteChildren = {
+  EsAuditoriaRoute: EsAuditoriaRoute,
+  EsContactoRoute: EsContactoRoute,
+  EsMetodologiaRoute: EsMetodologiaRoute,
+  EsServiciosRoute: EsServiciosRouteWithChildren,
+  EsIndexRoute: EsIndexRoute,
+}
+
+const EsRouteWithChildren = EsRoute._addFileChildren(EsRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesBlueprintRoute: typeof ServicesBlueprintRoute
@@ -231,6 +454,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuditRoute: AuditRoute,
   ContactRoute: ContactRoute,
+  EsRoute: EsRouteWithChildren,
   MethodologyRoute: MethodologyRoute,
   ServicesRoute: ServicesRouteWithChildren,
 }

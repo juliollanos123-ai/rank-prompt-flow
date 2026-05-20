@@ -1,7 +1,8 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import wordmark from "@/assets/brand/wordmark-dark.svg";
+import { isEsPath } from "@/i18n/langRoutes";
 
-const cols = [
+const enCols = [
   {
     heading: "Services",
     links: [
@@ -26,6 +27,31 @@ const cols = [
   },
 ];
 
+const esCols = [
+  {
+    heading: "Servicios",
+    links: [
+      { to: "/es/servicios/blueprint" as const, label: "Blueprint" },
+      { to: "/es/servicios/scale" as const, label: "Scale" },
+      { to: "/es/servicios/landmark" as const, label: "Landmark" },
+    ],
+  },
+  {
+    heading: "Recursos",
+    links: [
+      { to: "/es/auditoria" as const, label: "Diagnóstico gratuito" },
+      { to: "/es/metodologia" as const, label: "Metodología" },
+    ],
+  },
+  {
+    heading: "Empresa",
+    links: [
+      { to: "/es" as const, label: "Inicio" },
+      { to: "/es/contacto" as const, label: "Contacto" },
+    ],
+  },
+];
+
 function LinkedInIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -43,6 +69,10 @@ function XIcon() {
 }
 
 export function Footer() {
+  const { location } = useRouterState();
+  const isEs = isEsPath(location.pathname);
+  const cols = isEs ? esCols : enCols;
+
   return (
     <footer className="bg-ink text-canvas">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-5 lg:px-10">
@@ -53,13 +83,17 @@ export function Footer() {
             className="h-8 w-auto brightness-0 invert"
           />
           <p className="mt-6 max-w-sm text-sm text-canvas/70">
-            AI-native SEO for B2B companies that want to be the answer their buyers find — in Google, ChatGPT, Perplexity, and beyond.
+            {isEs
+              ? "SEO nativo de IA para empresas B2B que quieren ser la respuesta que sus compradores encuentran — en Google, ChatGPT, Perplexity y más."
+              : "AI-native SEO for B2B companies that want to be the answer their buyers find — in Google, ChatGPT, Perplexity, and beyond."}
           </p>
           <div className="mt-8 space-y-2 text-sm text-canvas/80">
             <a href="mailto:julio@rankyourbrand.co" className="block hover:text-prompt transition-colors">
               julio@rankyourbrand.co
             </a>
-            <p className="text-canvas/60">Serving B2B companies in USA, Europe & LATAM</p>
+            <p className="text-canvas/60">
+              {isEs ? "Servimos a empresas B2B en EE.UU., Europa y LATAM" : "Serving B2B companies in USA, Europe & LATAM"}
+            </p>
           </div>
           <div className="mt-6 flex items-center gap-3">
             <a
@@ -102,7 +136,9 @@ export function Footer() {
       <div className="border-t border-canvas/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-canvas/50 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <span>© {new Date().getFullYear()} RankYourBrand. All rights reserved.</span>
-          <span className="font-display tracking-widest uppercase">Your buyers are looking. Be found.</span>
+          <span className="font-display tracking-widest uppercase">
+            {isEs ? "Tus compradores están buscando. Sé encontrado." : "Your buyers are looking. Be found."}
+          </span>
         </div>
       </div>
     </footer>
