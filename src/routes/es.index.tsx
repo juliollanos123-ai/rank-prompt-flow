@@ -258,7 +258,7 @@ function Pillars() {
       tag: "02",
       title: "Operaciones nativas de IA",
       body:
-        "Nuestros flujos de trabajo N8N + LLM producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor coste.",
+        "Nuestros flujos de trabajo N8N + LLM producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor costo.",
     },
     {
       tag: "03",
@@ -446,7 +446,7 @@ const faqs = [
     a: "Las correcciones técnicas y mejoras de contenido suelen mostrar movimiento inicial en 6–12 semanas. Los resultados de citación GEO (menciones en ChatGPT, Perplexity) suelen aparecer en 8–16 semanas. Blueprint crea la base; Scale y Landmark construyen la visibilidad compuesta en 6–12 meses.",
   },
   {
-    q: "¿Trabajáis con empresas fuera de EE.UU.?",
+    q: "¿Trabajan con empresas fuera de EE.UU.?",
     a: "Sí. Trabajamos con empresas B2B en EE.UU., Europa y LATAM. Nuestro equipo opera en múltiples zonas horarias y hemos optimizado para mercados en inglés y español.",
   },
   {

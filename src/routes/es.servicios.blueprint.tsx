@@ -51,10 +51,10 @@ export const Route = createFileRoute("/es/servicios/blueprint")({
       ]}
       faqs={[
         ["¿Qué pasa si no conozco mis problemas de SEO?", "Eso es exactamente lo que descubre la fase de auditoría. Diagnosticamos antes de prescribir."],
-        ["¿Construís el sitio web desde cero?", "Sí. Ya sea que necesites una reconstrucción completa o un nuevo inicio, nos encargamos del desarrollo completo."],
-        ["¿Qué plataforma usáis?", "Normalmente usamos frameworks modernos (Next.js, React) por velocidad y SEO. También podemos trabajar con WordPress si se prefiere."],
+        ["¿Construyen el sitio web desde cero?", "Sí. Ya sea que necesiten una reconstrucción completa o un nuevo inicio, nos encargamos del desarrollo completo."],
+        ["¿Qué plataforma usan?", "Normalmente usamos frameworks modernos (Next.js, React) por velocidad y SEO. También podemos trabajar con WordPress si se prefiere."],
         ["¿Puedo pasar a Scale después de Blueprint?", "Absolutamente — la mayoría de clientes pasan a Scale después de ver la hoja de ruta. Ofrecemos descuentos de transición."],
-        ["¿Proporcionáis el contenido del sitio?", "Proporcionamos la arquitectura y estrategia de contenido. El copywriting se puede añadir por un coste adicional."],
+        ["¿Proporcionan el contenido del sitio?", "Proporcionamos la arquitectura y estrategia de contenido. El copywriting se puede agregar por un costo adicional."],
       ]}
       finalCtaText="¿No sabes si Blueprint es lo que necesitas?"
       lang="es"

@@ -54,7 +54,7 @@ export const Route = createFileRoute("/es/servicios/landmark")({
       faqs={[
         ["¿En qué se diferencia Landmark de Scale?", "Scale se enfoca en tráfico y rankings. Landmark se enfoca en la propiedad de categoría y la citación por IA. Piénsalo así: ser LA respuesta, no solo rankear bien."],
         ["¿Necesito una página de Wikipedia?", "No es obligatorio, pero si eres lo suficientemente notable, te ayudaremos a conseguirla. Si no, nos enfocamos en Wikidata, Crunchbase y bases de datos del sector."],
-        ["¿Cómo rastreáis las citas de IA?", "Probamos consultas semanalmente en ChatGPT, Perplexity y Claude. Medimos la frecuencia de mención, el contexto y el desplazamiento competitivo."],
+        ["¿Cómo rastrean las citas de IA?", "Probamos consultas semanalmente en ChatGPT, Perplexity y Claude. Medimos la frecuencia de mención, el contexto y el desplazamiento competitivo."],
         ["¿Qué pasa si mi industria aún no está lista para la IA?", "Todos los sectores B2B adoptarán la búsqueda por IA. Preparamos tu marca para que estés listo cuando tus compradores den el salto."],
         ["¿Puedo bajar a Scale después?", "Sí, después del compromiso de 12 meses. La mayoría de clientes se quedan porque ven los beneficios compuestos de GEO + liderazgo de pensamiento."],
         ["¿Qué nivel de participación ejecutiva se requiere?", "Mínimo pero estratégico — unas 2–3 horas/mes para llamadas de estrategia y revisión de contenido. Nuestro equipo hace el trabajo pesado."],

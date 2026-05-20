@@ -55,7 +55,7 @@ export const Route = createFileRoute("/es/servicios/scale")({
         ["¿Qué pasa si no veo resultados en 6 meses?", "Rastreamos indicadores líderes mensualmente (movimiento de keywords, páginas indexadas, engagement). Si no hay tendencia positiva en el Mes 3, diagnosticamos y ajustamos."],
         ["¿Puedo pausar el retainer?", "No dentro del mínimo de 6 meses. Después, sí — con 30 días de aviso. Pausar el SEO suele significar perder momentum."],
         ["¿Puedo enfocarme en temas específicos?", "Absolutamente. Los calendarios de contenido se construyen de forma colaborativa. Tienes aprobación final sobre todos los temas antes de que escribamos."],
-        ["¿Cómo medís la calidad de los leads?", "Rastreamos envíos de formularios, solicitudes de demo y llamadas atribuidas al tráfico orgánico, más el comportamiento en el sitio para separar los leads cualificados de los no cualificados."],
+        ["¿Cómo miden la calidad de los leads?", "Rastreamos envíos de formularios, solicitudes de demo y llamadas atribuidas al tráfico orgánico, más el comportamiento en el sitio para separar los leads cualificados de los no cualificados."],
       ]}
       finalCtaText="¿Listo para crecer de forma predecible?"
       lang="es"
