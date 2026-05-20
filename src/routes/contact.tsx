@@ -96,7 +96,7 @@ function InfoBlock({ label, value, href }: { label: string; value: string; href?
   );
 }
 
-const WEB3FORMS_KEY = "d7c3d809-27dd-439c-b6b1-132392749c47";
+const BASIN_ENDPOINT = "https://usebasin.com/f/3c237926592d";
 
 function ContactForm({ onSubmit }: { onSubmit: () => void }) {
   const [loading, setLoading] = useState(false);
@@ -110,13 +110,12 @@ function ContactForm({ onSubmit }: { onSubmit: () => void }) {
     const data = Object.fromEntries(new FormData(e.currentTarget));
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(BASIN_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: "New contact — Rank Your Brand", ...data }),
+        body: JSON.stringify(data),
       });
-      const json = await res.json();
-      if (json.success) {
+      if (res.ok) {
         onSubmit();
       } else {
         setError("Something went wrong. Please try again or email us directly.");

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const WEB3FORMS_KEY = "d7c3d809-27dd-439c-b6b1-132392749c47";
+const BASIN_ENDPOINT = "https://usebasin.com/f/3c237926592d";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Reveal } from "@/components/site/Reveal";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -181,19 +181,14 @@ function AuditForm({ tier, onSubmit }: { tier: Tier; onSubmit: () => void }) {
     setError(null);
 
     const data = Object.fromEntries(new FormData(e.currentTarget));
-    const subject =
-      tier === "free"
-        ? "Free Diagnosis Request — Rank Your Brand"
-        : "Full SEO Audit Request ($497) — Rank Your Brand";
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(BASIN_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject, ...data }),
+        body: JSON.stringify(data),
       });
-      const json = await res.json();
-      if (json.success) {
+      if (res.ok) {
         onSubmit();
       } else {
         setError("Something went wrong. Please try again or email us directly.");
