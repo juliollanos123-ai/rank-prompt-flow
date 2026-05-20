@@ -58,7 +58,8 @@ export const Route = createFileRoute("/es/servicios/scale")({
         ["¿Cómo medís la calidad de los leads?", "Rastreamos envíos de formularios, solicitudes de demo y llamadas atribuidas al tráfico orgánico, más el comportamiento en el sitio para separar los leads cualificados de los no cualificados."],
       ]}
       finalCtaText="¿Listo para crecer de forma predecible?"
-      tone="dark"
+      lang="es"
+      tone="neutral"
     />
   ),
 });

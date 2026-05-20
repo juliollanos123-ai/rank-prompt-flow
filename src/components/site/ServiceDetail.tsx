@@ -4,7 +4,8 @@ import { Eyebrow } from "@/components/site/Eyebrow";
 import { Reveal } from "@/components/site/Reveal";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
-type Tone = "prompt" | "dark" | "flow";
+type Tone = "prompt" | "dark" | "flow" | "neutral";
+type Lang = "en" | "es";
 
 export type ServiceDetailProps = {
   tag: string;
@@ -22,7 +23,57 @@ export type ServiceDetailProps = {
   faqs?: [string, string][];
   finalCtaText?: string;
   tone: Tone;
+  lang?: Lang;
 };
+
+const t = {
+  en: {
+    breadcrumbHome: "Home",
+    breadcrumbHomeHref: "/" as const,
+    breadcrumbServices: "Services",
+    breadcrumbServicesHref: "/services" as const,
+    includedEyebrow: "What's included",
+    includedH2first: "Concrete deliverables.",
+    includedH2second: "No vague retainers.",
+    outcomesEyebrow: "Expected outcomes",
+    outcomesH2: "What you'll see,",
+    outcomesH2italic: "on the timeline that matters.",
+    whoEyebrow: "Who this is for",
+    whoH2: "A fit if you recognize",
+    whoH2italic: "yourself here.",
+    idealClient: "Ideal client",
+    notAFit: "Not a fit if",
+    processEyebrow: "Process",
+    processH2: "From kickoff to compounding.",
+    faqsEyebrow: "FAQs",
+    faqsH2: "Questions,",
+    faqsH2italic: "answered honestly.",
+    stage: "Stage",
+  },
+  es: {
+    breadcrumbHome: "Inicio",
+    breadcrumbHomeHref: "/es" as const,
+    breadcrumbServices: "Servicios",
+    breadcrumbServicesHref: "/es/servicios" as const,
+    includedEyebrow: "Que incluye",
+    includedH2first: "Entregables concretos.",
+    includedH2second: "Sin retainers vagos.",
+    outcomesEyebrow: "Resultados esperados",
+    outcomesH2: "Lo que veras,",
+    outcomesH2italic: "en el plazo que importa.",
+    whoEyebrow: "Para quien es",
+    whoH2: "Encaja si te",
+    whoH2italic: "reconoces aqui.",
+    idealClient: "Cliente ideal",
+    notAFit: "No encaja si",
+    processEyebrow: "Proceso",
+    processH2: "Del arranque al crecimiento.",
+    faqsEyebrow: "Preguntas frecuentes",
+    faqsH2: "Preguntas,",
+    faqsH2italic: "respondidas honestamente.",
+    stage: "Etapa",
+  },
+} as const;
 
 export function ServiceDetail(props: ServiceDetailProps) {
   const {
@@ -33,16 +84,32 @@ export function ServiceDetail(props: ServiceDetailProps) {
     outcomes, faqs,
     finalCtaText = "Not sure if this is right for you?",
     tone,
+    lang = "en",
   } = props;
+
+  const tx = t[lang];
 
   const heroBg =
     tone === "dark"
       ? "bg-ink text-canvas"
       : tone === "flow"
       ? "bg-gradient-to-br from-canvas via-canvas to-flow/10"
+      : tone === "neutral"
+      ? "bg-canvas"
       : "bg-gradient-to-br from-canvas via-canvas to-prompt/10";
 
   const eyebrowTone = tone === "dark" ? "canvas" : "ink";
+
+  // Dark hero → Includes flips to light for contrast. All light heroes → dark Includes.
+  const includesBg = tone === "dark"
+    ? "bg-canvas py-24 lg:py-32"
+    : "bg-ink py-24 text-canvas lg:py-32";
+  const includesCardBorder = tone === "dark"
+    ? "border-ink/10 bg-ink/[0.03]"
+    : "border-canvas/10 bg-canvas/[0.04]";
+  const includesH3Color = tone === "dark" ? "text-ink" : "text-canvas";
+  const includesBodyColor = tone === "dark" ? "text-ink/70" : "text-canvas/70";
+  const includesEyebrowTone = tone === "dark" ? "ink" : "canvas";
 
   return (
     <>
@@ -53,8 +120,8 @@ export function ServiceDetail(props: ServiceDetailProps) {
             <Breadcrumbs
               tone={tone === "dark" ? "canvas" : "ink"}
               items={[
-                { label: "Home", to: "/" },
-                { label: "Services", to: "/services" },
+                { label: tx.breadcrumbHome, to: tx.breadcrumbHomeHref },
+                { label: tx.breadcrumbServices, to: tx.breadcrumbServicesHref },
                 { label: tag },
               ]}
             />
@@ -84,6 +151,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
                   <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "ghost"}>
                     {secondaryCta.label}
                   </CTA>
+
                 )}
               </div>
             </div>
@@ -92,13 +160,13 @@ export function ServiceDetail(props: ServiceDetailProps) {
       </section>
 
       {/* Includes */}
-      <section className="bg-ink py-24 text-canvas lg:py-32">
+      <section className={includesBg}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal><Eyebrow tone="canvas">What's included</Eyebrow></Reveal>
+          <Reveal><Eyebrow tone={includesEyebrowTone}>{tx.includedEyebrow}</Eyebrow></Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mt-6 max-w-3xl text-4xl text-canvas lg:text-5xl">
-              Concrete deliverables.<br />
-              <span className="italic text-prompt">No vague retainers.</span>
+            <h2 className={`mt-6 max-w-3xl text-4xl lg:text-5xl ${tone === "dark" ? "text-ink" : "text-canvas"}`}>
+              {tx.includedH2first}<br />
+              <span className="italic text-prompt">{tx.includedH2second}</span>
             </h2>
           </Reveal>
 
@@ -107,11 +175,11 @@ export function ServiceDetail(props: ServiceDetailProps) {
               <Reveal key={h} delay={i * 0.06}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="h-full rounded-2xl border border-canvas/10 bg-canvas/[0.04] p-7 transition-colors hover:border-flow/40"
+                  className={`h-full rounded-2xl border p-7 transition-colors hover:border-flow/40 ${includesCardBorder}`}
                 >
                   <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
-                  <h3 className="mt-4 text-2xl text-canvas">{h}</h3>
-                  <p className="mt-3 text-canvas/70">{d}</p>
+                  <h3 className={`mt-4 text-2xl ${includesH3Color}`}>{h}</h3>
+                  <p className={`mt-3 ${includesBodyColor}`}>{d}</p>
                 </motion.div>
               </Reveal>
             ))}
@@ -123,17 +191,17 @@ export function ServiceDetail(props: ServiceDetailProps) {
       {outcomes && outcomes.length > 0 && (
         <section className="bg-canvas py-24 lg:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <Reveal><Eyebrow>Expected outcomes</Eyebrow></Reveal>
+            <Reveal><Eyebrow>{tx.outcomesEyebrow}</Eyebrow></Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-6 max-w-2xl text-4xl lg:text-5xl">
-                What you'll see, <span className="italic text-prompt">on the timeline that matters.</span>
+                {tx.outcomesH2} <span className="italic text-prompt">{tx.outcomesH2italic}</span>
               </h2>
             </Reveal>
             <ul className="mt-12 grid gap-4 lg:grid-cols-3">
               {outcomes.map((o, i) => (
                 <Reveal key={i} delay={i * 0.06}>
                   <div className="h-full rounded-2xl border border-prompt/20 bg-prompt/5 p-7">
-                    <div className="font-display text-xs tracking-[0.3em] text-prompt">Stage {i + 1}</div>
+                    <div className="font-display text-xs tracking-[0.3em] text-prompt">{tx.stage} {i + 1}</div>
                     <p className="mt-4 text-lg text-ink/85">{o}</p>
                   </div>
                 </Reveal>
@@ -146,17 +214,17 @@ export function ServiceDetail(props: ServiceDetailProps) {
       {/* Who for + not fit */}
       <section className={`${outcomes ? "bg-ink/[0.02]" : "bg-canvas"} py-24 lg:py-32`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal><Eyebrow>Who this is for</Eyebrow></Reveal>
+          <Reveal><Eyebrow>{tx.whoEyebrow}</Eyebrow></Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl lg:text-5xl">
-              A fit if you recognize <span className="italic text-prompt">yourself here.</span>
+              {tx.whoH2} <span className="italic text-prompt">{tx.whoH2italic}</span>
             </h2>
           </Reveal>
 
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
             <Reveal>
               <div className="rounded-3xl border border-prompt/20 bg-canvas p-8">
-                <div className="font-display text-xs tracking-[0.3em] text-prompt">Ideal client</div>
+                <div className="font-display text-xs tracking-[0.3em] text-prompt">{tx.idealClient}</div>
                 <ul className="mt-6 space-y-4">
                   {forWho.map((w) => (
                     <li key={w} className="flex items-start gap-4 border-b border-border pb-4 last:border-0">
@@ -170,7 +238,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
             {notFit && notFit.length > 0 && (
               <Reveal delay={0.1}>
                 <div className="rounded-3xl border border-ink/10 bg-canvas p-8">
-                  <div className="font-display text-xs tracking-[0.3em] text-ink/50">Not a fit if</div>
+                  <div className="font-display text-xs tracking-[0.3em] text-ink/50">{tx.notAFit}</div>
                   <ul className="mt-6 space-y-4">
                     {notFit.map((w) => (
                       <li key={w} className="flex items-start gap-4 border-b border-border pb-4 last:border-0">
@@ -189,9 +257,9 @@ export function ServiceDetail(props: ServiceDetailProps) {
       {/* Timeline */}
       <section className="bg-canvas py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal><Eyebrow>Process</Eyebrow></Reveal>
+          <Reveal><Eyebrow>{tx.processEyebrow}</Eyebrow></Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mt-6 max-w-2xl text-4xl lg:text-5xl">From kickoff to compounding.</h2>
+            <h2 className="mt-6 max-w-2xl text-4xl lg:text-5xl">{tx.processH2}</h2>
           </Reveal>
 
           <div className={`mt-14 grid gap-6 ${timeline.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
@@ -211,10 +279,10 @@ export function ServiceDetail(props: ServiceDetailProps) {
       {faqs && faqs.length > 0 && (
         <section className="bg-ink/[0.02] py-24 lg:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <Reveal><Eyebrow>FAQs</Eyebrow></Reveal>
+            <Reveal><Eyebrow>{tx.faqsEyebrow}</Eyebrow></Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-6 max-w-2xl text-4xl lg:text-5xl">
-                Questions, <span className="italic text-prompt">answered honestly.</span>
+                {tx.faqsH2} <span className="italic text-prompt">{tx.faqsH2italic}</span>
               </h2>
             </Reveal>
             <div className="mt-12 grid gap-4">

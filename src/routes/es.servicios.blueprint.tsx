@@ -57,6 +57,7 @@ export const Route = createFileRoute("/es/servicios/blueprint")({
         ["¿Proporcionáis el contenido del sitio?", "Proporcionamos la arquitectura y estrategia de contenido. El copywriting se puede añadir por un coste adicional."],
       ]}
       finalCtaText="¿No sabes si Blueprint es lo que necesitas?"
+      lang="es"
       tone="prompt"
     />
   ),

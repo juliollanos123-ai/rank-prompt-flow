@@ -57,7 +57,7 @@ export const Route = createFileRoute("/services/scale")({
         ["How do you measure lead quality?", "We track form submissions, demo requests and calls attributed to organic traffic, plus on-site behavior to separate qualified from unqualified."],
       ]}
       finalCtaText="Ready to grow predictably?"
-      tone="dark"
+      tone="neutral"
     />
   ),
 });

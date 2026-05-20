@@ -60,6 +60,7 @@ export const Route = createFileRoute("/es/servicios/landmark")({
         ["¿Qué nivel de participación ejecutiva se requiere?", "Mínimo pero estratégico — unas 2–3 horas/mes para llamadas de estrategia y revisión de contenido. Nuestro equipo hace el trabajo pesado."],
       ]}
       finalCtaText="¿Listo para dominar tu categoría? Limitado a 3–5 clientes por año. Se requiere solicitud."
+      lang="es"
       tone="flow"
     />
   ),
