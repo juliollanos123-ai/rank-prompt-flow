@@ -184,7 +184,7 @@ function ArticleView() {
               items={[
                 { label: "Home", to: "/" },
                 { label: "Blog", to: "/blog" },
-                { label: cat.label, to: "/blog/$slug", },
+                { label: cat.label },
                 { label: article.title },
               ]}
             />
