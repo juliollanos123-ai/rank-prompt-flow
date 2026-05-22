@@ -83,7 +83,7 @@ const t = {
 
 export function ServiceDetail(props: ServiceDetailProps) {
   const {
-    tag, kicker, tagline, meta,
+    tag, tier, format, duration, tagline,
     primaryCta = { label: "Get a free diagnosis", to: "/audit" },
     secondaryCta,
     forWho, notFit, includes, timeline,
