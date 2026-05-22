@@ -104,7 +104,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
       ? "bg-canvas"
       : "bg-gradient-to-br from-canvas via-canvas to-prompt/10";
 
-  const eyebrowTone = tone === "dark" ? "canvas" : "ink";
+  
 
   // Dark hero → Includes flips to light for contrast. All light heroes → dark Includes.
   const includesBg = tone === "dark"
