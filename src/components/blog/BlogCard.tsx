@@ -9,8 +9,8 @@ export function BlogCard({ article, variant = "grid" }: { article: Article; vari
   if (variant === "featured") {
     return (
       <Link
-        to="/blog/$slug"
-        params={{ slug: article.slug }}
+        to="/blog/$category/$slug"
+        params={{ category: article.category, slug: article.slug }}
         className="group grid overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-all hover:shadow-elegant lg:grid-cols-2"
       >
         <div className={`relative aspect-[16/10] lg:aspect-auto ${cat.cover}`}>
@@ -44,8 +44,8 @@ export function BlogCard({ article, variant = "grid" }: { article: Article; vari
 
   return (
     <Link
-      to="/blog/$slug"
-      params={{ slug: article.slug }}
+      to="/blog/$category/$slug"
+      params={{ category: article.category, slug: article.slug }}
       className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-card"
     >
       <div className={`relative aspect-[16/10] ${cat.cover}`}>

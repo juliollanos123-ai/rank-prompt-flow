@@ -1,15 +1,12 @@
-import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-// articles import kept for potential future use; only individual helpers below are required.
+import { createFileRoute, notFound, Link, redirect } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTA } from "@/components/site/CTA";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { CategoryChip } from "@/components/blog/CategoryChip";
-import { CategoryFilter } from "@/components/blog/CategoryFilter";
 import { BlogInlineCTA, BlogEndCTA } from "@/components/blog/BlogInlineCTA";
 import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import {
-  articlesByCategory,
   formatDate,
   getArticle,
   getCategory,
@@ -20,31 +17,23 @@ import {
   type Block,
 } from "@/data/blog";
 
-export const Route = createFileRoute("/blog/$slug")({
+export const Route = createFileRoute("/blog/$category/$slug")({
   loader: ({ params }) => {
-    const { slug } = params;
-    if (isCategorySlug(slug)) {
-      const cat = getCategory(slug);
-      const list = articlesByCategory(slug);
-      return { kind: "category" as const, cat, list };
-    }
-    const article = getArticle(slug);
+    if (!isCategorySlug(params.category)) throw notFound();
+    const article = getArticle(params.slug);
     if (!article) throw notFound();
-    return { kind: "article" as const, article };
+    // Canonical URL guard — article belongs to one category only.
+    if (article.category !== params.category) {
+      throw redirect({
+        to: "/blog/$category/$slug",
+        params: { category: article.category, slug: article.slug },
+        statusCode: 301,
+      });
+    }
+    return { article };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Blog — Rank Your Brand" }] };
-    if (loaderData.kind === "category") {
-      const { cat, list } = loaderData;
-      return {
-        meta: [
-          { title: `${cat.label} — Blog | Rank Your Brand` },
-          { name: "description", content: cat.description },
-          { property: "og:title", content: `${cat.label} — Rank Your Brand Blog` },
-          { property: "og:description", content: `${list.length} articles on ${cat.label}.` },
-        ],
-      };
-    }
     const a = loaderData.article;
     return {
       meta: [
@@ -70,110 +59,21 @@ export const Route = createFileRoute("/blog/$slug")({
       <button onClick={reset} className="mt-6 underline">Try again</button>
     </div>
   ),
-  component: BlogSlug,
+  component: ArticleView,
 });
 
-function BlogSlug() {
-  const data = Route.useLoaderData();
-  if (data.kind === "category") return <CategoryView />;
-  return <ArticleView />;
-}
-
-function CategoryView() {
-  const { cat, list } = Route.useLoaderData() as {
-    kind: "category";
-    cat: ReturnType<typeof getCategory>;
-    list: Article[];
-  };
-  const first = list.slice(0, 6);
-  const rest = list.slice(6);
-
-  return (
-    <>
-      <section className="relative isolate overflow-hidden pt-32 pb-12 lg:pt-40 lg:pb-16">
-        <div className="absolute inset-0 -z-10 bg-soft-glow" />
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal>
-            <Breadcrumbs
-              items={[{ label: "Home", to: "/" }, { label: "Blog", to: "/blog" }, { label: cat.label }]}
-            />
-          </Reveal>
-          <Reveal delay={0.08}>
-            <div className="mt-8"><CategoryChip slug={cat.slug} /></div>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <h1 className="mt-6 max-w-4xl text-5xl lg:text-7xl">
-              <span className="accent-italic text-prompt">{cat.label}.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <p className="mt-6 max-w-2xl text-lg text-ink/70">{cat.description}</p>
-          </Reveal>
-          <Reveal delay={0.24}>
-            <div className="mt-6 font-display text-[11px] uppercase tracking-[0.25em] text-ink/55">
-              {list.length} article{list.length === 1 ? "" : "s"}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <CategoryFilter active={cat.slug} />
-
-      <section className="bg-canvas py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          {list.length === 0 ? (
-            <p className="text-ink/60">No articles in this category yet.</p>
-          ) : (
-            <>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {first.map((a, i) => (
-                  <Reveal key={a.slug} delay={i * 0.05}>
-                    <BlogCard article={a} />
-                  </Reveal>
-                ))}
-              </div>
-              {rest.length > 0 && (
-                <>
-                  <div className="my-16"><BlogInlineCTA /></div>
-                  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {rest.map((a, i) => (
-                      <Reveal key={a.slug} delay={i * 0.05}>
-                        <BlogCard article={a} />
-                      </Reveal>
-                    ))}
-                  </div>
-                </>
-              )}
-            </>
-          )}
-        </div>
-      </section>
-
-      <section className="bg-canvas pb-24 lg:pb-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <BlogInlineCTA />
-        </div>
-      </section>
-    </>
-  );
-}
-
 function ArticleView() {
-  const { article } = Route.useLoaderData() as { kind: "article"; article: Article };
+  const { article } = Route.useLoaderData() as { article: Article };
   const cat = getCategory(article.category);
   const time = readingTimeMinutes(article.body);
   const headings = article.body.filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2");
   const related = relatedArticles(article);
-
-
-
   const initials = article.author.name.split(" ").map((n) => n[0]).join("");
 
   return (
     <>
       <ReadingProgress />
 
-      {/* Header — 12-col editorial grid */}
       <section className="relative isolate overflow-hidden pt-28 pb-10 lg:pt-36 lg:pb-14">
         <div className="absolute inset-0 -z-10 bg-soft-glow" />
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -182,14 +82,13 @@ function ArticleView() {
               items={[
                 { label: "Home", to: "/" },
                 { label: "Blog", to: "/blog" },
-                { label: cat.label },
+                { label: cat.label, to: `/blog/${cat.slug}` },
                 { label: article.title },
               ]}
             />
           </Reveal>
 
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-12">
-            {/* Left: title + excerpt */}
             <div className="lg:col-span-8">
               <Reveal delay={0.06}>
                 <div className="flex flex-wrap items-center gap-3">
@@ -215,7 +114,6 @@ function ArticleView() {
               </Reveal>
             </div>
 
-            {/* Right: meta rail */}
             <Reveal delay={0.22} className="lg:col-span-4">
               <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm lg:p-7">
                 <div className="flex items-center gap-4">
@@ -236,27 +134,19 @@ function ArticleView() {
 
                 <dl className="grid grid-cols-2 gap-x-4 gap-y-4 border-t border-border pt-5">
                   <div>
-                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
-                      Category
-                    </dt>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">Category</dt>
                     <dd className="mt-1 font-display text-sm text-ink">{cat.label}</dd>
                   </div>
                   <div>
-                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
-                      Reading
-                    </dt>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">Reading</dt>
                     <dd className="mt-1 font-display text-sm text-ink">{time} min</dd>
                   </div>
                   <div>
-                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
-                      Published
-                    </dt>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">Published</dt>
                     <dd className="mt-1 font-display text-sm text-ink">{formatDate(article.publishedAt)}</dd>
                   </div>
                   <div>
-                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
-                      Sections
-                    </dt>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">Sections</dt>
                     <dd className="mt-1 font-display text-sm text-ink">{headings.length || "—"}</dd>
                   </div>
                 </dl>
@@ -266,7 +156,6 @@ function ArticleView() {
         </div>
       </section>
 
-      {/* Cover — full bleed within container */}
       <section className="bg-canvas">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className={`relative aspect-[21/8] overflow-hidden rounded-3xl ${cat.cover}`}>
@@ -275,11 +164,9 @@ function ArticleView() {
         </div>
       </section>
 
-      {/* Body + sticky TOC */}
       <section className="bg-canvas py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            {/* Sticky TOC */}
             {headings.length > 0 && (
               <aside className="lg:col-span-3">
                 <div className="lg:sticky lg:top-28">
@@ -305,7 +192,6 @@ function ArticleView() {
               </aside>
             )}
 
-            {/* Article body */}
             <article
               className={`prose-blog max-w-[720px] ${
                 headings.length > 0 ? "lg:col-span-8 lg:col-start-5" : "mx-auto lg:col-span-10 lg:col-start-2"
@@ -313,12 +199,10 @@ function ArticleView() {
             >
               {article.body.map((b, i) => renderBlock(b, i))}
 
-              {/* Mid-content lead magnet */}
               <div className="my-14">
                 <BlogInlineCTA />
               </div>
 
-              {/* End-of-article author + share */}
               <div className="mt-16 flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between lg:p-7">
                 <div className="flex items-center gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-ink font-display text-sm text-canvas">
@@ -333,8 +217,8 @@ function ArticleView() {
                   </div>
                 </div>
                 <Link
-                  to="/blog/$slug"
-                  params={{ slug: cat.slug }}
+                  to="/blog/$category"
+                  params={{ category: cat.slug }}
                   className="font-display text-[11px] uppercase tracking-[0.25em] text-ink/60 transition-colors hover:text-prompt"
                 >
                   More in {cat.label} →
@@ -349,7 +233,6 @@ function ArticleView() {
         </div>
       </section>
 
-      {/* Related */}
       {related.length > 0 && (
         <section className="bg-canvas pb-24 lg:pb-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -375,20 +258,12 @@ function renderBlock(b: Block, i: number) {
   switch (b.type) {
     case "h2":
       return (
-        <h2
-          key={i}
-          id={b.id}
-          className="mt-14 scroll-mt-28 text-3xl text-ink lg:text-4xl"
-        >
+        <h2 key={i} id={b.id} className="mt-14 scroll-mt-28 text-3xl text-ink lg:text-4xl">
           {b.text}
         </h2>
       );
     case "h3":
-      return (
-        <h3 key={i} className="mt-10 h3-soft text-2xl text-ink">
-          {b.text}
-        </h3>
-      );
+      return <h3 key={i} className="mt-10 h3-soft text-2xl text-ink">{b.text}</h3>;
     case "p":
       return (
         <p key={i} className="mt-5 text-base leading-[1.75] text-ink/85 lg:text-[17px]">
@@ -408,10 +283,7 @@ function renderBlock(b: Block, i: number) {
       );
     case "callout":
       return (
-        <div
-          key={i}
-          className="mt-10 rounded-2xl border-l-4 border-prompt bg-prompt/5 px-6 py-5 text-ink"
-        >
+        <div key={i} className="mt-10 rounded-2xl border-l-4 border-prompt bg-prompt/5 px-6 py-5 text-ink">
           {b.text}
         </div>
       );
