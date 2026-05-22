@@ -54,9 +54,6 @@ function MetodologiaEs() {
             <Breadcrumbs items={[{ label: "Inicio", to: "/es" }, { label: "Metodología" }]} />
           </Reveal>
           <Reveal delay={0.05}>
-            <div className="mt-8"><Eyebrow>Metodología</Eyebrow></div>
-          </Reveal>
-          <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               No hacemos SEO.<br />
               <span className="italic text-prompt">Construimos sistemas de visibilidad.</span>

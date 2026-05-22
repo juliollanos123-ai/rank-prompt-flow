@@ -88,17 +88,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rank Your Brand — AI-Native SEO for B2B" },
+      { title: "Rank Your Brand — AI SEO Agency for B2B" },
       { name: "description", content: "We build visibility systems that get your brand cited by Google, ChatGPT and Perplexity. AI-native SEO for B2B companies in the US and Europe." },
       { name: "author", content: "Rank Your Brand" },
-      { property: "og:title", content: "Rank Your Brand — AI-Native SEO for B2B" },
-      { property: "og:description", content: "We build visibility systems that get your brand cited by Google, ChatGPT and Perplexity. AI-native SEO for B2B companies in the US and Europe." },
+      { property: "og:title", content: "Rank Your Brand — AI SEO Agency for B2B" },
+      { property: "og:description", content: "We build visibility systems that get B2B brands cited by ChatGPT, Perplexity and Google AI. Technical SEO + GEO + content strategy." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Rank Your Brand — AI-Native SEO for B2B" },
-      { name: "twitter:description", content: "We build visibility systems that get your brand cited by Google, ChatGPT and Perplexity. AI-native SEO for B2B companies in the US and Europe." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e272053b-9c9c-432f-b273-ba60f813eb4e/id-preview-552e8080--791b7d41-aa91-45bc-b533-3c6986a10545.lovable.app-1778353035482.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e272053b-9c9c-432f-b273-ba60f813eb4e/id-preview-552e8080--791b7d41-aa91-45bc-b533-3c6986a10545.lovable.app-1778353035482.png" },
+      { name: "twitter:title", content: "Rank Your Brand — AI SEO Agency for B2B" },
+      { name: "twitter:description", content: "We build visibility systems that get B2B brands cited by ChatGPT, Perplexity and Google AI. Technical SEO + GEO + content strategy." },
+      { property: "og:image", content: "https://rankyourbrand.co/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: "https://rankyourbrand.co/og-image.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -117,38 +119,77 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": "https://rankyourbrand.co/#organization",
   name: "Rank Your Brand",
   alternateName: "RYB",
   url: "https://rankyourbrand.co",
-  email: "julio@rankyourbrand.co",
-  description:
-    "AI-native SEO agency for B2B. We build visibility systems that get brands cited by ChatGPT, Perplexity and Google AI.",
-  areaServed: ["United States", "Europe", "Latin America"],
-  knowsAbout: [
-    "SEO",
-    "Generative Engine Optimization",
-    "B2B Marketing",
-    "AI Search Optimization",
-    "Content Strategy",
-  ],
+  logo: {
+    "@type": "ImageObject",
+    url: "https://rankyourbrand.co/favicon.svg",
+  },
+  description: "AI-native SEO agency for B2B companies. We build visibility systems that get brands cited by ChatGPT, Perplexity and Google AI.",
+  foundingDate: "2024",
+  priceRange: "$$$",
+  areaServed: ["US", "Europe", "LATAM"],
+  knowsLanguage: ["en", "es"],
+  serviceType: ["SEO", "Technical SEO", "AI SEO", "Generative Engine Optimization", "B2B SEO"],
   sameAs: [
     "https://www.linkedin.com/company/rankyourbrand",
     "https://x.com/rankyourbrand",
   ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: "julio@rankyourbrand.co",
+    availableLanguage: ["English", "Spanish"],
+  },
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://rankyourbrand.co/#website",
+  name: "Rank Your Brand",
+  url: "https://rankyourbrand.co",
+  publisher: { "@id": "https://rankyourbrand.co/#organization" },
+};
+
+const GTM_ID = "GTM-P4DCNPGR";
+const GA_ID = "G-0XBK3TWED7";
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{ __html:
+          `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`
+        }} />
+        {/* Google Analytics */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script dangerouslySetInnerHTML={{ __html:
+          `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`
+        }} />
         <HeadContent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0" width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
         <ScrollRestoration />
         <Scripts />

@@ -1,0 +1,18 @@
+# Rank Your Brand
+> AI-native SEO agency for B2B companies. We build visibility systems that get brands cited by ChatGPT, Perplexity and Google AI Overviews. Based in Colombia, serving US and European markets.
+
+## Services
+- [Technical SEO Services — B2B Website + SEO Foundation](https://rankyourbrand.co/services/technical-seo-services)
+- [B2B SEO Services — Monthly Organic Growth Retainer](https://rankyourbrand.co/services/b2b-seo-services)
+- [AI SEO Agency — Generative Engine Optimization + Authority](https://rankyourbrand.co/services/ai-seo-agency)
+- [Free Website Diagnosis](https://rankyourbrand.co/audit)
+
+## About
+- [Methodology — How RYB's AI-native system works](https://rankyourbrand.co/methodology)
+- [Contact](https://rankyourbrand.co/contact)
+
+## Key Topics
+Rank Your Brand specializes in: Generative Engine Optimization (GEO), AI SEO, B2B SEO, technical SEO for B2B companies, getting cited by ChatGPT and Perplexity, entity SEO, and AI-native content production using N8N multi-agent workflows.
+
+## Blog
+- [All articles](https://rankyourbrand.co/blog)

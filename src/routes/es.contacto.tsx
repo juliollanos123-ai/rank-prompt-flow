@@ -1,12 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useId } from "react";
 import { motion } from "framer-motion";
 import { CTA } from "@/components/site/CTA";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { Reveal } from "@/components/site/Reveal";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
+const SERVICE_OPTIONS_ES = [
+  "Technical SEO Services",
+  "B2B SEO Services",
+  "AI SEO Agency",
+  "No estoy seguro aún",
+];
+
 export const Route = createFileRoute("/es/contacto")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    service: typeof search.service === "string" ? search.service : "",
+  }),
   head: () => ({
     meta: [
       { title: "Contacto — Hablemos de visibilidad | Rank Your Brand" },
@@ -28,6 +38,7 @@ const reasons = [
 
 function ContactoPage() {
   const [submitted, setSubmitted] = useState(false);
+  const { service } = Route.useSearch();
 
   return (
     <>
@@ -57,7 +68,7 @@ function ContactoPage() {
               {submitted ? (
                 <ThankYou />
               ) : (
-                <ContactForm onSubmit={() => setSubmitted(true)} />
+                <ContactForm onSubmit={() => setSubmitted(true)} preselectedService={service} />
               )}
             </div>
           </Reveal>
@@ -99,9 +110,10 @@ function InfoBlock({ label, value, href }: { label: string; value: string; href?
 
 const BASIN_ENDPOINT = "https://usebasin.com/f/3c237926592d";
 
-function ContactForm({ onSubmit }: { onSubmit: () => void }) {
+function ContactForm({ onSubmit, preselectedService = "" }: { onSubmit: () => void; preselectedService?: string }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const selectId = useId();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -137,6 +149,22 @@ function ContactForm({ onSubmit }: { onSubmit: () => void }) {
       <Field label="Sitio web (opcional)" name="website" type="url" />
       <Field label="País" name="country" required />
       <Field label="Ciudad" name="city" required />
+
+      <label className="block" htmlFor={selectId}>
+        <span className="font-display text-xs uppercase tracking-[0.25em] text-ink/60">Servicio *</span>
+        <select
+          id={selectId}
+          name="service"
+          required
+          defaultValue={preselectedService}
+          className="mt-2 w-full rounded-xl border border-border bg-canvas px-4 py-3 text-ink focus:border-prompt focus:outline-none focus:ring-2 focus:ring-prompt/20"
+        >
+          <option value="" disabled>Selecciona un servicio…</option>
+          {SERVICE_OPTIONS_ES.map((o) => (
+            <option key={o} value={o}>{o}</option>
+          ))}
+        </select>
+      </label>
 
       <fieldset>
         <legend className="font-display text-xs uppercase tracking-[0.25em] text-ink/60">

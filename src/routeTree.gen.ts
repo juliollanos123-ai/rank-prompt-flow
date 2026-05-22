@@ -13,21 +13,30 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as EsRouteImport } from './routes/es'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as EsIndexRouteImport } from './routes/es.index'
+import { Route as ServicesTechnicalSeoServicesRouteImport } from './routes/services.technical-seo-services'
+import { Route as ServicesTechnicalSeoRouteImport } from './routes/services.technical-seo'
+import { Route as ServicesSeoForB2bRouteImport } from './routes/services.seo-for-b2b'
 import { Route as ServicesScaleRouteImport } from './routes/services.scale'
 import { Route as ServicesLandmarkRouteImport } from './routes/services.landmark'
 import { Route as ServicesBlueprintRouteImport } from './routes/services.blueprint'
+import { Route as ServicesB2bSeoServicesRouteImport } from './routes/services.b2b-seo-services'
+import { Route as ServicesAiSeoAgencyRouteImport } from './routes/services.ai-seo-agency'
 import { Route as EsServiciosRouteImport } from './routes/es.servicios'
 import { Route as EsMetodologiaRouteImport } from './routes/es.metodologia'
 import { Route as EsContactoRouteImport } from './routes/es.contacto'
 import { Route as EsAuditoriaRouteImport } from './routes/es.auditoria'
 import { Route as EsServiciosIndexRouteImport } from './routes/es.servicios.index'
+import { Route as EsServiciosSeoTecnicoRouteImport } from './routes/es.servicios.seo-tecnico'
+import { Route as EsServiciosSeoB2bRouteImport } from './routes/es.servicios.seo-b2b'
 import { Route as EsServiciosScaleRouteImport } from './routes/es.servicios.scale'
 import { Route as EsServiciosLandmarkRouteImport } from './routes/es.servicios.landmark'
 import { Route as EsServiciosBlueprintRouteImport } from './routes/es.servicios.blueprint'
+import { Route as EsServiciosAgenciaSeoIaRouteImport } from './routes/es.servicios.agencia-seo-ia'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -47,6 +56,11 @@ const EsRoute = EsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuditRoute = AuditRouteImport.update({
@@ -69,6 +83,22 @@ const EsIndexRoute = EsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EsRoute,
 } as any)
+const ServicesTechnicalSeoServicesRoute =
+  ServicesTechnicalSeoServicesRouteImport.update({
+    id: '/technical-seo-services',
+    path: '/technical-seo-services',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesTechnicalSeoRoute = ServicesTechnicalSeoRouteImport.update({
+  id: '/technical-seo',
+  path: '/technical-seo',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSeoForB2bRoute = ServicesSeoForB2bRouteImport.update({
+  id: '/seo-for-b2b',
+  path: '/seo-for-b2b',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const ServicesScaleRoute = ServicesScaleRouteImport.update({
   id: '/scale',
   path: '/scale',
@@ -82,6 +112,16 @@ const ServicesLandmarkRoute = ServicesLandmarkRouteImport.update({
 const ServicesBlueprintRoute = ServicesBlueprintRouteImport.update({
   id: '/blueprint',
   path: '/blueprint',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesB2bSeoServicesRoute = ServicesB2bSeoServicesRouteImport.update({
+  id: '/b2b-seo-services',
+  path: '/b2b-seo-services',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesAiSeoAgencyRoute = ServicesAiSeoAgencyRouteImport.update({
+  id: '/ai-seo-agency',
+  path: '/ai-seo-agency',
   getParentRoute: () => ServicesRoute,
 } as any)
 const EsServiciosRoute = EsServiciosRouteImport.update({
@@ -109,6 +149,16 @@ const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EsServiciosRoute,
 } as any)
+const EsServiciosSeoTecnicoRoute = EsServiciosSeoTecnicoRouteImport.update({
+  id: '/seo-tecnico',
+  path: '/seo-tecnico',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
+const EsServiciosSeoB2bRoute = EsServiciosSeoB2bRouteImport.update({
+  id: '/seo-b2b',
+  path: '/seo-b2b',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
 const EsServiciosScaleRoute = EsServiciosScaleRouteImport.update({
   id: '/scale',
   path: '/scale',
@@ -124,10 +174,16 @@ const EsServiciosBlueprintRoute = EsServiciosBlueprintRouteImport.update({
   path: '/blueprint',
   getParentRoute: () => EsServiciosRoute,
 } as any)
+const EsServiciosAgenciaSeoIaRoute = EsServiciosAgenciaSeoIaRouteImport.update({
+  id: '/agencia-seo-ia',
+  path: '/agencia-seo-ia',
+  getParentRoute: () => EsServiciosRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
@@ -136,38 +192,56 @@ export interface FileRoutesByFullPath {
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
   '/es/servicios': typeof EsServiciosRouteWithChildren
+  '/services/ai-seo-agency': typeof ServicesAiSeoAgencyRoute
+  '/services/b2b-seo-services': typeof ServicesB2bSeoServicesRoute
   '/services/blueprint': typeof ServicesBlueprintRoute
   '/services/landmark': typeof ServicesLandmarkRoute
   '/services/scale': typeof ServicesScaleRoute
+  '/services/seo-for-b2b': typeof ServicesSeoForB2bRoute
+  '/services/technical-seo': typeof ServicesTechnicalSeoRoute
+  '/services/technical-seo-services': typeof ServicesTechnicalSeoServicesRoute
   '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
   '/es/servicios/scale': typeof EsServiciosScaleRoute
+  '/es/servicios/seo-b2b': typeof EsServiciosSeoB2bRoute
+  '/es/servicios/seo-tecnico': typeof EsServiciosSeoTecnicoRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/methodology': typeof MethodologyRoute
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
+  '/services/ai-seo-agency': typeof ServicesAiSeoAgencyRoute
+  '/services/b2b-seo-services': typeof ServicesB2bSeoServicesRoute
   '/services/blueprint': typeof ServicesBlueprintRoute
   '/services/landmark': typeof ServicesLandmarkRoute
   '/services/scale': typeof ServicesScaleRoute
+  '/services/seo-for-b2b': typeof ServicesSeoForB2bRoute
+  '/services/technical-seo': typeof ServicesTechnicalSeoRoute
+  '/services/technical-seo-services': typeof ServicesTechnicalSeoServicesRoute
   '/es': typeof EsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
   '/es/servicios/scale': typeof EsServiciosScaleRoute
+  '/es/servicios/seo-b2b': typeof EsServiciosSeoB2bRoute
+  '/es/servicios/seo-tecnico': typeof EsServiciosSeoTecnicoRoute
   '/es/servicios': typeof EsServiciosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
@@ -176,14 +250,22 @@ export interface FileRoutesById {
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
   '/es/servicios': typeof EsServiciosRouteWithChildren
+  '/services/ai-seo-agency': typeof ServicesAiSeoAgencyRoute
+  '/services/b2b-seo-services': typeof ServicesB2bSeoServicesRoute
   '/services/blueprint': typeof ServicesBlueprintRoute
   '/services/landmark': typeof ServicesLandmarkRoute
   '/services/scale': typeof ServicesScaleRoute
+  '/services/seo-for-b2b': typeof ServicesSeoForB2bRoute
+  '/services/technical-seo': typeof ServicesTechnicalSeoRoute
+  '/services/technical-seo-services': typeof ServicesTechnicalSeoServicesRoute
   '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
   '/es/servicios/scale': typeof EsServiciosScaleRoute
+  '/es/servicios/seo-b2b': typeof EsServiciosSeoB2bRoute
+  '/es/servicios/seo-tecnico': typeof EsServiciosSeoTecnicoRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
 }
 export interface FileRouteTypes {
@@ -191,6 +273,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/audit'
+    | '/blog'
     | '/contact'
     | '/es'
     | '/methodology'
@@ -199,37 +282,55 @@ export interface FileRouteTypes {
     | '/es/contacto'
     | '/es/metodologia'
     | '/es/servicios'
+    | '/services/ai-seo-agency'
+    | '/services/b2b-seo-services'
     | '/services/blueprint'
     | '/services/landmark'
     | '/services/scale'
+    | '/services/seo-for-b2b'
+    | '/services/technical-seo'
+    | '/services/technical-seo-services'
     | '/es/'
     | '/services/'
+    | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
     | '/es/servicios/scale'
+    | '/es/servicios/seo-b2b'
+    | '/es/servicios/seo-tecnico'
     | '/es/servicios/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/audit'
+    | '/blog'
     | '/contact'
     | '/methodology'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
+    | '/services/ai-seo-agency'
+    | '/services/b2b-seo-services'
     | '/services/blueprint'
     | '/services/landmark'
     | '/services/scale'
+    | '/services/seo-for-b2b'
+    | '/services/technical-seo'
+    | '/services/technical-seo-services'
     | '/es'
     | '/services'
+    | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
     | '/es/servicios/scale'
+    | '/es/servicios/seo-b2b'
+    | '/es/servicios/seo-tecnico'
     | '/es/servicios'
   id:
     | '__root__'
     | '/'
     | '/audit'
+    | '/blog'
     | '/contact'
     | '/es'
     | '/methodology'
@@ -238,20 +339,29 @@ export interface FileRouteTypes {
     | '/es/contacto'
     | '/es/metodologia'
     | '/es/servicios'
+    | '/services/ai-seo-agency'
+    | '/services/b2b-seo-services'
     | '/services/blueprint'
     | '/services/landmark'
     | '/services/scale'
+    | '/services/seo-for-b2b'
+    | '/services/technical-seo'
+    | '/services/technical-seo-services'
     | '/es/'
     | '/services/'
+    | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
     | '/es/servicios/scale'
+    | '/es/servicios/seo-b2b'
+    | '/es/servicios/seo-tecnico'
     | '/es/servicios/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuditRoute: typeof AuditRoute
+  BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   EsRoute: typeof EsRouteWithChildren
   MethodologyRoute: typeof MethodologyRoute
@@ -288,6 +398,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/audit': {
       id: '/audit'
       path: '/audit'
@@ -316,6 +433,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsIndexRouteImport
       parentRoute: typeof EsRoute
     }
+    '/services/technical-seo-services': {
+      id: '/services/technical-seo-services'
+      path: '/technical-seo-services'
+      fullPath: '/services/technical-seo-services'
+      preLoaderRoute: typeof ServicesTechnicalSeoServicesRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/technical-seo': {
+      id: '/services/technical-seo'
+      path: '/technical-seo'
+      fullPath: '/services/technical-seo'
+      preLoaderRoute: typeof ServicesTechnicalSeoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/seo-for-b2b': {
+      id: '/services/seo-for-b2b'
+      path: '/seo-for-b2b'
+      fullPath: '/services/seo-for-b2b'
+      preLoaderRoute: typeof ServicesSeoForB2bRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/services/scale': {
       id: '/services/scale'
       path: '/scale'
@@ -335,6 +473,20 @@ declare module '@tanstack/react-router' {
       path: '/blueprint'
       fullPath: '/services/blueprint'
       preLoaderRoute: typeof ServicesBlueprintRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/b2b-seo-services': {
+      id: '/services/b2b-seo-services'
+      path: '/b2b-seo-services'
+      fullPath: '/services/b2b-seo-services'
+      preLoaderRoute: typeof ServicesB2bSeoServicesRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/ai-seo-agency': {
+      id: '/services/ai-seo-agency'
+      path: '/ai-seo-agency'
+      fullPath: '/services/ai-seo-agency'
+      preLoaderRoute: typeof ServicesAiSeoAgencyRouteImport
       parentRoute: typeof ServicesRoute
     }
     '/es/servicios': {
@@ -372,6 +524,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsServiciosIndexRouteImport
       parentRoute: typeof EsServiciosRoute
     }
+    '/es/servicios/seo-tecnico': {
+      id: '/es/servicios/seo-tecnico'
+      path: '/seo-tecnico'
+      fullPath: '/es/servicios/seo-tecnico'
+      preLoaderRoute: typeof EsServiciosSeoTecnicoRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
+    '/es/servicios/seo-b2b': {
+      id: '/es/servicios/seo-b2b'
+      path: '/seo-b2b'
+      fullPath: '/es/servicios/seo-b2b'
+      preLoaderRoute: typeof EsServiciosSeoB2bRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
     '/es/servicios/scale': {
       id: '/es/servicios/scale'
       path: '/scale'
@@ -393,20 +559,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsServiciosBlueprintRouteImport
       parentRoute: typeof EsServiciosRoute
     }
+    '/es/servicios/agencia-seo-ia': {
+      id: '/es/servicios/agencia-seo-ia'
+      path: '/agencia-seo-ia'
+      fullPath: '/es/servicios/agencia-seo-ia'
+      preLoaderRoute: typeof EsServiciosAgenciaSeoIaRouteImport
+      parentRoute: typeof EsServiciosRoute
+    }
   }
 }
 
 interface EsServiciosRouteChildren {
+  EsServiciosAgenciaSeoIaRoute: typeof EsServiciosAgenciaSeoIaRoute
   EsServiciosBlueprintRoute: typeof EsServiciosBlueprintRoute
   EsServiciosLandmarkRoute: typeof EsServiciosLandmarkRoute
   EsServiciosScaleRoute: typeof EsServiciosScaleRoute
+  EsServiciosSeoB2bRoute: typeof EsServiciosSeoB2bRoute
+  EsServiciosSeoTecnicoRoute: typeof EsServiciosSeoTecnicoRoute
   EsServiciosIndexRoute: typeof EsServiciosIndexRoute
 }
 
 const EsServiciosRouteChildren: EsServiciosRouteChildren = {
+  EsServiciosAgenciaSeoIaRoute: EsServiciosAgenciaSeoIaRoute,
   EsServiciosBlueprintRoute: EsServiciosBlueprintRoute,
   EsServiciosLandmarkRoute: EsServiciosLandmarkRoute,
   EsServiciosScaleRoute: EsServiciosScaleRoute,
+  EsServiciosSeoB2bRoute: EsServiciosSeoB2bRoute,
+  EsServiciosSeoTecnicoRoute: EsServiciosSeoTecnicoRoute,
   EsServiciosIndexRoute: EsServiciosIndexRoute,
 }
 
@@ -433,16 +612,26 @@ const EsRouteChildren: EsRouteChildren = {
 const EsRouteWithChildren = EsRoute._addFileChildren(EsRouteChildren)
 
 interface ServicesRouteChildren {
+  ServicesAiSeoAgencyRoute: typeof ServicesAiSeoAgencyRoute
+  ServicesB2bSeoServicesRoute: typeof ServicesB2bSeoServicesRoute
   ServicesBlueprintRoute: typeof ServicesBlueprintRoute
   ServicesLandmarkRoute: typeof ServicesLandmarkRoute
   ServicesScaleRoute: typeof ServicesScaleRoute
+  ServicesSeoForB2bRoute: typeof ServicesSeoForB2bRoute
+  ServicesTechnicalSeoRoute: typeof ServicesTechnicalSeoRoute
+  ServicesTechnicalSeoServicesRoute: typeof ServicesTechnicalSeoServicesRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesAiSeoAgencyRoute: ServicesAiSeoAgencyRoute,
+  ServicesB2bSeoServicesRoute: ServicesB2bSeoServicesRoute,
   ServicesBlueprintRoute: ServicesBlueprintRoute,
   ServicesLandmarkRoute: ServicesLandmarkRoute,
   ServicesScaleRoute: ServicesScaleRoute,
+  ServicesSeoForB2bRoute: ServicesSeoForB2bRoute,
+  ServicesTechnicalSeoRoute: ServicesTechnicalSeoRoute,
+  ServicesTechnicalSeoServicesRoute: ServicesTechnicalSeoServicesRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 
@@ -453,6 +642,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuditRoute: AuditRoute,
+  BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   EsRoute: EsRouteWithChildren,
   MethodologyRoute: MethodologyRoute,

@@ -9,7 +9,7 @@ import isotipo from "@/assets/brand/isotipo-color.svg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rank Your Brand — Be the answer your buyers find in ChatGPT" },
+      { title: "Rank Your Brand — AI SEO Agency for B2B" },
       {
         name: "description",
         content:
@@ -288,7 +288,7 @@ function Pillars() {
                 className="group relative h-full overflow-hidden rounded-3xl border border-canvas/10 bg-canvas/[0.03] p-8 transition-colors hover:border-flow/40"
               >
                 <div className="font-display text-xs tracking-[0.3em] text-prompt">{p.tag}</div>
-                <h3 className="mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
+                <h3 className="h3-soft mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
                 <p className="mt-4 text-canvas/70">{p.body}</p>
                 <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-flow/0 blur-3xl transition-all group-hover:bg-flow/30" />
               </motion.div>
@@ -359,30 +359,27 @@ function CaseStudyZero() {
 function ServicesPreview() {
   const services = [
     {
-      tag: "Blueprint",
-      to: "/services/blueprint" as const,
+      tag: "Technical SEO",
+      to: "/services/technical-seo" as const,
       kicker: "Foundation",
-      desc: "Full website development + technical SEO foundation. Ready for organic growth and AI discovery.",
-      price: "$1,500 USD",
       meta: "Project · 4–6 weeks",
+      desc: "B2B Website + SEO Foundation. Technical fixes, Core Web Vitals, schema and architecture — ready for organic growth.",
       tone: "border-prompt/40 bg-prompt/5",
     },
     {
-      tag: "Scale",
-      to: "/services/scale" as const,
+      tag: "SEO for B2B",
+      to: "/services/seo-for-b2b" as const,
       kicker: "Growth",
-      desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards.",
-      price: "$2,500/mo",
       meta: "Retainer · 6-month minimum",
+      desc: "Monthly Organic Growth for B2B. AI-native content engine + CRO + link building + dashboards.",
       tone: "border-ink/15 bg-ink text-canvas",
     },
     {
-      tag: "Landmark",
-      to: "/services/landmark" as const,
+      tag: "AI SEO Agency",
+      to: "/services/ai-seo-agency" as const,
       kicker: "Authority",
-      desc: "The authority AI recommends. Everything in Scale + GEO + thought leadership.",
-      price: "$3,500/mo",
       meta: "Retainer · 12-month engagement",
+      desc: "Generative Engine Optimization + Authority. Everything in SEO for B2B + GEO + thought leadership.",
       tone: "border-flow/40 bg-flow/[0.06]",
     },
   ];
@@ -409,16 +406,15 @@ function ServicesPreview() {
                   <div className={`font-display text-xs tracking-[0.3em] ${s.tone.includes("text-canvas") ? "text-canvas/60" : "text-ink/50"}`}>
                     {s.kicker}
                   </div>
-                  <h3 className="mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
+                  <h3 className="h3-soft mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
                   <p className={`mt-5 ${s.tone.includes("text-canvas") ? "text-canvas/75" : "text-ink/70"}`}>
                     {s.desc}
                   </p>
                   <div className="mt-auto pt-10">
-                    <div className="font-display text-2xl text-prompt">{s.price}</div>
-                    <div className={`mt-1 text-xs uppercase tracking-wider ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
+                    <div className={`mono-light text-xs uppercase tracking-widest ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
                       {s.meta}
                     </div>
-                    <div className="mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider">
+                    <div className="mt-4 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider">
                       Learn more <span aria-hidden>→</span>
                     </div>
                   </div>
@@ -540,9 +536,20 @@ function FinalCTA() {
   );
 }
 
+const homepageFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }} />
       <Hero />
       <GeoGap />
       <Pillars />

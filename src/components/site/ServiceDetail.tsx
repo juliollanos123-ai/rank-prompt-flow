@@ -9,10 +9,11 @@ type Lang = "en" | "es";
 
 export type ServiceDetailProps = {
   tag: string;
-  kicker: string;
+  tier?: string;
+  format?: string;
+  duration?: string;
   tagline: string;
-  price: string;
-  meta: string;
+  serviceId?: string;
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
   forWho: string[];
@@ -32,6 +33,9 @@ const t = {
     breadcrumbHomeHref: "/" as const,
     breadcrumbServices: "Services",
     breadcrumbServicesHref: "/services" as const,
+    tierLabel: "Tier",
+    formatLabel: "Format",
+    durationLabel: "Duration",
     includedEyebrow: "What's included",
     includedH2first: "Concrete deliverables.",
     includedH2second: "No vague retainers.",
@@ -55,6 +59,9 @@ const t = {
     breadcrumbHomeHref: "/es" as const,
     breadcrumbServices: "Servicios",
     breadcrumbServicesHref: "/es/servicios" as const,
+    tierLabel: "Nivel",
+    formatLabel: "Formato",
+    durationLabel: "Duración",
     includedEyebrow: "Que incluye",
     includedH2first: "Entregables concretos.",
     includedH2second: "Sin retainers vagos.",
@@ -77,8 +84,9 @@ const t = {
 
 export function ServiceDetail(props: ServiceDetailProps) {
   const {
-    tag, kicker, tagline, price, meta,
-    primaryCta = { label: "Get a free diagnosis", to: "/audit" },
+    tag, tier, format, duration, tagline,
+    serviceId,
+    primaryCta = { label: "Book a strategy call", to: "/contact" },
     secondaryCta,
     forWho, notFit, includes, timeline,
     outcomes, faqs,
@@ -98,9 +106,10 @@ export function ServiceDetail(props: ServiceDetailProps) {
       ? "bg-canvas"
       : "bg-gradient-to-br from-canvas via-canvas to-prompt/10";
 
-  const eyebrowTone = tone === "dark" ? "canvas" : "ink";
+  const metaBorderColor = tone === "dark" ? "border-canvas/15" : "border-ink/15";
+  const metaDtColor = tone === "dark" ? "text-canvas/50" : "text-ink/50";
+  const metaDdColor = tone === "dark" ? "text-canvas" : "text-ink";
 
-  // Dark hero → Includes flips to light for contrast. All light heroes → dark Includes.
   const includesBg = tone === "dark"
     ? "bg-canvas py-24 lg:py-32"
     : "bg-ink py-24 text-canvas lg:py-32";
@@ -110,6 +119,8 @@ export function ServiceDetail(props: ServiceDetailProps) {
   const includesH3Color = tone === "dark" ? "text-ink" : "text-canvas";
   const includesBodyColor = tone === "dark" ? "text-ink/70" : "text-canvas/70";
   const includesEyebrowTone = tone === "dark" ? "ink" : "canvas";
+
+  const hasMetaBar = tier || format || duration;
 
   return (
     <>
@@ -127,33 +138,52 @@ export function ServiceDetail(props: ServiceDetailProps) {
             />
           </Reveal>
           <Reveal delay={0.05}>
-            <div className="mt-8">
-              <Eyebrow tone={eyebrowTone}>{kicker}</Eyebrow>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
             <h1 className="mt-6 text-5xl lg:text-[clamp(4rem,9vw,9rem)]">{tag}</h1>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal delay={0.15}>
             <p className={`mt-6 max-w-2xl text-xl ${tone === "dark" ? "text-canvas/80" : "text-ink/75"}`}>
               {tagline}
             </p>
           </Reveal>
-          <Reveal delay={0.3}>
-            <div className="mt-10 flex flex-wrap items-end gap-x-10 gap-y-6">
-              <div>
-                <div className="font-display text-4xl text-prompt lg:text-5xl">{price}</div>
-                <div className={`mt-2 text-xs uppercase tracking-widest ${tone === "dark" ? "text-canvas/50" : "text-ink/50"}`}>{meta}</div>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
-                {secondaryCta && (
-                  <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "ghost"}>
-                    {secondaryCta.label}
-                  </CTA>
 
+          {hasMetaBar && (
+            <Reveal delay={0.2}>
+              <dl className={`mt-8 grid grid-cols-1 gap-y-4 border-t border-b py-5 sm:grid-cols-3 ${metaBorderColor}`}>
+                {tier && (
+                  <div>
+                    <dt className={`mono-light text-xs uppercase tracking-[0.25em] ${metaDtColor}`}>{tx.tierLabel}</dt>
+                    <dd className={`mt-1 font-display text-sm uppercase ${metaDdColor}`}>{tier}</dd>
+                  </div>
                 )}
-              </div>
+                {format && (
+                  <div>
+                    <dt className={`mono-light text-xs uppercase tracking-[0.25em] ${metaDtColor}`}>{tx.formatLabel}</dt>
+                    <dd className={`mt-1 font-display text-sm uppercase ${metaDdColor}`}>{format}</dd>
+                  </div>
+                )}
+                {duration && (
+                  <div>
+                    <dt className={`mono-light text-xs uppercase tracking-[0.25em] ${metaDtColor}`}>{tx.durationLabel}</dt>
+                    <dd className={`mt-1 font-display text-sm uppercase ${metaDdColor}`}>{duration}</dd>
+                  </div>
+                )}
+              </dl>
+            </Reveal>
+          )}
+
+          <Reveal delay={0.3}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <CTA
+                to={primaryCta.to}
+                search={serviceId ? { service: serviceId } : undefined}
+              >
+                {primaryCta.label}
+              </CTA>
+              {secondaryCta && (
+                <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "outline"}>
+                  {secondaryCta.label}
+                </CTA>
+              )}
             </div>
           </Reveal>
         </div>
@@ -178,7 +208,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
                   className={`h-full rounded-2xl border p-7 transition-colors hover:border-flow/40 ${includesCardBorder}`}
                 >
                   <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
-                  <h3 className={`mt-4 text-2xl ${includesH3Color}`}>{h}</h3>
+                  <h3 className={`h3-soft mt-4 text-2xl ${includesH3Color}`}>{h}</h3>
                   <p className={`mt-3 ${includesBodyColor}`}>{d}</p>
                 </motion.div>
               </Reveal>
@@ -311,7 +341,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
               <div className="mt-8 flex flex-wrap gap-3">
                 <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
                 {secondaryCta && (
-                  <CTA to={secondaryCta.to} variant="ghost">{secondaryCta.label}</CTA>
+                  <CTA to={secondaryCta.to} variant="outline">{secondaryCta.label}</CTA>
                 )}
               </div>
             </div>

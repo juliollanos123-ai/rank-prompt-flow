@@ -5,19 +5,20 @@ import isotipo from "@/assets/brand/isotipo-nuevo.svg";
 import { isEsPath, getAlternateLang } from "@/i18n/langRoutes";
 
 const enServiceItems = [
-  { to: "/services/blueprint" as const, label: "Blueprint", desc: "Foundation" },
-  { to: "/services/scale" as const, label: "Scale", desc: "Growth" },
-  { to: "/services/landmark" as const, label: "Landmark", desc: "Authority" },
+  { to: "/services/technical-seo" as const, label: "Technical SEO" },
+  { to: "/services/seo-for-b2b" as const, label: "SEO for B2B" },
+  { to: "/services/ai-seo-agency" as const, label: "AI SEO Agency" },
 ];
 
 const esServiceItems = [
-  { to: "/es/servicios/blueprint" as const, label: "Blueprint", desc: "Fundacion" },
-  { to: "/es/servicios/scale" as const, label: "Scale", desc: "Crecimiento" },
-  { to: "/es/servicios/landmark" as const, label: "Landmark", desc: "Autoridad" },
+  { to: "/es/servicios/seo-tecnico" as const, label: "SEO Técnico" },
+  { to: "/es/servicios/seo-b2b" as const, label: "SEO para B2B" },
+  { to: "/es/servicios/agencia-seo-ia" as const, label: "Agencia SEO IA" },
 ];
 
 const enLinks = [
   { to: "/methodology" as const, label: "Methodology" },
+  { to: "/blog" as const, label: "Blog" },
   { to: "/contact" as const, label: "Contact" },
 ];
 
@@ -82,12 +83,11 @@ function ServicesDropdown({ isEs }: { isEs: boolean }) {
               <Link
                 key={item.to}
                 to={item.to}
-                className="group flex items-center justify-between px-4 py-3 transition-colors hover:bg-prompt/5 first:pt-4 last:pb-4"
+                className="group block px-4 py-3 transition-colors hover:bg-prompt/5 first:pt-4 last:pb-4"
               >
-                <span className="font-display text-sm font-semibold tracking-wide text-ink group-hover:text-prompt">
+                <span className="font-display text-sm font-medium tracking-wide text-ink group-hover:text-prompt">
                   {item.label}
                 </span>
-                <span className="text-xs text-ink/45 group-hover:text-prompt/70">{item.desc}</span>
               </Link>
             ))}
             <div className="border-t border-border px-4 py-3">
@@ -232,10 +232,9 @@ export function Nav() {
                         <Link
                           key={item.to}
                           to={item.to}
-                          className="flex items-center justify-between rounded-lg px-2 py-2.5 text-sm text-ink/80 transition-colors hover:text-prompt"
+                          className="block rounded-lg px-2 py-2.5 text-sm font-medium text-ink/80 transition-colors hover:text-prompt"
                         >
-                          <span className="font-medium">{item.label}</span>
-                          <span className="text-xs text-ink/40">{item.desc}</span>
+                          {item.label}
                         </Link>
                       ))}
                     </div>

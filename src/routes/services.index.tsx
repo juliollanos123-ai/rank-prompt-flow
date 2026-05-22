@@ -8,13 +8,13 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Blueprint, Scale & Landmark | Rank Your Brand" },
+      { title: "B2B SEO Services — Technical SEO, B2B SEO & AI SEO Agency | Rank Your Brand" },
       {
         name: "description",
         content:
-          "Three levels. One objective: make you findable. Blueprint ($1,500), Scale ($2,500/mo) and Landmark ($3,500/mo).",
+          "Three levels. One objective: make you findable. Technical SEO Services (starting at $1,200), B2B SEO Services (from $1,800/mo) and AI SEO Agency (from $3,500/mo).",
       },
-      { property: "og:title", content: "Services — Rank Your Brand" },
+      { property: "og:title", content: "B2B SEO Services — Rank Your Brand" },
       { property: "og:description", content: "Three levels. One objective: make you findable." },
     ],
   }),
@@ -23,46 +23,40 @@ export const Route = createFileRoute("/services/")({
 
 const tiers = [
   {
-    tag: "Blueprint",
-    to: "/services/blueprint" as const,
-    kicker: "Foundation · Project",
-    price: "$1,500 USD",
-    meta: "4–6 weeks",
-    desc: "The foundation your site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
+    tag: "Technical SEO",
+    to: "/services/technical-seo" as const,
+    kicker: "Foundation · Project · 4–6 weeks",
+    desc: "The foundation your B2B site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
     bullets: [
       "Full website development (from scratch or redesign)",
       "Technical SEO + Core Web Vitals optimization",
       "Schema markup + content architecture",
       "GA4, Search Console & Tag Manager setup",
     ],
-    ideal: "Companies launching new sites or rebuilding outdated ones.",
+    ideal: "B2B companies launching new sites or rebuilding outdated ones.",
     tone: "border-prompt/40 bg-prompt/5",
   },
   {
-    tag: "Scale",
-    to: "/services/scale" as const,
-    kicker: "Growth · Monthly retainer",
-    price: "$2,500/mo",
-    meta: "6-month minimum",
-    desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
+    tag: "SEO for B2B",
+    to: "/services/seo-for-b2b" as const,
+    kicker: "Growth · Monthly retainer · 6-month minimum",
+    desc: "Monthly organic growth for B2B. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
     bullets: [
       "4–6 SEO-optimized blog posts/month",
       "Conversion Rate Optimization (CRO)",
       "2–3 high-quality backlinks/month",
       "Real-time dashboard + monthly reporting",
     ],
-    ideal: "Companies ready to grow organic traffic and lead generation.",
+    ideal: "B2B companies ready to grow organic traffic and lead generation.",
     tone: "border-ink/15 bg-ink text-canvas",
   },
   {
-    tag: "Landmark",
-    to: "/services/landmark" as const,
-    kicker: "Authority · Premium retainer",
-    price: "$3,500/mo",
-    meta: "12-month engagement",
-    desc: "The authority AI recommends. Everything in Scale + GEO + thought leadership + white-glove service for category leaders.",
+    tag: "AI SEO Agency",
+    to: "/services/ai-seo-agency" as const,
+    kicker: "Authority · Premium retainer · 12-month engagement",
+    desc: "Generative Engine Optimization for B2B. Everything in SEO for B2B + GEO + thought leadership + white-glove service for category leaders.",
     bullets: [
-      "Everything in Scale",
+      "Everything in SEO for B2B",
       "GEO optimization (ChatGPT, Perplexity citations)",
       "Executive thought leadership program",
       "Dedicated account manager + bi-weekly strategy",
@@ -82,9 +76,6 @@ function ServicesPage() {
             <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Services" }]} />
           </Reveal>
           <Reveal delay={0.05}>
-            <div className="mt-8"><Eyebrow>Services</Eyebrow></div>
-          </Reveal>
-          <Reveal delay={0.1}>
             <h1 className="mt-6 max-w-4xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               Three levels.<br />
               <span className="italic text-prompt">One objective: make you findable.</span>
@@ -126,11 +117,7 @@ function ServicesPage() {
                       ))}
                     </ul>
                     <div className="text-right">
-                      <div className="font-display text-3xl text-prompt">{t.price}</div>
-                      <div className={`mt-1 text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
-                        {t.meta}
-                      </div>
-                      <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
+                      <div className={`inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
                         Learn more <span aria-hidden>→</span>
                       </div>
                     </div>

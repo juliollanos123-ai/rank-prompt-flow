@@ -6,9 +6,9 @@ const enCols = [
   {
     heading: "Services",
     links: [
-      { to: "/services/blueprint" as const, label: "Blueprint" },
-      { to: "/services/scale" as const, label: "Scale" },
-      { to: "/services/landmark" as const, label: "Landmark" },
+      { to: "/services/technical-seo" as const, label: "Technical SEO" },
+      { to: "/services/seo-for-b2b" as const, label: "SEO for B2B" },
+      { to: "/services/ai-seo-agency" as const, label: "AI SEO Agency" },
     ],
   },
   {
@@ -16,6 +16,7 @@ const enCols = [
     links: [
       { to: "/audit" as const, label: "Free Diagnosis" },
       { to: "/methodology" as const, label: "Methodology" },
+      { to: "/blog" as const, label: "Blog" },
     ],
   },
   {
@@ -31,9 +32,9 @@ const esCols = [
   {
     heading: "Servicios",
     links: [
-      { to: "/es/servicios/blueprint" as const, label: "Blueprint" },
-      { to: "/es/servicios/scale" as const, label: "Scale" },
-      { to: "/es/servicios/landmark" as const, label: "Landmark" },
+      { to: "/es/servicios/seo-tecnico" as const, label: "SEO Técnico" },
+      { to: "/es/servicios/seo-b2b" as const, label: "SEO para B2B" },
+      { to: "/es/servicios/agencia-seo-ia" as const, label: "Agencia SEO IA" },
     ],
   },
   {

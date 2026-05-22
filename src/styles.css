@@ -30,6 +30,20 @@
   font-style: italic;
   font-display: swap;
 }
+@font-face {
+  font-family: "Aglet Mono";
+  src: url("/src/assets/fonts/AgletMonoTrial-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aglet Mono";
+  src: url("/src/assets/fonts/AgletMonoTrial-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -198,6 +212,27 @@
 
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
+
+  .accent-italic {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .h3-soft {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-transform: none;
+  }
+  .mono-light {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-style: normal;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

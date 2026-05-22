@@ -1,13 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 
-type Variant = "primary" | "ghost" | "outline-canvas";
+type Variant = "primary" | "ghost" | "outline" | "outline-canvas";
 
 const styles: Record<Variant, string> = {
   primary:
     "bg-prompt text-primary-foreground hover:shadow-elegant",
   ghost:
     "bg-transparent text-ink hover:bg-ink/5",
+  outline:
+    "border border-ink/30 text-ink hover:bg-ink hover:text-canvas",
   "outline-canvas":
     "border border-canvas/30 text-canvas hover:bg-canvas hover:text-ink",
 };
@@ -18,12 +20,14 @@ export function CTA({
   children,
   variant = "primary",
   className = "",
+  search,
 }: {
   to?: string;
   href?: string;
   children: React.ReactNode;
   variant?: Variant;
   className?: string;
+  search?: Record<string, string>;
 }) {
   const cls = `group inline-flex items-center gap-2 rounded-full px-7 py-4 font-display text-sm uppercase tracking-wider transition-all ${styles[variant]} ${className}`;
 
@@ -49,7 +53,7 @@ export function CTA({
     );
   }
   return (
-    <Link to={to ?? "/"} className={cls}>
+    <Link to={to ?? "/"} search={search} className={cls}>
       {content}
     </Link>
   );

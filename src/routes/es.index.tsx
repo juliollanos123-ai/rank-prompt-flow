@@ -288,7 +288,7 @@ function Pillars() {
                 className="group relative h-full overflow-hidden rounded-3xl border border-canvas/10 bg-canvas/[0.03] p-8 transition-colors hover:border-flow/40"
               >
                 <div className="font-display text-xs tracking-[0.3em] text-prompt">{p.tag}</div>
-                <h3 className="mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
+                <h3 className="h3-soft mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
                 <p className="mt-4 text-canvas/70">{p.body}</p>
                 <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-flow/0 blur-3xl transition-all group-hover:bg-flow/30" />
               </motion.div>
@@ -359,30 +359,27 @@ function CaseStudyZero() {
 function ServicesPreview() {
   const services = [
     {
-      tag: "Blueprint",
-      to: "/es/servicios/blueprint" as const,
+      tag: "SEO Técnico",
+      to: "/es/servicios/seo-tecnico" as const,
       kicker: "Fundación",
-      desc: "Desarrollo web completo + base técnica SEO. Lista para crecimiento orgánico y descubrimiento por IA.",
-      price: "$1,500 USD",
       meta: "Proyecto · 4–6 semanas",
+      desc: "Desarrollo web completo + base técnica SEO. Lista para crecimiento orgánico y descubrimiento por IA.",
       tone: "border-prompt/40 bg-prompt/5",
     },
     {
-      tag: "Scale",
-      to: "/es/servicios/scale" as const,
+      tag: "SEO para B2B",
+      to: "/es/servicios/seo-b2b" as const,
       kicker: "Crecimiento",
+      meta: "Retainer mensual · Mínimo 6 meses",
       desc: "Crecimiento orgánico, mes a mes. Motor de contenido con IA + CRO + link building + dashboards.",
-      price: "$2,500/mo",
-      meta: "Retainer · mínimo 6 meses",
       tone: "border-ink/15 bg-ink text-canvas",
     },
     {
-      tag: "Landmark",
-      to: "/es/servicios/landmark" as const,
+      tag: "Agencia SEO IA",
+      to: "/es/servicios/agencia-seo-ia" as const,
       kicker: "Autoridad",
-      desc: "La autoridad que la IA recomienda. Todo lo de Scale + GEO + liderazgo de pensamiento.",
-      price: "$3,500/mo",
-      meta: "Retainer · compromiso 12 meses",
+      meta: "Retainer premium · 12 meses",
+      desc: "La autoridad que la IA recomienda. Todo lo de SEO para B2B + GEO + liderazgo de pensamiento.",
       tone: "border-flow/40 bg-flow/[0.06]",
     },
   ];
@@ -409,16 +406,15 @@ function ServicesPreview() {
                   <div className={`font-display text-xs tracking-[0.3em] ${s.tone.includes("text-canvas") ? "text-canvas/60" : "text-ink/50"}`}>
                     {s.kicker}
                   </div>
-                  <h3 className="mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
+                  <h3 className="h3-soft mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
                   <p className={`mt-5 ${s.tone.includes("text-canvas") ? "text-canvas/75" : "text-ink/70"}`}>
                     {s.desc}
                   </p>
                   <div className="mt-auto pt-10">
-                    <div className="font-display text-2xl text-prompt">{s.price}</div>
-                    <div className={`mt-1 text-xs uppercase tracking-wider ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
+                    <div className={`mono-light text-xs uppercase tracking-widest ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
                       {s.meta}
                     </div>
-                    <div className="mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider">
+                    <div className="mt-4 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider">
                       Ver más <span aria-hidden>→</span>
                     </div>
                   </div>
