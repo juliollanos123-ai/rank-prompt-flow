@@ -32,6 +32,13 @@
 }
 @font-face {
   font-family: "Aglet Mono";
+  src: url("/src/assets/fonts/AgletMono-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aglet Mono";
   src: url("/src/assets/fonts/AgletMono-LightItalic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
@@ -219,8 +226,14 @@
     font-style: italic;
     letter-spacing: -0.01em;
     text-transform: none;
-    line-height: 1.15;
     line-height: 1.2;
+  }
+  .mono-light {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0;
+    text-transform: none;
   }
 }
 
