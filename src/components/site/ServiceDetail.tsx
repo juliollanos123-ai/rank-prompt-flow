@@ -9,9 +9,10 @@ type Lang = "en" | "es";
 
 export type ServiceDetailProps = {
   tag: string;
-  kicker: string;
+  tier: string;
+  format: string;
+  duration: string;
   tagline: string;
-  meta: string;
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
   forWho: string[];
