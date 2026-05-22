@@ -1,4 +1,5 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+// articles import kept for potential future use; only individual helpers below are required.
 import { Reveal } from "@/components/site/Reveal";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTA } from "@/components/site/CTA";
