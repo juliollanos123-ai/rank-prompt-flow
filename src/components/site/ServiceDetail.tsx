@@ -9,9 +9,10 @@ type Lang = "en" | "es";
 
 export type ServiceDetailProps = {
   tag: string;
-  kicker: string;
+  tier: string;
+  format: string;
+  duration: string;
   tagline: string;
-  meta: string;
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
   forWho: string[];
@@ -48,6 +49,9 @@ const t = {
     faqsH2: "Questions,",
     faqsH2italic: "answered honestly.",
     stage: "Stage",
+    tierLabel: "Tier",
+    formatLabel: "Format",
+    durationLabel: "Duration",
   },
   es: {
     breadcrumbHome: "Inicio",
@@ -71,12 +75,15 @@ const t = {
     faqsH2: "Preguntas,",
     faqsH2italic: "respondidas honestamente.",
     stage: "Etapa",
+    tierLabel: "Nivel",
+    formatLabel: "Formato",
+    durationLabel: "Duración",
   },
 } as const;
 
 export function ServiceDetail(props: ServiceDetailProps) {
   const {
-    tag, kicker, tagline, meta,
+    tag, tier, format, duration, tagline,
     primaryCta = { label: "Get a free diagnosis", to: "/audit" },
     secondaryCta,
     forWho, notFit, includes, timeline,
@@ -97,7 +104,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
       ? "bg-canvas"
       : "bg-gradient-to-br from-canvas via-canvas to-prompt/10";
 
-  const eyebrowTone = tone === "dark" ? "canvas" : "ink";
+  
 
   // Dark hero → Includes flips to light for contrast. All light heroes → dark Includes.
   const includesBg = tone === "dark"
@@ -125,32 +132,40 @@ export function ServiceDetail(props: ServiceDetailProps) {
               ]}
             />
           </Reveal>
-          <Reveal delay={0.05}>
-            <div className="mt-8">
-              <Eyebrow tone={eyebrowTone}>{kicker}</Eyebrow>
-            </div>
-          </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 text-5xl lg:text-[clamp(4rem,9vw,9rem)]">{tag}</h1>
+            <h1 className="mt-10 text-5xl lg:text-[clamp(4rem,9vw,9rem)]">{tag}</h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className={`mt-6 max-w-2xl text-xl ${tone === "dark" ? "text-canvas/80" : "text-ink/75"}`}>
               {tagline}
             </p>
           </Reveal>
+          <Reveal delay={0.25}>
+            <dl className={`mt-12 grid max-w-2xl grid-cols-3 gap-x-8 gap-y-4 border-t pt-6 ${tone === "dark" ? "border-canvas/15" : "border-ink/10"}`}>
+              {[
+                [tx.tierLabel, tier],
+                [tx.formatLabel, format],
+                [tx.durationLabel, duration],
+              ].map(([label, value]) => (
+                <div key={label}>
+                  <dt className={`mono-light text-[0.65rem] uppercase tracking-[0.2em] ${tone === "dark" ? "text-canvas/45" : "text-ink/45"}`}>
+                    {label}
+                  </dt>
+                  <dd className={`mt-2 text-sm ${tone === "dark" ? "text-canvas/90" : "text-ink/85"}`}>
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
           <Reveal delay={0.3}>
-            <div className="mt-10 flex flex-wrap items-end gap-x-10 gap-y-6">
-              <div>
-                <div className={`text-xs uppercase tracking-widest ${tone === "dark" ? "text-canvas/50" : "text-ink/50"}`}>{meta}</div>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
-                {secondaryCta && (
-                  <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "ghost"}>
-                    {secondaryCta.label}
-                  </CTA>
-                )}
-              </div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
+              {secondaryCta && (
+                <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "ghost"}>
+                  {secondaryCta.label}
+                </CTA>
+              )}
             </div>
           </Reveal>
         </div>

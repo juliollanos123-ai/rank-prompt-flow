@@ -13,9 +13,10 @@ export const Route = createFileRoute("/services/landmark")({
   component: () => (
     <ServiceDetail
       tag="AI SEO Agency"
-      kicker="Authority · Premium retainer"
+      tier="Authority"
+      format="Premium retainer"
       tagline="For established B2B brands ready to dominate their category across traditional search AND generative AI engines."
-      meta="Retainer · 12-month engagement · Application only"
+      duration="12-month · Application only"
       primaryCta={{ label: "Apply for AI SEO Agency", to: "/contact" }}
       secondaryCta={{ label: "See methodology", to: "/methodology" }}
       forWho={[

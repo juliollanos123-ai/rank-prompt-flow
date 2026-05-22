@@ -14,9 +14,10 @@ export const Route = createFileRoute("/es/servicios/scale")({
   component: () => (
     <ServiceDetail
       tag="SEO para B2B"
-      kicker="Crecimiento · Retainer mensual"
+      tier="Crecimiento"
+      format="Retainer mensual"
       tagline="Para empresas B2B listas para invertir en un crecimiento sostenido de visibilidad con producción de contenido continua, optimización y generación de leads."
-      meta="Retainer · mínimo 6 meses"
+      duration="Mínimo 6 meses"
       primaryCta={{ label: "Reserva una llamada estratégica", to: "/es/contacto" }}
       secondaryCta={{ label: "Diagnóstico gratuito primero", to: "/es/auditoria" }}
       forWho={[

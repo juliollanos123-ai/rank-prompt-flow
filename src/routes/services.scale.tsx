@@ -13,9 +13,10 @@ export const Route = createFileRoute("/services/scale")({
   component: () => (
     <ServiceDetail
       tag="SEO for B2B"
-      kicker="Growth · Monthly retainer"
+      tier="Growth"
+      format="Monthly retainer"
       tagline="For B2B companies ready to invest in sustained visibility growth with ongoing content production, optimization and lead generation."
-      meta="Retainer · 6-month minimum"
+      duration="6-month minimum"
       primaryCta={{ label: "Book a strategy call", to: "/contact" }}
       secondaryCta={{ label: "Get free diagnosis first", to: "/audit" }}
       forWho={[
