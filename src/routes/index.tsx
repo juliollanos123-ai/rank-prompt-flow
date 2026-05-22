@@ -217,7 +217,7 @@ function GeoGap() {
               <Reveal key={m.year} delay={0.1 * i}>
                 <div className="relative pt-12">
                   <div className="absolute left-0 top-3.5 h-6 w-6 rounded-full border-2 border-prompt bg-canvas" />
-                  <div className="font-display text-2xl text-prompt">{m.year}</div>
+                  <div className="font-display font-black text-2xl text-prompt">{m.year}</div>
                   <div className="mt-2 text-lg font-semibold">{m.label}</div>
                   <div className="mt-1 text-sm text-ink/60">{m.note}</div>
                 </div>
@@ -230,7 +230,7 @@ function GeoGap() {
           <div className="mt-20 overflow-hidden rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-14">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <div className="font-display text-7xl text-prompt lg:text-9xl">68%</div>
+                <div className="font-display font-black text-7xl text-prompt lg:text-9xl">68%</div>
                 <p className="mt-3 max-w-md text-ink/70">
                   of B2B buyers start product research with an AI assistant — not a search engine.
                 </p>
@@ -340,7 +340,7 @@ function CaseStudyZero() {
               <div className="grid grid-cols-2 lg:grid-cols-3">
                 {metrics.map((m) => (
                   <div key={m.label} className="border-b border-r border-canvas/10 p-6 last:border-r-0">
-                    <div className="font-display text-4xl text-canvas lg:text-5xl">{m.value}</div>
+                    <div className="font-display font-black text-4xl text-canvas lg:text-5xl">{m.value}</div>
                     <div className="mt-2 text-xs uppercase tracking-wider text-canvas/50">{m.label}</div>
                   </div>
                 ))}

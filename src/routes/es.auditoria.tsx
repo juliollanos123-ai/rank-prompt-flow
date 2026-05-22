@@ -148,7 +148,7 @@ function TierCard({
       <p className="mt-3 text-ink/65">{subtitle}</p>
 
       <div className="mt-8 flex items-end gap-3">
-        <div className="font-display text-5xl text-prompt">{price}</div>
+        <div className="font-display font-black text-5xl text-prompt">{price}</div>
         {priceNote && <div className="pb-2 text-xs text-ink/50">{priceNote}</div>}
       </div>
 

@@ -18,7 +18,7 @@ function NotFoundComponent() {
     <div className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden bg-canvas px-6 text-center">
       <div className="absolute inset-0 -z-10 bg-soft-glow" />
       <div className="absolute inset-0 -z-10 grid-overlay opacity-40" />
-      <div className="font-display text-[clamp(6rem,20vw,14rem)] leading-none text-prompt opacity-15 select-none">
+      <div className="font-display font-black text-[clamp(6rem,20vw,14rem)] leading-none text-prompt opacity-15 select-none">
         404
       </div>
       <div className="-mt-8 max-w-lg">
