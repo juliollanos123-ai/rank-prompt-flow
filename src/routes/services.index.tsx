@@ -24,7 +24,7 @@ export const Route = createFileRoute("/services/")({
 const tiers = [
   {
     tag: "Technical SEO",
-    to: "/services/blueprint" as const,
+    to: "/services/technical-seo" as const,
     kicker: "Foundation · Project",
     meta: "4–6 weeks",
     desc: "The foundation your site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
@@ -39,7 +39,7 @@ const tiers = [
   },
   {
     tag: "SEO for B2B",
-    to: "/services/scale" as const,
+    to: "/services/seo-for-b2b" as const,
     kicker: "Growth · Monthly retainer",
     meta: "6-month minimum",
     desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
@@ -54,7 +54,7 @@ const tiers = [
   },
   {
     tag: "AI SEO Agency",
-    to: "/services/landmark" as const,
+    to: "/services/ai-seo-agency" as const,
     kicker: "Authority · Premium retainer",
     meta: "12-month engagement",
     desc: "The authority AI recommends. Everything in SEO for B2B + GEO + thought leadership + white-glove service for category leaders.",
