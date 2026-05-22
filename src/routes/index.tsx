@@ -360,7 +360,7 @@ function ServicesPreview() {
   const services = [
     {
       tag: "Technical SEO",
-      to: "/services/blueprint" as const,
+      to: "/services/technical-seo" as const,
       kicker: "Foundation",
       desc: "Full website development + technical SEO foundation. Ready for organic growth and AI discovery.",
       meta: "Project · 4–6 weeks",
@@ -368,7 +368,7 @@ function ServicesPreview() {
     },
     {
       tag: "SEO for B2B",
-      to: "/services/scale" as const,
+      to: "/services/seo-for-b2b" as const,
       kicker: "Growth",
       desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards.",
       meta: "Retainer · 6-month minimum",
@@ -376,7 +376,7 @@ function ServicesPreview() {
     },
     {
       tag: "AI SEO Agency",
-      to: "/services/landmark" as const,
+      to: "/services/ai-seo-agency" as const,
       kicker: "Authority",
       desc: "The authority AI recommends. Everything in SEO for B2B + GEO + thought leadership.",
       meta: "Retainer · 12-month engagement",

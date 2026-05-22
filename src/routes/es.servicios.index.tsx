@@ -25,7 +25,7 @@ export const Route = createFileRoute("/es/servicios/")({
 const tiers = [
   {
     tag: "SEO Técnico",
-    to: "/es/servicios/blueprint" as const,
+    to: "/es/servicios/seo-tecnico" as const,
     kicker: "Fundación · Proyecto",
     meta: "4–6 semanas",
     desc: "La base que tu sitio necesita para rankear. Desarrollo web completo + SEO técnico + analytics, listo para crecimiento orgánico y descubrimiento por IA.",
@@ -40,7 +40,7 @@ const tiers = [
   },
   {
     tag: "SEO para B2B",
-    to: "/es/servicios/scale" as const,
+    to: "/es/servicios/seo-b2b" as const,
     kicker: "Crecimiento · Retainer mensual",
     meta: "mínimo 6 meses",
     desc: "Crecimiento orgánico, mes a mes. Motor de contenido con IA + CRO + link building + dashboards enfocados en leads cualificados.",
@@ -55,7 +55,7 @@ const tiers = [
   },
   {
     tag: "Agencia SEO IA",
-    to: "/es/servicios/landmark" as const,
+    to: "/es/servicios/agencia-seo-ia" as const,
     kicker: "Autoridad · Retainer premium",
     meta: "compromiso 12 meses",
     desc: "La autoridad que la IA recomienda. Todo lo de SEO para B2B + GEO + liderazgo de pensamiento + servicio premium para líderes de categoría.",
