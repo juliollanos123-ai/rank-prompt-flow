@@ -75,7 +75,7 @@ function AuditoriaPage() {
                 "2–3 keywords de alto valor B2B que te estás perdiendo",
                 "Tu visibilidad en Google AI, ChatGPT y Perplexity",
                 "Plan de acción priorizado a 30 días",
-                "Recomendación de servicio (Blueprint / Scale / Landmark)",
+                "Recomendación de servicio (SEO Técnico / SEO para B2B / Agencia SEO IA)",
               ]}
               tone="prompt"
             />

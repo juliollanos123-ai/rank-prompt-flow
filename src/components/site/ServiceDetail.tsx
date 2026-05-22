@@ -11,7 +11,6 @@ export type ServiceDetailProps = {
   tag: string;
   kicker: string;
   tagline: string;
-  price: string;
   meta: string;
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
@@ -77,7 +76,7 @@ const t = {
 
 export function ServiceDetail(props: ServiceDetailProps) {
   const {
-    tag, kicker, tagline, price, meta,
+    tag, kicker, tagline, meta,
     primaryCta = { label: "Get a free diagnosis", to: "/audit" },
     secondaryCta,
     forWho, notFit, includes, timeline,
@@ -142,8 +141,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
           <Reveal delay={0.3}>
             <div className="mt-10 flex flex-wrap items-end gap-x-10 gap-y-6">
               <div>
-                <div className="font-display text-4xl text-prompt lg:text-5xl">{price}</div>
-                <div className={`mt-2 text-xs uppercase tracking-widest ${tone === "dark" ? "text-canvas/50" : "text-ink/50"}`}>{meta}</div>
+                <div className={`text-xs uppercase tracking-widest ${tone === "dark" ? "text-canvas/50" : "text-ink/50"}`}>{meta}</div>
               </div>
               <div className="flex flex-wrap gap-3">
                 <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
@@ -151,7 +149,6 @@ export function ServiceDetail(props: ServiceDetailProps) {
                   <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "ghost"}>
                     {secondaryCta.label}
                   </CTA>
-
                 )}
               </div>
             </div>

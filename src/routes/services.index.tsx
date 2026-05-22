@@ -8,11 +8,11 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Blueprint, Scale & Landmark | Rank Your Brand" },
+      { title: "Services — Technical SEO, SEO for B2B & AI SEO Agency | Rank Your Brand" },
       {
         name: "description",
         content:
-          "Three levels. One objective: make you findable. Blueprint ($1,500), Scale ($2,500/mo) and Landmark ($3,500/mo).",
+          "Three levels. One objective: make you findable. Technical SEO, SEO for B2B and AI SEO Agency.",
       },
       { property: "og:title", content: "Services — Rank Your Brand" },
       { property: "og:description", content: "Three levels. One objective: make you findable." },
@@ -23,10 +23,9 @@ export const Route = createFileRoute("/services/")({
 
 const tiers = [
   {
-    tag: "Blueprint",
+    tag: "Technical SEO",
     to: "/services/blueprint" as const,
     kicker: "Foundation · Project",
-    price: "$1,500 USD",
     meta: "4–6 weeks",
     desc: "The foundation your site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
     bullets: [
@@ -39,10 +38,9 @@ const tiers = [
     tone: "border-prompt/40 bg-prompt/5",
   },
   {
-    tag: "Scale",
+    tag: "SEO for B2B",
     to: "/services/scale" as const,
     kicker: "Growth · Monthly retainer",
-    price: "$2,500/mo",
     meta: "6-month minimum",
     desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
     bullets: [
@@ -55,14 +53,13 @@ const tiers = [
     tone: "border-ink/15 bg-ink text-canvas",
   },
   {
-    tag: "Landmark",
+    tag: "AI SEO Agency",
     to: "/services/landmark" as const,
     kicker: "Authority · Premium retainer",
-    price: "$3,500/mo",
     meta: "12-month engagement",
-    desc: "The authority AI recommends. Everything in Scale + GEO + thought leadership + white-glove service for category leaders.",
+    desc: "The authority AI recommends. Everything in SEO for B2B + GEO + thought leadership + white-glove service for category leaders.",
     bullets: [
-      "Everything in Scale",
+      "Everything in SEO for B2B",
       "GEO optimization (ChatGPT, Perplexity citations)",
       "Executive thought leadership program",
       "Dedicated account manager + bi-weekly strategy",
@@ -126,8 +123,7 @@ function ServicesPage() {
                       ))}
                     </ul>
                     <div className="text-right">
-                      <div className="font-display text-3xl text-prompt">{t.price}</div>
-                      <div className={`mt-1 text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
+                      <div className={`text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
                         {t.meta}
                       </div>
                       <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>

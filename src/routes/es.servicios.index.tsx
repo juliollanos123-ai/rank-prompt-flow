@@ -8,11 +8,11 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/es/servicios/")({
   head: () => ({
     meta: [
-      { title: "Servicios — Blueprint, Scale & Landmark | Rank Your Brand" },
+      { title: "Servicios — SEO Técnico, SEO para B2B y Agencia SEO IA | Rank Your Brand" },
       {
         name: "description",
         content:
-          "Tres niveles. Un objetivo: que te encuentren. Blueprint ($1,500), Scale ($2,500/mes) y Landmark ($3,500/mes).",
+          "Tres niveles. Un objetivo: que te encuentren. SEO Técnico, SEO para B2B y Agencia SEO IA.",
       },
       { property: "og:title", content: "Servicios — Rank Your Brand" },
       { property: "og:description", content: "Tres niveles. Un objetivo: que te encuentren." },
@@ -24,10 +24,9 @@ export const Route = createFileRoute("/es/servicios/")({
 
 const tiers = [
   {
-    tag: "Blueprint",
+    tag: "SEO Técnico",
     to: "/es/servicios/blueprint" as const,
     kicker: "Fundación · Proyecto",
-    price: "$1,500 USD",
     meta: "4–6 semanas",
     desc: "La base que tu sitio necesita para rankear. Desarrollo web completo + SEO técnico + analytics, listo para crecimiento orgánico y descubrimiento por IA.",
     bullets: [
@@ -40,10 +39,9 @@ const tiers = [
     tone: "border-prompt/40 bg-prompt/5",
   },
   {
-    tag: "Scale",
+    tag: "SEO para B2B",
     to: "/es/servicios/scale" as const,
     kicker: "Crecimiento · Retainer mensual",
-    price: "$2,500/mes",
     meta: "mínimo 6 meses",
     desc: "Crecimiento orgánico, mes a mes. Motor de contenido con IA + CRO + link building + dashboards enfocados en leads cualificados.",
     bullets: [
@@ -56,14 +54,13 @@ const tiers = [
     tone: "border-ink/15 bg-ink text-canvas",
   },
   {
-    tag: "Landmark",
+    tag: "Agencia SEO IA",
     to: "/es/servicios/landmark" as const,
     kicker: "Autoridad · Retainer premium",
-    price: "$3,500/mes",
     meta: "compromiso 12 meses",
-    desc: "La autoridad que la IA recomienda. Todo lo de Scale + GEO + liderazgo de pensamiento + servicio premium para líderes de categoría.",
+    desc: "La autoridad que la IA recomienda. Todo lo de SEO para B2B + GEO + liderazgo de pensamiento + servicio premium para líderes de categoría.",
     bullets: [
-      "Todo lo de Scale",
+      "Todo lo de SEO para B2B",
       "Optimización GEO (citas en ChatGPT, Perplexity)",
       "Programa de liderazgo de pensamiento ejecutivo",
       "Account manager dedicado + estrategia quincenal",
@@ -127,8 +124,7 @@ function ServicesPageEs() {
                       ))}
                     </ul>
                     <div className="text-right">
-                      <div className="font-display text-3xl text-prompt">{t.price}</div>
-                      <div className={`mt-1 text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
+                      <div className={`text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
                         {t.meta}
                       </div>
                       <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>

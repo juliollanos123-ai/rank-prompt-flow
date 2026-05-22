@@ -74,7 +74,7 @@ function AuditPage() {
                 "2–3 high-value B2B keywords you're missing",
                 "Your visibility in Google AI, ChatGPT & Perplexity",
                 "Prioritized 30-day action plan",
-                "Service recommendation (Blueprint / Scale / Landmark)",
+                "Service recommendation (Technical SEO / SEO for B2B / AI SEO Agency)",
               ]}
               tone="prompt"
             />
