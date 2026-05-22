@@ -9,7 +9,6 @@ import { CategoryFilter } from "@/components/blog/CategoryFilter";
 import { BlogInlineCTA, BlogEndCTA } from "@/components/blog/BlogInlineCTA";
 import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import {
-  articles,
   articlesByCategory,
   formatDate,
   getArticle,
