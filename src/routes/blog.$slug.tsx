@@ -310,8 +310,6 @@ function ArticleView() {
       )}
     </>
   );
-
-  void articles; // keep import used for tree-shaking sanity
 }
 
 function renderBlock(b: Block, i: number) {
