@@ -359,29 +359,26 @@ function CaseStudyZero() {
 function ServicesPreview() {
   const services = [
     {
-      tag: "Blueprint",
+      tag: "Technical SEO",
       to: "/services/blueprint" as const,
       kicker: "Foundation",
       desc: "Full website development + technical SEO foundation. Ready for organic growth and AI discovery.",
-      price: "$1,500 USD",
       meta: "Project · 4–6 weeks",
       tone: "border-prompt/40 bg-prompt/5",
     },
     {
-      tag: "Scale",
+      tag: "SEO for B2B",
       to: "/services/scale" as const,
       kicker: "Growth",
       desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards.",
-      price: "$2,500/mo",
       meta: "Retainer · 6-month minimum",
       tone: "border-ink/15 bg-ink text-canvas",
     },
     {
-      tag: "Landmark",
+      tag: "AI SEO Agency",
       to: "/services/landmark" as const,
       kicker: "Authority",
-      desc: "The authority AI recommends. Everything in Scale + GEO + thought leadership.",
-      price: "$3,500/mo",
+      desc: "The authority AI recommends. Everything in SEO for B2B + GEO + thought leadership.",
       meta: "Retainer · 12-month engagement",
       tone: "border-flow/40 bg-flow/[0.06]",
     },
@@ -414,8 +411,7 @@ function ServicesPreview() {
                     {s.desc}
                   </p>
                   <div className="mt-auto pt-10">
-                    <div className="font-display text-2xl text-prompt">{s.price}</div>
-                    <div className={`mt-1 text-xs uppercase tracking-wider ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
+                    <div className={`text-xs uppercase tracking-wider ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
                       {s.meta}
                     </div>
                     <div className="mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider">
