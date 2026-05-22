@@ -288,7 +288,7 @@ function Pillars() {
                 className="group relative h-full overflow-hidden rounded-3xl border border-canvas/10 bg-canvas/[0.03] p-8 transition-colors hover:border-flow/40"
               >
                 <div className="font-display text-xs tracking-[0.3em] text-prompt">{p.tag}</div>
-                <h3 className="mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
+                <h3 className="h3-soft mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
                 <p className="mt-4 text-canvas/70">{p.body}</p>
                 <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-flow/0 blur-3xl transition-all group-hover:bg-flow/30" />
               </motion.div>
@@ -409,7 +409,7 @@ function ServicesPreview() {
                   <div className={`font-display text-xs tracking-[0.3em] ${s.tone.includes("text-canvas") ? "text-canvas/60" : "text-ink/50"}`}>
                     {s.kicker}
                   </div>
-                  <h3 className="mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
+                  <h3 className="h3-soft mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
                   <p className={`mt-5 ${s.tone.includes("text-canvas") ? "text-canvas/75" : "text-ink/70"}`}>
                     {s.desc}
                   </p>

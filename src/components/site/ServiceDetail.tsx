@@ -178,7 +178,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
                   className={`h-full rounded-2xl border p-7 transition-colors hover:border-flow/40 ${includesCardBorder}`}
                 >
                   <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
-                  <h3 className={`mt-4 text-2xl ${includesH3Color}`}>{h}</h3>
+                  <h3 className={`h3-soft mt-4 text-2xl ${includesH3Color}`}>{h}</h3>
                   <p className={`mt-3 ${includesBodyColor}`}>{d}</p>
                 </motion.div>
               </Reveal>
