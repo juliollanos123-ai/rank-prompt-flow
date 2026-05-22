@@ -4,30 +4,29 @@ import { ServiceDetail } from "@/components/site/ServiceDetail";
 export const Route = createFileRoute("/es/servicios/scale")({
   head: () => ({
     meta: [
-      { title: "Scale — Crecimiento orgánico mes a mes | Rank Your Brand" },
-      { name: "description", content: "SEO siempre activo + motor de contenido con IA para B2B. 4–6 artículos/mes, CRO, link building, dashboards. $2,500/mes, mínimo 6 meses." },
-      { property: "og:title", content: "Scale — Rank Your Brand" },
+      { title: "SEO para B2B — Crecimiento orgánico mes a mes | Rank Your Brand" },
+      { name: "description", content: "SEO siempre activo + motor de contenido con IA para B2B. 4–6 artículos/mes, CRO, link building, dashboards. Mínimo 6 meses." },
+      { property: "og:title", content: "SEO para B2B — Rank Your Brand" },
       { property: "og:description", content: "Crecimiento orgánico compuesto, cada mes." },
     ],
     links: [{ rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/scale" }],
   }),
   component: () => (
     <ServiceDetail
-      tag="Scale"
+      tag="SEO para B2B"
       kicker="Crecimiento · Retainer mensual"
       tagline="Para empresas B2B listas para invertir en un crecimiento sostenido de visibilidad con producción de contenido continua, optimización y generación de leads."
-      price="$2,500/mes"
       meta="Retainer · mínimo 6 meses"
       primaryCta={{ label: "Reserva una llamada estratégica", to: "/es/contacto" }}
       secondaryCta={{ label: "Diagnóstico gratuito primero", to: "/es/auditoria" }}
       forWho={[
-        "Empresas B2B con una base técnica sólida (o Blueprint completo)",
+        "Empresas B2B con una base técnica sólida (o SEO Técnico completo)",
         "Ingresos anuales entre $1M y $20M",
         "Tráfico orgánico actual de 2,000–20,000 visitas/mes",
         "Listas para comprometerse 6+ meses con crecimiento sostenido",
       ]}
       notFit={[
-        "Necesitas una reconstrucción completa del sitio (empieza con Blueprint)",
+        "Necesitas una reconstrucción completa del sitio (empieza con SEO Técnico)",
         "No estás listo para un compromiso de 6 meses",
         "Quieres microgestionar cada artículo",
         "Tu sitio tiene problemas técnicos importantes sin resolver",
@@ -50,7 +49,7 @@ export const Route = createFileRoute("/es/servicios/scale")({
         "Mes 12 — 2–3× tráfico orgánico con generación de leads predecible",
       ]}
       faqs={[
-        ["¿Necesito Blueprint antes de Scale?", "No siempre. Auditamos tu sitio primero. Si existen problemas técnicos, los corregimos en el Mes 1 de Scale (o recomendamos Blueprint primero)."],
+        ["¿Necesito SEO Técnico antes de SEO para B2B?", "No siempre. Auditamos tu sitio primero. Si existen problemas técnicos, los corregimos en el Mes 1 de SEO para B2B (o recomendamos SEO Técnico primero)."],
         ["¿Puedo escribir mi propio contenido?", "Puedes, pero no lo recomendamos. Nuestro proceso asistido por IA es más rápido y consistente. Ofrecemos un nivel 'Solo Estrategia' a precio reducido si lo prefieres."],
         ["¿Qué pasa si no veo resultados en 6 meses?", "Rastreamos indicadores líderes mensualmente (movimiento de keywords, páginas indexadas, engagement). Si no hay tendencia positiva en el Mes 3, diagnosticamos y ajustamos."],
         ["¿Puedo pausar el retainer?", "No dentro del mínimo de 6 meses. Después, sí — con 30 días de aviso. Pausar el SEO suele significar perder momentum."],

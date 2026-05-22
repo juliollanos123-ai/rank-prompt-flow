@@ -4,29 +4,28 @@ import { ServiceDetail } from "@/components/site/ServiceDetail";
 export const Route = createFileRoute("/services/scale")({
   head: () => ({
     meta: [
-      { title: "Scale — Organic growth, month after month | Rank Your Brand" },
-      { name: "description", content: "Always-on SEO + AI content engine for B2B. 4–6 articles/month, CRO, link building, dashboards. $2,500/mo, 6-month minimum." },
-      { property: "og:title", content: "Scale — Rank Your Brand" },
+      { title: "SEO for B2B — Organic growth, month after month | Rank Your Brand" },
+      { name: "description", content: "Always-on SEO + AI content engine for B2B. 4–6 articles/month, CRO, link building, dashboards. 6-month minimum." },
+      { property: "og:title", content: "SEO for B2B — Rank Your Brand" },
       { property: "og:description", content: "Compounding organic growth, every month." },
     ],
   }),
   component: () => (
     <ServiceDetail
-      tag="Scale"
+      tag="SEO for B2B"
       kicker="Growth · Monthly retainer"
       tagline="For B2B companies ready to invest in sustained visibility growth with ongoing content production, optimization and lead generation."
-      price="$2,500/mo"
       meta="Retainer · 6-month minimum"
       primaryCta={{ label: "Book a strategy call", to: "/contact" }}
       secondaryCta={{ label: "Get free diagnosis first", to: "/audit" }}
       forWho={[
-        "B2B companies with a solid technical foundation (or Blueprint complete)",
+        "B2B companies with a solid technical foundation (or Technical SEO complete)",
         "Annual revenue between $1M and $20M",
         "Current organic traffic of 2,000–20,000 visits/month",
         "Ready to commit 6+ months to sustained growth",
       ]}
       notFit={[
-        "You need a complete website rebuild (start with Blueprint)",
+        "You need a complete website rebuild (start with Technical SEO)",
         "You're not ready for a 6-month commitment",
         "You want to micromanage every article",
         "Your site has major unresolved technical issues",
@@ -49,7 +48,7 @@ export const Route = createFileRoute("/services/scale")({
         "Month 12 — 2–3× organic traffic with predictable lead generation",
       ]}
       faqs={[
-        ["Do I need Blueprint before Scale?", "Not always. We audit your site first. If technical issues exist, we fix them in Month 1 of Scale (or recommend Blueprint first)."],
+        ["Do I need Technical SEO before SEO for B2B?", "Not always. We audit your site first. If technical issues exist, we fix them in Month 1 of SEO for B2B (or recommend Technical SEO first)."],
         ["Can I write my own content instead?", "You can, but we don't recommend it. Our AI-assisted process is faster and more consistent. We offer a 'Strategy Only' tier at reduced pricing if you insist."],
         ["What if I don't see results in 6 months?", "We track leading indicators monthly (keyword movement, indexed pages, engagement). If we're not trending up by Month 3, we diagnose why and adjust."],
         ["Can I pause the retainer?", "Not within the 6-month minimum. After that, yes — with 30 days notice. Pausing SEO often means losing momentum, though."],
