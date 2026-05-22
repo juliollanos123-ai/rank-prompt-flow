@@ -164,21 +164,19 @@ function ArticleView() {
   const time = readingTimeMinutes(article.body);
   const headings = article.body.filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2");
   const related = relatedArticles(article);
-  const wordCount = article.body.reduce((acc, b) => {
-    if ("text" in b) return acc + b.text.split(/\s+/).length;
-    if (b.type === "ul") return acc + b.items.join(" ").split(/\s+/).length;
-    return acc;
-  }, 0);
-  const showToc = wordCount > 1000 && headings.length > 1;
+
+
+
+  const initials = article.author.name.split(" ").map((n) => n[0]).join("");
 
   return (
     <>
       <ReadingProgress />
 
-      {/* Header */}
-      <section className="relative isolate overflow-hidden pt-32 pb-12 lg:pt-40 lg:pb-16">
+      {/* Header — 12-col editorial grid */}
+      <section className="relative isolate overflow-hidden pt-28 pb-10 lg:pt-36 lg:pb-14">
         <div className="absolute inset-0 -z-10 bg-soft-glow" />
-        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
             <Breadcrumbs
               items={[
@@ -189,91 +187,111 @@ function ArticleView() {
               ]}
             />
           </Reveal>
-          <Reveal delay={0.06}>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <CategoryChip slug={article.category} />
-              <span className="font-display text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                {time} min read
-              </span>
-              <span className="text-ink/30">·</span>
-              <span className="font-display text-[11px] uppercase tracking-[0.22em] text-ink/55">
-                {formatDate(article.publishedAt)}
-              </span>
-            </div>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <h1 className="mt-6 text-balance text-4xl lg:text-6xl">{article.title}</h1>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <p className="mt-6 text-lg text-ink/70">{article.excerpt}</p>
-          </Reveal>
-          <Reveal delay={0.22}>
-            <div className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-canvas font-display text-sm">
-                {article.author.name.split(" ").map((n) => n[0]).join("")}
-              </div>
-              <div>
-                <div className="font-display text-sm text-ink">{article.author.name}</div>
-                <div className="text-xs text-ink/55">
-                  {article.author.title ? `${article.author.title} · ` : ""}
-                  {article.author.company}
+
+          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-12">
+            {/* Left: title + excerpt */}
+            <div className="lg:col-span-8">
+              <Reveal delay={0.06}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <CategoryChip slug={article.category} />
+                  <span className="font-display text-[11px] uppercase tracking-[0.22em] text-ink/55">
+                    {time} min read
+                  </span>
+                  <span className="text-ink/30">·</span>
+                  <span className="font-display text-[11px] uppercase tracking-[0.22em] text-ink/55">
+                    {formatDate(article.publishedAt)}
+                  </span>
                 </div>
-              </div>
+              </Reveal>
+              <Reveal delay={0.12}>
+                <h1 className="mt-6 text-balance text-4xl leading-[1.05] lg:text-6xl">
+                  {article.title}
+                </h1>
+              </Reveal>
+              <Reveal delay={0.18}>
+                <p className="mt-6 max-w-2xl text-lg text-ink/70 lg:text-xl">
+                  {article.excerpt}
+                </p>
+              </Reveal>
             </div>
-          </Reveal>
+
+            {/* Right: meta rail */}
+            <Reveal delay={0.22} className="lg:col-span-4">
+              <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm lg:p-7">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-display text-sm text-canvas">
+                    {initials}
+                  </div>
+                  <div>
+                    <div className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
+                      Written by
+                    </div>
+                    <div className="mt-1 font-display text-sm text-ink">{article.author.name}</div>
+                    <div className="text-xs text-ink/55">
+                      {article.author.title ? `${article.author.title} · ` : ""}
+                      {article.author.company}
+                    </div>
+                  </div>
+                </div>
+
+                <dl className="grid grid-cols-2 gap-x-4 gap-y-4 border-t border-border pt-5">
+                  <div>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
+                      Category
+                    </dt>
+                    <dd className="mt-1 font-display text-sm text-ink">{cat.label}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
+                      Reading
+                    </dt>
+                    <dd className="mt-1 font-display text-sm text-ink">{time} min</dd>
+                  </div>
+                  <div>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
+                      Published
+                    </dt>
+                    <dd className="mt-1 font-display text-sm text-ink">{formatDate(article.publishedAt)}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-display text-[10px] uppercase tracking-[0.25em] text-ink/45">
+                      Sections
+                    </dt>
+                    <dd className="mt-1 font-display text-sm text-ink">{headings.length || "—"}</dd>
+                  </div>
+                </dl>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* Cover */}
+      {/* Cover — full bleed within container */}
       <section className="bg-canvas">
-        <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className={`relative aspect-[21/9] overflow-hidden rounded-3xl ${cat.cover}`}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className={`relative aspect-[21/8] overflow-hidden rounded-3xl ${cat.cover}`}>
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_20%_20%,rgba(255,255,255,0.18),transparent)]" />
           </div>
         </div>
       </section>
 
-      {/* Body + TOC */}
+      {/* Body + sticky TOC */}
       <section className="bg-canvas py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className={showToc ? "lg:grid lg:grid-cols-[1fr_240px] lg:gap-12" : ""}>
-            <article className="prose-blog mx-auto max-w-[720px]">
-              {/* Plan / On this page (inline at top, always visible) */}
-              {headings.length > 0 && (
-                <div className="mb-10 rounded-2xl border border-border bg-card p-6">
-                  <div className="font-display text-[11px] uppercase tracking-[0.25em] text-ink/55">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* Sticky TOC */}
+            {headings.length > 0 && (
+              <aside className="lg:col-span-3">
+                <div className="lg:sticky lg:top-28">
+                  <div className="font-display text-[10px] uppercase tracking-[0.3em] text-ink/45">
                     On this page
                   </div>
-                  <ol className="mt-4 space-y-2 text-sm">
-                    {headings.map((h, i) => (
-                      <li key={h.id} className="flex gap-3 text-ink/80 hover:text-prompt">
-                        <span className="font-display text-prompt">{String(i + 1).padStart(2, "0")}</span>
-                        <a href={`#${h.id}`} className="leading-snug">{h.text}</a>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
-
-              {article.body.map((b, i) => renderBlock(b, i))}
-
-              <div className="mt-16">
-                <BlogEndCTA />
-              </div>
-            </article>
-
-            {showToc && (
-              <aside className="hidden lg:block">
-                <div className="sticky top-28">
-                  <div className="font-display text-[11px] uppercase tracking-[0.25em] text-ink/55">
-                    Contents
-                  </div>
-                  <ol className="mt-4 space-y-3 border-l border-border pl-4 text-sm">
+                  <ol className="mt-5 space-y-3 border-l border-border pl-4 text-sm">
                     {headings.map((h, i) => (
                       <li key={h.id}>
                         <a
                           href={`#${h.id}`}
-                          className="block text-ink/70 transition-colors hover:text-prompt"
+                          className="block leading-snug text-ink/70 transition-colors hover:text-prompt"
                         >
                           <span className="mr-2 font-display text-[10px] text-ink/40">
                             {String(i + 1).padStart(2, "0")}
@@ -286,6 +304,47 @@ function ArticleView() {
                 </div>
               </aside>
             )}
+
+            {/* Article body */}
+            <article
+              className={`prose-blog max-w-[720px] ${
+                headings.length > 0 ? "lg:col-span-8 lg:col-start-5" : "mx-auto lg:col-span-10 lg:col-start-2"
+              }`}
+            >
+              {article.body.map((b, i) => renderBlock(b, i))}
+
+              {/* Mid-content lead magnet */}
+              <div className="my-14">
+                <BlogInlineCTA />
+              </div>
+
+              {/* End-of-article author + share */}
+              <div className="mt-16 flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between lg:p-7">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-ink font-display text-sm text-canvas">
+                    {initials}
+                  </div>
+                  <div>
+                    <div className="font-display text-sm text-ink">{article.author.name}</div>
+                    <div className="text-xs text-ink/55">
+                      {article.author.title ? `${article.author.title} · ` : ""}
+                      {article.author.company}
+                    </div>
+                  </div>
+                </div>
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: cat.slug }}
+                  className="font-display text-[11px] uppercase tracking-[0.25em] text-ink/60 transition-colors hover:text-prompt"
+                >
+                  More in {cat.label} →
+                </Link>
+              </div>
+
+              <div className="mt-10">
+                <BlogEndCTA />
+              </div>
+            </article>
           </div>
         </div>
       </section>
