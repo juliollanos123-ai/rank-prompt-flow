@@ -1,13 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 
-type Variant = "primary" | "ghost" | "outline-canvas";
+type Variant = "primary" | "ghost" | "outline" | "outline-canvas";
 
 const styles: Record<Variant, string> = {
   primary:
     "bg-prompt text-primary-foreground hover:shadow-elegant",
   ghost:
     "bg-transparent text-ink hover:bg-ink/5",
+  outline:
+    "border border-ink/30 text-ink hover:bg-ink hover:text-canvas",
   "outline-canvas":
     "border border-canvas/30 text-canvas hover:bg-canvas hover:text-ink",
 };
