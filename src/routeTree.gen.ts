@@ -29,7 +29,6 @@ import { Route as EsServiciosRouteImport } from './routes/es.servicios'
 import { Route as EsMetodologiaRouteImport } from './routes/es.metodologia'
 import { Route as EsContactoRouteImport } from './routes/es.contacto'
 import { Route as EsAuditoriaRouteImport } from './routes/es.auditoria'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EsServiciosIndexRouteImport } from './routes/es.servicios.index'
 import { Route as EsServiciosSeoTecnicoRouteImport } from './routes/es.servicios.seo-tecnico'
 import { Route as EsServiciosSeoB2bRouteImport } from './routes/es.servicios.seo-b2b'
@@ -138,11 +137,6 @@ const EsAuditoriaRoute = EsAuditoriaRouteImport.update({
   path: '/auditoria',
   getParentRoute: () => EsRoute,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
-} as any)
 const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -187,7 +181,6 @@ export interface FileRoutesByFullPath {
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
-  '/blog/$slug': typeof BlogSlugRoute
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -214,7 +207,6 @@ export interface FileRoutesByTo {
   '/audit': typeof AuditRoute
   '/contact': typeof ContactRoute
   '/methodology': typeof MethodologyRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -244,7 +236,6 @@ export interface FileRoutesById {
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
-  '/blog/$slug': typeof BlogSlugRoute
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -276,7 +267,6 @@ export interface FileRouteTypes {
     | '/es'
     | '/methodology'
     | '/services'
-    | '/blog/$slug'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -303,7 +293,6 @@ export interface FileRouteTypes {
     | '/audit'
     | '/contact'
     | '/methodology'
-    | '/blog/$slug'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -332,7 +321,6 @@ export interface FileRouteTypes {
     | '/es'
     | '/methodology'
     | '/services'
-    | '/blog/$slug'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -507,13 +495,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsAuditoriaRouteImport
       parentRoute: typeof EsRoute
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
-    }
     '/es/servicios/': {
       id: '/es/servicios/'
       path: '/'
@@ -567,12 +548,10 @@ declare module '@tanstack/react-router' {
 }
 
 interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 
