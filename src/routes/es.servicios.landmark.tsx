@@ -14,9 +14,10 @@ export const Route = createFileRoute("/es/servicios/landmark")({
   component: () => (
     <ServiceDetail
       tag="Agencia SEO IA"
-      kicker="Autoridad · Retainer premium"
+      tier="Autoridad"
+      format="Retainer premium"
       tagline="Para marcas B2B establecidas listas para dominar su categoría en búsqueda tradicional Y motores de IA generativos."
-      meta="Retainer · compromiso 12 meses · solo por solicitud"
+      duration="12 meses · Solo por solicitud"
       primaryCta={{ label: "Solicitar Agencia SEO IA", to: "/es/contacto" }}
       secondaryCta={{ label: "Ver metodología", to: "/es/metodologia" }}
       forWho={[
