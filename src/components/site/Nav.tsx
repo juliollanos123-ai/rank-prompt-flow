@@ -18,11 +18,13 @@ const esServiceItems = [
 
 const enLinks = [
   { to: "/methodology" as const, label: "Methodology" },
+  { to: "/blog" as const, label: "Blog" },
   { to: "/contact" as const, label: "Contact" },
 ];
 
 const esLinks = [
   { to: "/es/metodologia" as const, label: "Metodologia" },
+  { to: "/blog" as const, label: "Blog" },
   { to: "/es/contacto" as const, label: "Contacto" },
 ];
 

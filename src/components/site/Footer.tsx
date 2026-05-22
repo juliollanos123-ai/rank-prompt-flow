@@ -16,6 +16,7 @@ const enCols = [
     links: [
       { to: "/audit" as const, label: "Free Diagnosis" },
       { to: "/methodology" as const, label: "Methodology" },
+      { to: "/blog" as const, label: "Blog" },
     ],
   },
   {
@@ -41,6 +42,7 @@ const esCols = [
     links: [
       { to: "/es/auditoria" as const, label: "Diagnóstico gratuito" },
       { to: "/es/metodologia" as const, label: "Metodología" },
+      { to: "/blog" as const, label: "Blog" },
     ],
   },
   {
