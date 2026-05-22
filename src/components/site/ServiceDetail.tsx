@@ -166,7 +166,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
           <Reveal delay={0.1}>
             <h2 className={`mt-6 max-w-3xl text-4xl lg:text-5xl ${tone === "dark" ? "text-ink" : "text-canvas"}`}>
               {tx.includedH2first}<br />
-              <span className="italic text-prompt">{tx.includedH2second}</span>
+              <span className="accent-italic text-prompt">{tx.includedH2second}</span>
             </h2>
           </Reveal>
 
@@ -194,7 +194,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
             <Reveal><Eyebrow>{tx.outcomesEyebrow}</Eyebrow></Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-6 max-w-2xl text-4xl lg:text-5xl">
-                {tx.outcomesH2} <span className="italic text-prompt">{tx.outcomesH2italic}</span>
+                {tx.outcomesH2} <span className="accent-italic text-prompt">{tx.outcomesH2italic}</span>
               </h2>
             </Reveal>
             <ul className="mt-12 grid gap-4 lg:grid-cols-3">
@@ -217,7 +217,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
           <Reveal><Eyebrow>{tx.whoEyebrow}</Eyebrow></Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl lg:text-5xl">
-              {tx.whoH2} <span className="italic text-prompt">{tx.whoH2italic}</span>
+              {tx.whoH2} <span className="accent-italic text-prompt">{tx.whoH2italic}</span>
             </h2>
           </Reveal>
 
@@ -282,7 +282,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
             <Reveal><Eyebrow>{tx.faqsEyebrow}</Eyebrow></Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-6 max-w-2xl text-4xl lg:text-5xl">
-                {tx.faqsH2} <span className="italic text-prompt">{tx.faqsH2italic}</span>
+                {tx.faqsH2} <span className="accent-italic text-prompt">{tx.faqsH2italic}</span>
               </h2>
             </Reveal>
             <div className="mt-12 grid gap-4">

@@ -58,7 +58,7 @@ function Methodology() {
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               We don't do SEO.<br />
-              <span className="italic text-prompt">We build visibility systems.</span>
+              <span className="accent-italic text-prompt">We build visibility systems.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -80,7 +80,7 @@ function Methodology() {
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl text-canvas lg:text-6xl">
               A multi-agent system,<br />
-              <span className="italic text-prompt">not a brief in a Google Doc.</span>
+              <span className="accent-italic text-prompt">not a brief in a Google Doc.</span>
             </h2>
           </Reveal>
 
@@ -124,7 +124,7 @@ function Methodology() {
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-4xl text-4xl lg:text-6xl">
               Most agencies use ChatGPT.<br />
-              <span className="italic text-prompt">Our operations run on it.</span>
+              <span className="accent-italic text-prompt">Our operations run on it.</span>
             </h2>
           </Reveal>
 
@@ -158,7 +158,7 @@ function Methodology() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-              The tools that make us <span className="italic text-prompt">10× faster.</span>
+              The tools that make us <span className="accent-italic text-prompt">10× faster.</span>
             </h2>
           </Reveal>
 

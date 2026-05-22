@@ -24,7 +24,7 @@ function NotFoundComponent() {
       <div className="-mt-8 max-w-lg">
         <p className="font-display text-xs tracking-[0.3em] text-prompt uppercase">Page not found</p>
         <h1 className="mt-4 text-4xl lg:text-5xl">
-          This page <span className="italic text-prompt">doesn't exist.</span>
+          This page <span className="accent-italic text-prompt">doesn't exist.</span>
         </h1>
         <p className="mt-6 text-ink/65">
           The page you're looking for has been moved, renamed, or never existed.

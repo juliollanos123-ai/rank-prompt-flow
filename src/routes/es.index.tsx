@@ -66,7 +66,7 @@ function Hero() {
             ))}
           </span>
           <motion.span
-            className="block text-prompt italic"
+            className="block accent-italic text-prompt"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -192,7 +192,7 @@ function GeoGap() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            El SEO que conoces <span className="text-prompt italic">ya es obsoleto.</span>
+            El SEO que conoces <span className="accent-italic text-prompt">ya es obsoleto.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
@@ -275,7 +275,7 @@ function Pillars() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
-            Construimos sistemas de visibilidad, <span className="italic text-prompt">no campañas de SEO.</span>
+            Construimos sistemas de visibilidad, <span className="accent-italic text-prompt">no campañas de SEO.</span>
           </h2>
         </Reveal>
 
@@ -317,7 +317,7 @@ function CaseStudyZero() {
             <div>
               <Eyebrow>Caso de Estudio #0</Eyebrow>
               <h2 className="mt-6 text-4xl lg:text-6xl">
-                Este sitio web <span className="italic text-prompt">es</span> nuestro primer caso de estudio.
+                Este sitio web <span className="accent-italic text-prompt">es</span> nuestro primer caso de estudio.
               </h2>
               <p className="mt-6 max-w-md text-ink/70">
                 No solo hablamos de SEO nativo de IA. Lo practicamos en nosotros mismos, en público. Cada métrica que aparece a continuación viene de este mismo sitio.
@@ -394,7 +394,7 @@ function ServicesPreview() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Tres niveles. Un objetivo: <span className="italic text-prompt">que te encuentren.</span>
+            Tres niveles. Un objetivo: <span className="accent-italic text-prompt">que te encuentren.</span>
           </h2>
         </Reveal>
 
@@ -469,7 +469,7 @@ function FAQ() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Las preguntas que <span className="italic text-prompt">siempre nos hacen.</span>
+            Las preguntas que <span className="accent-italic text-prompt">siempre nos hacen.</span>
           </h2>
         </Reveal>
 

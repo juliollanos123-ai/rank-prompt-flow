@@ -46,7 +46,7 @@ function AuditPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-balance text-5xl text-canvas lg:text-[clamp(3.5rem,7vw,6.5rem)]">
-              Discover why your competitors <span className="italic">show up before you do.</span>
+              Discover why your competitors <span className="accent-italic">show up before you do.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -289,7 +289,7 @@ function ThankYou({ tier }: { tier: Tier }) {
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         <div className="font-display text-xs tracking-[0.3em] text-prompt">Confirmed</div>
         <h2 className="mt-4 text-3xl lg:text-4xl">
-          Your Full SEO Audit is <span className="italic text-prompt">on the way.</span>
+          Your Full SEO Audit is <span className="accent-italic text-prompt">on the way.</span>
         </h2>
         <ol className="mt-8 space-y-4 text-ink/75">
           <li><strong className="text-ink">1.</strong> You'll receive a payment link via email (PayPal or Stripe).</li>
@@ -307,7 +307,7 @@ function ThankYou({ tier }: { tier: Tier }) {
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
       <div className="font-display text-xs tracking-[0.3em] text-prompt">On the way</div>
       <h2 className="mt-4 text-3xl lg:text-4xl">
-        Your free diagnosis will arrive <span className="italic text-prompt">within 48 hours.</span>
+        Your free diagnosis will arrive <span className="accent-italic text-prompt">within 48 hours.</span>
       </h2>
       <ol className="mt-8 space-y-4 text-ink/75">
         <li><strong className="text-ink">1.</strong> We analyze your site and competitors.</li>
