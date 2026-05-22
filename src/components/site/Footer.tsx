@@ -16,6 +16,7 @@ const enCols = [
     links: [
       { to: "/audit" as const, label: "Free Diagnosis" },
       { to: "/methodology" as const, label: "Methodology" },
+      { to: "/blog" as const, label: "Blog" },
     ],
   },
   {
