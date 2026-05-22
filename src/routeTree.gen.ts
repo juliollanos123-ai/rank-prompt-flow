@@ -13,6 +13,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as EsRouteImport } from './routes/es'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -53,6 +54,11 @@ const EsRoute = EsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuditRoute = AuditRouteImport.update({
@@ -164,6 +170,7 @@ const EsServiciosAgenciaSeoIaRoute = EsServiciosAgenciaSeoIaRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
@@ -191,6 +198,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/methodology': typeof MethodologyRoute
   '/es/auditoria': typeof EsAuditoriaRoute
@@ -216,6 +224,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
@@ -245,6 +254,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/audit'
+    | '/blog'
     | '/contact'
     | '/es'
     | '/methodology'
@@ -272,6 +282,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/audit'
+    | '/blog'
     | '/contact'
     | '/methodology'
     | '/es/auditoria'
@@ -296,6 +307,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/audit'
+    | '/blog'
     | '/contact'
     | '/es'
     | '/methodology'
@@ -324,6 +336,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuditRoute: typeof AuditRoute
+  BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   EsRoute: typeof EsRouteWithChildren
   MethodologyRoute: typeof MethodologyRoute
@@ -358,6 +371,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/audit': {
@@ -579,6 +599,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuditRoute: AuditRoute,
+  BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   EsRoute: EsRouteWithChildren,
   MethodologyRoute: MethodologyRoute,
