@@ -13,9 +13,10 @@ export const Route = createFileRoute("/services/blueprint")({
   component: () => (
     <ServiceDetail
       tag="Technical SEO"
-      kicker="Foundation · Project"
+      tier="Foundation"
+      format="Project"
       tagline="For B2B companies with underperforming websites that need technical fixes, strategic repositioning, and a solid foundation for growth."
-      meta="Project · 4–6 weeks"
+      duration="4–6 weeks"
       primaryCta={{ label: "Get your free diagnosis first", to: "/audit" }}
       secondaryCta={{ label: "Contact us", to: "/contact" }}
       forWho={[
