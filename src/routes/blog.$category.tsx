@@ -5,7 +5,7 @@ import { BlogCard } from "@/components/blog/BlogCard";
 import { CategoryChip } from "@/components/blog/CategoryChip";
 import { CategoryFilter } from "@/components/blog/CategoryFilter";
 import { BlogInlineCTA } from "@/components/blog/BlogInlineCTA";
-import { articlesByCategory, getCategory, isCategorySlug } from "@/data/blog";
+import { articlesByCategory, getCategory, isCategorySlug, type Article, type Category } from "@/data/blog";
 
 export const Route = createFileRoute("/blog/$category")({
   loader: ({ params }) => {
@@ -42,7 +42,7 @@ function CategoryLayout() {
 }
 
 function CategoryView() {
-  const { cat, list } = Route.useLoaderData();
+  const { cat, list } = Route.useLoaderData() as { cat: Category; list: Article[] };
   const first = list.slice(0, 6);
   const rest = list.slice(6);
 

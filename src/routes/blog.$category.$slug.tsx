@@ -13,6 +13,7 @@ import {
   isCategorySlug,
   readingTimeMinutes,
   relatedArticles,
+  type Article,
   type Block,
 } from "@/data/blog";
 
@@ -62,7 +63,7 @@ export const Route = createFileRoute("/blog/$category/$slug")({
 });
 
 function ArticleView() {
-  const { article } = Route.useLoaderData();
+  const { article } = Route.useLoaderData() as { article: Article };
   const cat = getCategory(article.category);
   const time = readingTimeMinutes(article.body);
   const headings = article.body.filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2");
@@ -81,7 +82,7 @@ function ArticleView() {
               items={[
                 { label: "Home", to: "/" },
                 { label: "Blog", to: "/blog" },
-                { label: cat.label, to: "/blog/$category", params: { category: cat.slug } },
+                { label: cat.label, to: `/blog/${cat.slug}` },
                 { label: article.title },
               ]}
             />
