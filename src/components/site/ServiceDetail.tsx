@@ -49,6 +49,9 @@ const t = {
     faqsH2: "Questions,",
     faqsH2italic: "answered honestly.",
     stage: "Stage",
+    tierLabel: "Tier",
+    formatLabel: "Format",
+    durationLabel: "Duration",
   },
   es: {
     breadcrumbHome: "Inicio",
