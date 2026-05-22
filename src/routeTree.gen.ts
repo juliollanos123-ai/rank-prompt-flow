@@ -29,6 +29,7 @@ import { Route as EsServiciosRouteImport } from './routes/es.servicios'
 import { Route as EsMetodologiaRouteImport } from './routes/es.metodologia'
 import { Route as EsContactoRouteImport } from './routes/es.contacto'
 import { Route as EsAuditoriaRouteImport } from './routes/es.auditoria'
+import { Route as BlogCategoryRouteImport } from './routes/blog.$category'
 import { Route as EsServiciosIndexRouteImport } from './routes/es.servicios.index'
 import { Route as EsServiciosSeoTecnicoRouteImport } from './routes/es.servicios.seo-tecnico'
 import { Route as EsServiciosSeoB2bRouteImport } from './routes/es.servicios.seo-b2b'
@@ -36,6 +37,7 @@ import { Route as EsServiciosScaleRouteImport } from './routes/es.servicios.scal
 import { Route as EsServiciosLandmarkRouteImport } from './routes/es.servicios.landmark'
 import { Route as EsServiciosBlueprintRouteImport } from './routes/es.servicios.blueprint'
 import { Route as EsServiciosAgenciaSeoIaRouteImport } from './routes/es.servicios.agencia-seo-ia'
+import { Route as BlogCategorySlugRouteImport } from './routes/blog.$category.$slug'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -137,6 +139,11 @@ const EsAuditoriaRoute = EsAuditoriaRouteImport.update({
   path: '/auditoria',
   getParentRoute: () => EsRoute,
 } as any)
+const BlogCategoryRoute = BlogCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => BlogRoute,
+} as any)
 const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -172,6 +179,11 @@ const EsServiciosAgenciaSeoIaRoute = EsServiciosAgenciaSeoIaRouteImport.update({
   path: '/agencia-seo-ia',
   getParentRoute: () => EsServiciosRoute,
 } as any)
+const BlogCategorySlugRoute = BlogCategorySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogCategoryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -181,6 +193,7 @@ export interface FileRoutesByFullPath {
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/blog/$category': typeof BlogCategoryRouteWithChildren
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -194,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/blog/$category/$slug': typeof BlogCategorySlugRoute
   '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
@@ -207,6 +221,7 @@ export interface FileRoutesByTo {
   '/audit': typeof AuditRoute
   '/contact': typeof ContactRoute
   '/methodology': typeof MethodologyRoute
+  '/blog/$category': typeof BlogCategoryRouteWithChildren
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -219,6 +234,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/es': typeof EsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/blog/$category/$slug': typeof BlogCategorySlugRoute
   '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
@@ -236,6 +252,7 @@ export interface FileRoutesById {
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/blog/$category': typeof BlogCategoryRouteWithChildren
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -249,6 +266,7 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/blog/$category/$slug': typeof BlogCategorySlugRoute
   '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
@@ -267,6 +285,7 @@ export interface FileRouteTypes {
     | '/es'
     | '/methodology'
     | '/services'
+    | '/blog/$category'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -280,6 +299,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/es/'
     | '/services/'
+    | '/blog/$category/$slug'
     | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
@@ -293,6 +313,7 @@ export interface FileRouteTypes {
     | '/audit'
     | '/contact'
     | '/methodology'
+    | '/blog/$category'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -305,6 +326,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/es'
     | '/services'
+    | '/blog/$category/$slug'
     | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
@@ -321,6 +343,7 @@ export interface FileRouteTypes {
     | '/es'
     | '/methodology'
     | '/services'
+    | '/blog/$category'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -334,6 +357,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/es/'
     | '/services/'
+    | '/blog/$category/$slug'
     | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
@@ -495,6 +519,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsAuditoriaRouteImport
       parentRoute: typeof EsRoute
     }
+    '/blog/$category': {
+      id: '/blog/$category'
+      path: '/$category'
+      fullPath: '/blog/$category'
+      preLoaderRoute: typeof BlogCategoryRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/es/servicios/': {
       id: '/es/servicios/'
       path: '/'
@@ -544,14 +575,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsServiciosAgenciaSeoIaRouteImport
       parentRoute: typeof EsServiciosRoute
     }
+    '/blog/$category/$slug': {
+      id: '/blog/$category/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$category/$slug'
+      preLoaderRoute: typeof BlogCategorySlugRouteImport
+      parentRoute: typeof BlogCategoryRoute
+    }
   }
 }
 
+interface BlogCategoryRouteChildren {
+  BlogCategorySlugRoute: typeof BlogCategorySlugRoute
+}
+
+const BlogCategoryRouteChildren: BlogCategoryRouteChildren = {
+  BlogCategorySlugRoute: BlogCategorySlugRoute,
+}
+
+const BlogCategoryRouteWithChildren = BlogCategoryRoute._addFileChildren(
+  BlogCategoryRouteChildren,
+)
+
 interface BlogRouteChildren {
+  BlogCategoryRoute: typeof BlogCategoryRouteWithChildren
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
+  BlogCategoryRoute: BlogCategoryRouteWithChildren,
   BlogIndexRoute: BlogIndexRoute,
 }
 
