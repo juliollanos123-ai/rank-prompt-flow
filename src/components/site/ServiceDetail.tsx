@@ -75,6 +75,9 @@ const t = {
     faqsH2: "Preguntas,",
     faqsH2italic: "respondidas honestamente.",
     stage: "Etapa",
+    tierLabel: "Nivel",
+    formatLabel: "Formato",
+    durationLabel: "Duración",
   },
 } as const;
 
