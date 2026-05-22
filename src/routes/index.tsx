@@ -439,7 +439,7 @@ const faqs = [
   },
   {
     q: "How long does it take to see results?",
-    a: "Technical fixes and content improvements typically show initial movement in 6–12 weeks. GEO citation results (ChatGPT, Perplexity mentions) often appear in 8–16 weeks. Our Blueprint service creates the foundation; Scale and Landmark build the compounding visibility over 6–12 months.",
+    a: "Technical fixes and content improvements typically show initial movement in 6–12 weeks. GEO citation results (ChatGPT, Perplexity mentions) often appear in 8–16 weeks. Our Technical SEO service creates the foundation; SEO for B2B and AI SEO Agency build the compounding visibility over 6–12 months.",
   },
   {
     q: "Do you work with companies outside the US?",

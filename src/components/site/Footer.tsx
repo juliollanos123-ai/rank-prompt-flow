@@ -6,9 +6,9 @@ const enCols = [
   {
     heading: "Services",
     links: [
-      { to: "/services/blueprint" as const, label: "Blueprint" },
-      { to: "/services/scale" as const, label: "Scale" },
-      { to: "/services/landmark" as const, label: "Landmark" },
+      { to: "/services/blueprint" as const, label: "Technical SEO" },
+      { to: "/services/scale" as const, label: "SEO for B2B" },
+      { to: "/services/landmark" as const, label: "AI SEO Agency" },
     ],
   },
   {
@@ -31,9 +31,9 @@ const esCols = [
   {
     heading: "Servicios",
     links: [
-      { to: "/es/servicios/blueprint" as const, label: "Blueprint" },
-      { to: "/es/servicios/scale" as const, label: "Scale" },
-      { to: "/es/servicios/landmark" as const, label: "Landmark" },
+      { to: "/es/servicios/blueprint" as const, label: "SEO Técnico" },
+      { to: "/es/servicios/scale" as const, label: "SEO para B2B" },
+      { to: "/es/servicios/landmark" as const, label: "Agencia SEO IA" },
     ],
   },
   {
