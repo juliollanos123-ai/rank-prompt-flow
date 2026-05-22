@@ -11,8 +11,8 @@ export function CategoryFilter({ active }: { active: CategorySlug | "all" }) {
             key={c.slug}
             label={c.label}
             isActive={active === c.slug}
-            to="/blog/$slug"
-            params={{ slug: c.slug }}
+            to="/blog/$category"
+            params={{ category: c.slug }}
           />
         ))}
       </div>
@@ -22,7 +22,7 @@ export function CategoryFilter({ active }: { active: CategorySlug | "all" }) {
 
 type PillProps =
   | { label: string; isActive: boolean; to: "/blog"; params?: undefined }
-  | { label: string; isActive: boolean; to: "/blog/$slug"; params: { slug: CategorySlug } };
+  | { label: string; isActive: boolean; to: "/blog/$category"; params: { category: CategorySlug } };
 
 function FilterPill(props: PillProps) {
   const cls = `whitespace-nowrap rounded-full px-4 py-2 font-display text-xs uppercase tracking-[0.2em] transition-colors ${
@@ -32,7 +32,7 @@ function FilterPill(props: PillProps) {
     return <Link to="/blog" className={cls}>{props.label}</Link>;
   }
   return (
-    <Link to="/blog/$slug" params={props.params} className={cls}>
+    <Link to="/blog/$category" params={props.params} className={cls}>
       {props.label}
     </Link>
   );
