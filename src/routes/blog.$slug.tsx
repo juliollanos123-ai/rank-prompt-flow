@@ -164,12 +164,8 @@ function ArticleView() {
   const time = readingTimeMinutes(article.body);
   const headings = article.body.filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2");
   const related = relatedArticles(article);
-  const wordCount = article.body.reduce((acc, b) => {
-    if ("text" in b) return acc + b.text.split(/\s+/).length;
-    if (b.type === "ul") return acc + b.items.join(" ").split(/\s+/).length;
-    return acc;
-  }, 0);
-  const showToc = wordCount > 1000 && headings.length > 1;
+
+
 
   const initials = article.author.name.split(" ").map((n) => n[0]).join("");
 
