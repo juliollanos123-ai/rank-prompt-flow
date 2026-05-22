@@ -162,7 +162,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
             <div className="mt-10 flex flex-wrap gap-3">
               <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
               {secondaryCta && (
-                <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "ghost"}>
+                <CTA to={secondaryCta.to} variant={tone === "dark" ? "outline-canvas" : "outline"}>
                   {secondaryCta.label}
                 </CTA>
               )}
@@ -323,7 +323,7 @@ export function ServiceDetail(props: ServiceDetailProps) {
               <div className="mt-8 flex flex-wrap gap-3">
                 <CTA to={primaryCta.to}>{primaryCta.label}</CTA>
                 {secondaryCta && (
-                  <CTA to={secondaryCta.to} variant="ghost">{secondaryCta.label}</CTA>
+                  <CTA to={secondaryCta.to} variant="outline">{secondaryCta.label}</CTA>
                 )}
               </div>
             </div>
