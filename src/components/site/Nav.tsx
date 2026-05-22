@@ -84,7 +84,7 @@ function ServicesDropdown({ isEs }: { isEs: boolean }) {
                 to={item.to}
                 className="group flex items-center justify-between px-4 py-3 transition-colors hover:bg-prompt/5 first:pt-4 last:pb-4"
               >
-                <span className="font-display text-sm font-normal tracking-wide text-ink group-hover:text-prompt">
+                <span className="mono-light text-sm text-ink group-hover:text-prompt">
                   {item.label}
                 </span>
                 <span className="text-xs text-ink/45 group-hover:text-prompt/70">{item.desc}</span>
