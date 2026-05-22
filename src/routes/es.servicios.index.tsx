@@ -88,7 +88,7 @@ function ServicesPageEs() {
           <Reveal delay={0.1}>
             <h1 className="mt-6 max-w-4xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               Tres niveles.<br />
-              <span className="italic text-prompt">Un objetivo: que te encuentren.</span>
+              <span className="accent-italic text-prompt">Un objetivo: que te encuentren.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -149,7 +149,7 @@ function ServicesPageEs() {
             <div className="rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-16">
               <Eyebrow>¿No sabes cuál es el correcto?</Eyebrow>
               <h2 className="mt-6 max-w-3xl text-3xl lg:text-5xl">
-                Cada empresa es diferente. Obtén un diagnóstico gratuito y recomendaremos el <span className="italic text-prompt">punto de partida ideal.</span>
+                Cada empresa es diferente. Obtén un diagnóstico gratuito y recomendaremos el <span className="accent-italic text-prompt">punto de partida ideal.</span>
               </h2>
               <div className="mt-8 flex flex-wrap gap-3">
                 <CTA to="/es/auditoria">Diagnóstico gratuito</CTA>

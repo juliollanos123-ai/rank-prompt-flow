@@ -59,7 +59,7 @@ function MetodologiaEs() {
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               No hacemos SEO.<br />
-              <span className="italic text-prompt">Construimos sistemas de visibilidad.</span>
+              <span className="accent-italic text-prompt">Construimos sistemas de visibilidad.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -79,7 +79,7 @@ function MetodologiaEs() {
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl text-canvas lg:text-6xl">
               Un sistema multi-agente,<br />
-              <span className="italic text-prompt">no un brief en un Google Doc.</span>
+              <span className="accent-italic text-prompt">no un brief en un Google Doc.</span>
             </h2>
           </Reveal>
 
@@ -94,7 +94,7 @@ function MetodologiaEs() {
                 className="relative rounded-2xl border border-canvas/10 bg-canvas/[0.04] p-6"
               >
                 <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
-                <div className="mt-4 font-display text-xl">{a.name}</div>
+                <div className="h3-soft mt-4 text-xl">{a.name}</div>
                 <div className="mt-1 text-sm text-canvas/60">{a.role}</div>
                 <div className="mt-6 border-t border-canvas/10 pt-4 text-xs text-canvas/50">
                   {a.note}
@@ -123,7 +123,7 @@ function MetodologiaEs() {
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-4xl text-4xl lg:text-6xl">
               La mayoría de agencias usan ChatGPT.<br />
-              <span className="italic text-prompt">Nuestras operaciones corren sobre él.</span>
+              <span className="accent-italic text-prompt">Nuestras operaciones corren sobre él.</span>
             </h2>
           </Reveal>
 
@@ -157,7 +157,7 @@ function MetodologiaEs() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-              Las herramientas que nos hacen <span className="italic text-prompt">10× más rápidos.</span>
+              Las herramientas que nos hacen <span className="accent-italic text-prompt">10× más rápidos.</span>
             </h2>
           </Reveal>
 

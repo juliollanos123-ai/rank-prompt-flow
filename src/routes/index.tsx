@@ -65,7 +65,7 @@ function Hero() {
             ))}
           </span>
           <motion.span
-            className="block text-prompt italic"
+            className="block accent-italic text-prompt"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -192,7 +192,7 @@ function GeoGap() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            The SEO you know <span className="text-prompt italic">is already obsolete.</span>
+            The SEO you know <span className="accent-italic text-prompt">is already obsolete.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
@@ -275,7 +275,7 @@ function Pillars() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
-            We build visibility systems, <span className="italic text-prompt">not SEO campaigns.</span>
+            We build visibility systems, <span className="accent-italic text-prompt">not SEO campaigns.</span>
           </h2>
         </Reveal>
 
@@ -288,7 +288,7 @@ function Pillars() {
                 className="group relative h-full overflow-hidden rounded-3xl border border-canvas/10 bg-canvas/[0.03] p-8 transition-colors hover:border-flow/40"
               >
                 <div className="font-display text-xs tracking-[0.3em] text-prompt">{p.tag}</div>
-                <h3 className="mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
+                <h3 className="h3-soft mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
                 <p className="mt-4 text-canvas/70">{p.body}</p>
                 <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-flow/0 blur-3xl transition-all group-hover:bg-flow/30" />
               </motion.div>
@@ -317,7 +317,7 @@ function CaseStudyZero() {
             <div>
               <Eyebrow>Case Study #0</Eyebrow>
               <h2 className="mt-6 text-4xl lg:text-6xl">
-                This website <span className="italic text-prompt">is</span> our first case study.
+                This website <span className="accent-italic text-prompt">is</span> our first case study.
               </h2>
               <p className="mt-6 max-w-md text-ink/70">
                 We don't just talk about AI-native SEO. We practice it on ourselves, in public. Every metric below comes from this exact site.
@@ -394,7 +394,7 @@ function ServicesPreview() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Three levels. One objective: <span className="italic text-prompt">make you findable.</span>
+            Three levels. One objective: <span className="accent-italic text-prompt">make you findable.</span>
           </h2>
         </Reveal>
 
@@ -409,7 +409,7 @@ function ServicesPreview() {
                   <div className={`font-display text-xs tracking-[0.3em] ${s.tone.includes("text-canvas") ? "text-canvas/60" : "text-ink/50"}`}>
                     {s.kicker}
                   </div>
-                  <h3 className="mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
+                  <h3 className="h3-soft mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
                   <p className={`mt-5 ${s.tone.includes("text-canvas") ? "text-canvas/75" : "text-ink/70"}`}>
                     {s.desc}
                   </p>
@@ -469,7 +469,7 @@ function FAQ() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Questions we <span className="italic text-prompt">always get.</span>
+            Questions we <span className="accent-italic text-prompt">always get.</span>
           </h2>
         </Reveal>
 

@@ -47,7 +47,7 @@ function AuditoriaPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-balance text-5xl text-canvas lg:text-[clamp(3.5rem,7vw,6.5rem)]">
-              Descubre por qué tus competidores <span className="italic">aparecen antes que tú.</span>
+              Descubre por qué tus competidores <span className="accent-italic">aparecen antes que tú.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -290,7 +290,7 @@ function ThankYou({ tier }: { tier: Tier }) {
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         <div className="font-display text-xs tracking-[0.3em] text-prompt">Confirmado</div>
         <h2 className="mt-4 text-3xl lg:text-4xl">
-          Tu Auditoría SEO Completa <span className="italic text-prompt">está en marcha.</span>
+          Tu Auditoría SEO Completa <span className="accent-italic text-prompt">está en marcha.</span>
         </h2>
         <ol className="mt-8 space-y-4 text-ink/75">
           <li><strong className="text-ink">1.</strong> Recibirás un enlace de pago por email (PayPal o Stripe).</li>
@@ -308,7 +308,7 @@ function ThankYou({ tier }: { tier: Tier }) {
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
       <div className="font-display text-xs tracking-[0.3em] text-prompt">En camino</div>
       <h2 className="mt-4 text-3xl lg:text-4xl">
-        Tu diagnóstico gratuito llegará <span className="italic text-prompt">en menos de 48 horas.</span>
+        Tu diagnóstico gratuito llegará <span className="accent-italic text-prompt">en menos de 48 horas.</span>
       </h2>
       <ol className="mt-8 space-y-4 text-ink/75">
         <li><strong className="text-ink">1.</strong> Analizamos tu sitio y competidores.</li>
