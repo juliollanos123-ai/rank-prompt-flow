@@ -12,7 +12,7 @@ export const Route = createFileRoute("/es/metodologia")({
       {
         name: "description",
         content:
-          "El sistema operativo de RYB: un flujo de trabajo multi-agente con N8N + LLM que convierte el SEO en una línea de producción medible.",
+          "El sistema operativo de RYB: una metodología AI-Native que convierte el SEO en una línea de producción medible, rápida y transparente.",
       },
       { property: "og:title", content: "Metodología — Rank Your Brand" },
       { property: "og:description", content: "No hacemos SEO. Construimos sistemas de visibilidad." },
@@ -23,22 +23,16 @@ export const Route = createFileRoute("/es/metodologia")({
 });
 
 const agents = [
-  { name: "The Scout", role: "Investigación", note: "DataForSEO + Perplexity" },
-  { name: "The Architect", role: "Estrategia", note: "GPT-4 + brand brief" },
-  { name: "The Writer", role: "Contenido", note: "Claude + guía de estilo" },
-  { name: "The Watchdog", role: "Monitoreo", note: "GSC + uptime + chequeos IA" },
-  { name: "The Reporter", role: "Resultados", note: "Looker Studio + email" },
+  { name: "The Scout", role: "Investigación", note: "Detecta oportunidades y mapea el panorama competitivo" },
+  { name: "The Architect", role: "Estrategia", note: "Define la estrategia editorial y técnica por cliente" },
+  { name: "The Writer", role: "Contenido", note: "Produce contenido alineado a marca y a intención de búsqueda" },
+  { name: "The Watchdog", role: "Monitoreo", note: "Vigila salud técnica, rankings y citas en IA 24/7" },
+  { name: "The Reporter", role: "Resultados", note: "Consolida resultados y los entrega listos para decisión" },
 ];
-
-const stack = {
-  "Estrategia & Datos": ["Airtable", "DataForSEO", "Ubersuggest"],
-  "Automatización": ["N8N", "OpenAI API", "Perplexity API"],
-  "Entrega": ["Google Workspace", "Lovable", "Looker Studio"],
-};
 
 const compare = [
   ["Investigación manual de keywords (4–6h)", "Automatizada por The Scout (15 min)"],
-  ["Briefs de contenido en Google Docs", "Auto-generados, almacenados en Airtable"],
+  ["Briefs de contenido en Google Docs", "Auto-generados y centralizados"],
   ["Informes mensuales compilados a mano", "Dashboard en tiempo real + auto-email"],
   ["Lento, caro, opaco", "Rápido, escalable, transparente"],
 ];
@@ -108,7 +102,7 @@ function MetodologiaEs() {
 
           <Reveal delay={0.4}>
             <div className="mt-12 rounded-2xl border-l-4 border-prompt bg-canvas/[0.04] p-6 text-canvas/80">
-              "Esto no es una metáfora. Este es nuestro sistema de producción real. Construido sobre N8N, GPT-4, Airtable y DataForSEO."
+              "Esto no es una metáfora. Es nuestro sistema de producción real: una línea de trabajo automatizada que opera 24/7 con IA, supervisada por estrategas humanos."
             </div>
           </Reveal>
         </div>
@@ -122,9 +116,14 @@ function MetodologiaEs() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-4xl text-4xl lg:text-6xl">
-              La mayoría de agencias usan ChatGPT.<br />
-              <span className="accent-italic text-prompt">Nuestras operaciones corren sobre él.</span>
+              La mayoría de agencias le piden cosas a la IA.<br />
+              <span className="accent-italic text-prompt">Nosotros operamos como una agencia AI-Native.</span>
             </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="mt-6 max-w-2xl text-lg text-ink/70">
+              Cada proceso —investigación, contenido, monitoreo, reporte— está orquestado por IA y validado por estrategas.
+            </p>
           </Reveal>
 
           <div className="mt-14 overflow-hidden rounded-3xl border border-border">
@@ -149,35 +148,22 @@ function MetodologiaEs() {
         </div>
       </section>
 
-      {/* Stack */}
+      {/* Operación AI-Native */}
       <section className="bg-canvas pb-28 lg:pb-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
-            <Eyebrow>Stack tecnológico · transparencia radical</Eyebrow>
+            <Eyebrow>Operación AI-Native</Eyebrow>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-              Las herramientas que nos hacen <span className="accent-italic text-prompt">10× más rápidos.</span>
+              Más rápidos. Más consistentes. <span className="accent-italic text-prompt">Más medibles.</span>
             </h2>
           </Reveal>
-
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {Object.entries(stack).map(([cat, tools], i) => (
-              <Reveal key={cat} delay={i * 0.1}>
-                <div className="rounded-3xl border border-border bg-card p-8">
-                  <div className="font-display text-xs tracking-widest text-flow">{cat}</div>
-                  <ul className="mt-6 space-y-3">
-                    {tools.map((t) => (
-                      <li key={t} className="flex items-center gap-3 text-ink">
-                        <span className="h-1.5 w-1.5 rounded-full bg-prompt" />
-                        <span className="font-medium">{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.2}>
+            <p className="mt-8 max-w-2xl text-lg text-ink/70">
+              Donde una agencia tradicional necesita semanas y un equipo de 8 personas, nuestra metodología automatizada con IA entrega lo mismo en días — con trazabilidad completa de cada decisión y cada resultado.
+            </p>
+          </Reveal>
 
           <Reveal delay={0.3}>
             <div className="mt-16">

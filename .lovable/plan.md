@@ -1,77 +1,126 @@
-## Typography Leveling Plan — Rank Your Brand
+## Objetivo
 
-### Goal
-Equilibrar la jerarquía tipográfica del sitio. Hoy todo display usa **Aglet Mono Black (900)**, lo que satura los H1/H2 y aplana la diferencia entre títulos, subtítulos y elementos editoriales. Vamos a incorporar la nueva **Aglet Mono Light Italic** (recién subida) como contrapeso editorial y reglar pesos por nivel.
+Quitar toda mención pública a stack tecnológico (N8N, GPT-4, Claude, DataForSEO, Airtable, Perplexity, OpenAI API, Looker Studio, etc.), reescribir el título "La mayoría de agencias usan ChatGPT…", unificar las dos opciones de audit en un único "Free Audit", y reemplazar el título "El SEO que conoces ya es obsoleto" del home con un mensaje más persuasivo. Cambios solo de copy/UI; sin tocar lógica de negocio.
 
-### 1. Instalar la nueva fuente
-- Copiar `user-uploads://AgletMonoTrial-LightItalic.otf` → `src/assets/fonts/AgletMono-LightItalic.otf`.
-- Agregar `@font-face` en `src/styles.css` con `font-weight: 300; font-style: italic;`.
-- Mantener Black (900) regular + Black Italic (900) ya existentes.
+---
 
-### 2. Sistema de escala (nuevo)
-Definir reglas de uso por jerarquía — sin tocar layouts, solo `className`:
+## 1. Página Metodología (`src/routes/es.metodologia.tsx` y `src/routes/methodology.tsx`)
 
-| Nivel | Fuente / peso | Uso |
-|---|---|---|
-| **Eyebrow / kicker** (xs uppercase tracking) | Aglet Mono **Black 900** | Tags pequeños (`PHASE 01`, `CASE STUDY #0`). Sin cambios. |
-| **H1 hero** (clamp 4–9rem) | Aglet Mono **Black 900** | Solo el headline principal de cada página. Sin cambios. |
-| **H1 secundario** (text-5xl en services detail) | Aglet **Black 900** | Sin cambios. |
-| **H2 de sección** (text-4xl/5xl/6xl) | Aglet **Black 900**, con **una palabra clave en Light Italic** (acento editorial). | Crear utility `.accent-italic` que aplica `font-weight:300; font-style:italic;` al `<span>` resaltado. |
-| **H3 de tarjeta** (text-2xl/3xl) | **Inter SemiBold** (no Aglet) | Aliviar la densidad mono en cards: pillars, services preview, methodology agents, FAQ headers, includes. |
-| **Números grandes / métricas** (text-7xl, text-9xl) | Aglet **Black 900** | Sin cambios. |
-| **Subtítulos descriptivos / lead** | Inter Regular | Sin cambios. |
+### 1a. Tarjetas de agentes — quitar tecnologías del `note`
+Reemplazar el campo `note` para que describa el rol con lenguaje de proceso, no de herramientas:
 
-**Regla resumida:** Aglet Black sigue siendo la voz principal en H1, H2 y números. Light Italic aparece **solo como acento** dentro de H2 (una o dos palabras clave). H3 baja a Inter SemiBold para crear contraste y respirar.
+- The Scout · "Detecta oportunidades y mapea el panorama competitivo"
+- The Architect · "Define la estrategia editorial y técnica por cliente"
+- The Writer · "Produce contenido alineado a marca y a intención de búsqueda"
+- The Watchdog · "Vigila salud técnica, rankings y citas en IA 24/7"
+- The Reporter · "Consolida resultados y los entrega listos para decisión"
 
-### 3. Cambios concretos por archivo
+(Mismo cambio en `methodology.tsx` con copy en EN.)
 
-**`src/styles.css`**
-- Añadir `@font-face` Light Italic (300, italic).
-- Añadir utilities:
-  - `.accent-italic { font-weight: 300; font-style: italic; letter-spacing: -0.01em; }`
-  - `.h3-soft { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.01em; }`
+### 1b. Quote bajo el sistema multi-agente
+Sustituir:
+> "Esto no es una metáfora. Este es nuestro sistema de producción real. Construido sobre N8N, GPT-4, Airtable y DataForSEO."
 
-**`src/routes/index.tsx`**
-- H1 hero: envolver palabra de remate (ej. *"cited"*, *"visibility"*) en `<span class="accent-italic text-prompt">`.
-- H2 de GEO Gap, Pillars, Case Study #0, Services preview, FAQs CTA: aplicar `accent-italic` a la palabra de contraste.
-- H3 de pillars (`.pillars` cards) y services preview (`s.tag` queda Black, pero `h3` interno descripciones) → revisar: las tags de tier son identidad → quedan Black. Los `h3` descriptivos (pillars cards y dashboard labels) → `h3-soft`.
+Por:
+> "Esto no es una metáfora. Es nuestro sistema de producción real: una línea de trabajo automatizada que opera 24/7 con IA, supervisada por estrategas humanos."
 
-**`src/routes/methodology.tsx`**
-- H1 + H2 hero: keyword en `accent-italic`.
-- Agent name (`a.name`, text-xl): pasar a `h3-soft`.
-- Comparison table headers: mantener Black.
+### 1c. Sección "Nativo de IA vs Sabor a IA" — nuevo título
+Reemplazar:
+> "La mayoría de agencias usan ChatGPT. Nuestras operaciones corren sobre él."
 
-**`src/routes/services.index.tsx`**
-- H1: keyword en italic.
-- H2 de tier cards (`t.tag`): se mantienen Black (son identidad de producto).
-- H2 final CTA: keyword en italic.
+Por (propuesta — el dev puede ajustar matiz si quiere):
+> "La mayoría de agencias le piden cosas a la IA. Nosotros operamos como una agencia AI-Native."
 
-**`src/components/site/ServiceDetail.tsx`**
-- H1 (tag): Black, sin cambios.
-- H2 de "What you get / Process / Ideal client / FAQ / Final CTA": keyword en italic.
-- H3 de includes y FAQ questions → `h3-soft`.
+Subtexto / italic: "Cada proceso —investigación, contenido, monitoreo, reporte— está orquestado por IA y validado por estrategas."
 
-**`src/routes/audit.tsx`**
-- H1: keyword en italic.
-- H2 de tier cards (`title`): Black sin cambios.
-- H2 de success states: keyword en italic.
+(EN: "Most agencies prompt AI. We operate as an AI-Native agency." + subcopy paralelo.)
 
-**`src/routes/contact.tsx`** (verificar y aplicar mismo patrón)
+### 1d. Sección "Stack tecnológico" — eliminar completa
+Borrar la sección final completa (eyebrow "Stack tecnológico · transparencia radical", H2 "Las herramientas que nos hacen 10× más rápidos", y la grilla de 3 tarjetas con Airtable / DataForSEO / Ubersuggest / N8N / OpenAI API / Perplexity API / Google Workspace / Lovable / Looker Studio).
 
-**`src/routes/__root.tsx`** (404 page)
-- "doesn't exist" ya está en italic con `<span class="italic text-prompt">` → reemplazar por `accent-italic` para usar la nueva Light Italic real.
+Reemplazar por una sección nueva, sin nombrar herramientas, que mantenga el mensaje de velocidad/eficiencia y el CTA final:
 
-**Rutas `es.*`** — replicar exactamente los mismos `className` cambios en sus equivalentes en español para mantener paridad.
+- Eyebrow: "Operación AI-Native"
+- H2: "Más rápidos. Más consistentes. *Más medibles.*"
+- Párrafo corto: "Donde una agencia tradicional necesita semanas y un equipo de 8 personas, nuestra metodología automatizada con IA entrega lo mismo en días — con trazabilidad completa de cada decisión y cada resultado."
+- Mantener el CTA actual ("Reserva una llamada estratégica" / "Book a strategy call").
 
-### 4. Lo que NO se toca
-- Estructura, layouts, animaciones, colores, copy en sí.
-- Paleta y tokens (la regla 55/35/15/5 sigue intacta).
-- Font-weight de eyebrows, números, navegación, botones.
+También limpiar el `meta description` de la `head()`:
+- ES: "El sistema operativo de RYB: una metodología AI-Native que convierte el SEO en una línea de producción medible, rápida y transparente."
+- EN equivalente.
 
-### 5. QA
-- Revisar visualmente Home, Methodology, Services overview, los 3 service detail, Audit, Contact en viewport actual (1014px) y mobile.
-- Verificar contraste y legibilidad de Light Italic sobre fondos canvas, ink y diagonal.
-- Confirmar que la Light Italic carga (network tab) y no hace fallback a system italic.
+---
 
-### Resultado esperado
-Jerarquía visual con tres voces claras: **Black Mono** (autoridad/identidad), **Light Italic Mono** (acento editorial premium), **Inter SemiBold** (legibilidad en cards). El sitio se siente menos "todo grita" y más editorial-técnico — alineado con la metáfora de la diagonal perfecta.
+## 2. Página Audit — unificar a un solo "Free Audit"
+
+Archivos: `src/routes/audit.tsx` (EN) y `src/routes/es.auditoria.tsx` (ES).
+
+### 2a. Eliminar el toggle de tiers
+- Quitar el estado `tier` / `setTier` y el tipo `Tier`.
+- Quitar la grilla `lg:grid-cols-2` con las dos `TierCard`.
+- Quitar el componente `TierCard` (ya no se usa).
+- Quitar la rama `tier === "full"` en `ThankYou` y el `<input type="hidden" name="tier" />`.
+- Quitar el badge "Selected option · Full SEO Audit · $497" del form; dejar solo "Free Audit".
+
+### 2b. Nueva sección única "Free Audit" (una sola tarjeta o bloque centrado encima del form)
+
+Contenido exacto a mostrar (ES — EN paralelo):
+
+- Badge: "100% gratuito"
+- Título: "Free Audit"
+- Subtítulo: "Una radiografía clara de tu visibilidad en Google y en motores con IA."
+- Precio: "Gratis" (sin línea de "refundable" ni referencia a páginas/duración del informe)
+- Bullets (en este orden, sin mencionar número de páginas):
+  1. Análisis SEO del sitio web actual
+  2. On-Page SEO Score
+  3. Traffic Overview (Google y AI)
+  4. Salud del sitio web
+  5. 3 problemas técnicos críticos que bloquean tu posicionamiento
+  6. Análisis de oportunidades de keywords (5 keywords)
+  7. Recomendación del servicio de RYB que necesitas
+
+(EN mirror: "On-Page SEO Score", "Traffic Overview (Google & AI)", "Website health", "3 critical technical issues blocking your rankings", "Keyword opportunity analysis (5 keywords)", "Recommended RYB service for you".)
+
+### 2c. Form
+- Botón submit: "Obtener mi Free Audit" / "Get my Free Audit".
+- `ThankYou`: dejar solo la versión actual del free (sin la rama de pago/$497), manteniendo los enlaces a metodología y servicios.
+
+### 2d. Metadata `head()`
+- ES title: "Free Audit SEO gratuito | Rank Your Brand"
+- ES description: "Descubre por qué tus competidores aparecen antes que tú. Free Audit con análisis SEO, salud del sitio, visibilidad en Google y AI, y recomendación personalizada."
+- EN title: "Free SEO Audit | Rank Your Brand"
+- EN description equivalente.
+- Eliminar menciones a "48 horas", "5 días", "$497" en hero, subhero y meta.
+
+### 2e. Hero copy
+- ES H1: mantener "Descubre por qué tus competidores aparecen antes que tú." (sigue siendo válido)
+- ES subhero: "Pide tu Free Audit y obtén una imagen clara de tu visibilidad en Google y en motores con IA, junto a la recomendación del servicio que más impacto tendrá en tu negocio."
+- EN: mismo enfoque, sin tiempos ni precios.
+- Breadcrumb: "Free Audit" en ambos idiomas.
+
+---
+
+## 3. Home — reemplazar "El SEO que conoces ya es obsoleto"
+
+Archivos: `src/routes/es.index.tsx` (~línea 195) y `src/routes/index.tsx` (~línea 195).
+
+Sustituir el H2:
+> "El SEO que conoces ya es obsoleto."
+
+Por (propuesta corta y persuasiva, manteniendo el eyebrow "La Brecha GEO"):
+> "Hay nuevas formas de aparecer en los motores de búsqueda. *Nosotros sabemos cómo.*"
+
+EN paralelo:
+> "There are new ways to show up in search. *We know how.*"
+
+Ajustar también el párrafo de apoyo para que conecte con el nuevo título, sin cambiar el resto de la sección (timeline 2020→2026 se queda igual):
+- ES: "Google ya no solo muestra enlaces — genera respuestas. Y la IA decide a quién cita. Te ayudamos a estar del lado correcto de ese cambio."
+- EN equivalente.
+
+---
+
+## 4. QA después de implementar
+
+- Buscar en el proyecto que no queden menciones públicas a: `N8N`, `GPT-4`, `Claude`, `Airtable`, `DataForSEO`, `Perplexity`, `OpenAI`, `Ubersuggest`, `Looker Studio` dentro de `src/routes/methodology.tsx` y `src/routes/es.metodologia.tsx` (en otras páginas se revisa solo si aparece, no se toca fuera de scope).
+- Validar que `/audit` y `/es/auditoria` ya no tienen tarjetas duplicadas ni el plan de $497, y que el form envía correctamente (un solo tier implícito = "free").
+- Validar que home (ES + EN) renderiza el nuevo H2 sin romper el grid del timeline.
