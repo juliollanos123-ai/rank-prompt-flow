@@ -7,27 +7,34 @@ import { Eyebrow } from "@/components/site/Eyebrow";
 import { Reveal } from "@/components/site/Reveal";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
-type Tier = "free" | "full";
-
 export const Route = createFileRoute("/es/auditoria")({
   head: () => ({
     meta: [
-      { title: "Diagnóstico web gratuito y Auditoría SEO completa | Rank Your Brand" },
+      { title: "Free Audit SEO gratuito | Rank Your Brand" },
       {
         name: "description",
         content:
-          "Descubre por qué tus competidores aparecen antes que tú. Diagnóstico gratuito en 48h o auditoría SEO completa (5 días, $497, reembolsable).",
+          "Descubre por qué tus competidores aparecen antes que tú. Free Audit con análisis SEO, salud del sitio, visibilidad en Google y AI, y recomendación personalizada.",
       },
-      { property: "og:title", content: "Diagnóstico Gratuito y Auditoría SEO Completa" },
-      { property: "og:description", content: "Diagnóstico gratuito en 48 horas o auditoría completa en 5 días." },
+      { property: "og:title", content: "Free Audit SEO" },
+      { property: "og:description", content: "Una radiografía clara de tu visibilidad en Google y en motores con IA." },
     ],
     links: [{ rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/audit" }],
   }),
   component: AuditoriaPage,
 });
 
+const AUDIT_ITEMS = [
+  "Análisis SEO del sitio web actual",
+  "On-Page SEO Score",
+  "Traffic Overview (Google y AI)",
+  "Salud del sitio web",
+  "3 problemas técnicos críticos que bloquean tu posicionamiento",
+  "Análisis de oportunidades de keywords (5 keywords)",
+  "Recomendación del servicio de RYB que necesitas",
+];
+
 function AuditoriaPage() {
-  const [tier, setTier] = useState<Tier>("free");
   const [submitted, setSubmitted] = useState(false);
 
   return (
@@ -43,7 +50,7 @@ function AuditoriaPage() {
         />
         <div className="mx-auto max-w-7xl px-6 text-canvas lg:px-10">
           <Reveal>
-            <Breadcrumbs tone="canvas" items={[{ label: "Inicio", to: "/es" }, { label: "Diagnóstico Gratuito" }]} />
+            <Breadcrumbs tone="canvas" items={[{ label: "Inicio", to: "/es" }, { label: "Free Audit" }]} />
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-balance text-5xl text-canvas lg:text-[clamp(3.5rem,7vw,6.5rem)]">
@@ -52,61 +59,18 @@ function AuditoriaPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl text-lg text-canvas/85">
-              Obtén una imagen clara de tu visibilidad digital en 48 horas — completamente gratuito.
-              O desbloquea una auditoría profunda que revela tu hoja de ruta SEO completa.
+              Pide tu Free Audit y obtén una imagen clara de tu visibilidad en Google y en motores con IA, junto a la recomendación del servicio que más impacto tendrá en tu negocio.
             </p>
           </Reveal>
         </div>
       </section>
 
       <section className="bg-canvas pb-28 lg:pb-36">
-        <div className="mx-auto max-w-7xl px-6 -mt-10 lg:px-10 lg:-mt-16">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <TierCard
-              active={tier === "free"}
-              onSelect={() => setTier("free")}
-              badge="Más popular"
-              title="Diagnóstico Web Gratuito"
-              subtitle="Entregado en 48 horas. Sin compromiso."
-              price="Gratis"
-              deliverable="Informe PDF (5–7 páginas)"
-              items={[
-                "3 problemas técnicos críticos que bloquean tu posicionamiento",
-                "2–3 keywords de alto valor B2B que te estás perdiendo",
-                "Tu visibilidad en Google AI, ChatGPT y Perplexity",
-                "Plan de acción priorizado a 30 días",
-                "Recomendación de servicio (SEO Técnico / SEO para B2B / Agencia SEO IA)",
-              ]}
-              tone="prompt"
-            />
-            <TierCard
-              active={tier === "full"}
-              onSelect={() => setTier("full")}
-              badge="Más completo"
-              title="Auditoría SEO Completa"
-              subtitle="Análisis profundo en 5 días hábiles."
-              price="$497 USD"
-              priceNote="Reembolsable si nos contratas en 30 días"
-              deliverable="PDF de 20 páginas + video walkthrough de 30 min"
-              items={[
-                "Todo lo del Diagnóstico Gratuito",
-                "Análisis SEO técnico completo (50+ puntos de control)",
-                "Benchmarking de competidores (3–5 jugadores clave)",
-                "Análisis de oportunidades de keywords (100+ keywords)",
-                "Auditoría de brechas de contenido y perfil de backlinks",
-                "Hoja de ruta de optimización GEO (estrategia de citas en IA)",
-                "Hoja de ruta de implementación de 90 días",
-              ]}
-              tone="flow"
-            />
-          </div>
+        <div className="mx-auto max-w-5xl px-6 -mt-10 lg:px-10 lg:-mt-16">
+          <AuditCard />
 
-          <div id="form" className="mt-16 rounded-3xl border border-border bg-card p-8 shadow-card lg:p-12">
-            {submitted ? (
-              <ThankYou tier={tier} />
-            ) : (
-              <AuditForm tier={tier} onSubmit={() => setSubmitted(true)} />
-            )}
+          <div id="form" className="mt-12 rounded-3xl border border-border bg-card p-8 shadow-card lg:p-12">
+            {submitted ? <ThankYou /> : <AuditForm onSubmit={() => setSubmitted(true)} />}
           </div>
         </div>
       </section>
@@ -114,65 +78,35 @@ function AuditoriaPage() {
   );
 }
 
-function TierCard({
-  active, onSelect, badge, title, subtitle, price, priceNote, deliverable, items, tone,
-}: {
-  active: boolean;
-  onSelect: () => void;
-  badge: string;
-  title: string;
-  subtitle: string;
-  price: string;
-  priceNote?: string;
-  deliverable: string;
-  items: string[];
-  tone: "prompt" | "flow";
-}) {
-  const ring = active
-    ? tone === "prompt"
-      ? "border-prompt ring-2 ring-prompt/20"
-      : "border-flow ring-2 ring-flow/20"
-    : "border-border hover:border-ink/30";
-  const accent = tone === "prompt" ? "bg-prompt text-canvas" : "bg-flow text-canvas";
+function AuditCard() {
   return (
-    <motion.button
-      type="button"
-      onClick={onSelect}
+    <motion.div
       whileHover={{ y: -4 }}
-      className={`group relative flex h-full flex-col rounded-3xl border bg-canvas p-8 text-left transition-all lg:p-10 ${ring}`}
+      className="relative flex h-full flex-col rounded-3xl border border-prompt bg-canvas p-8 text-left ring-2 ring-prompt/20 lg:p-10"
     >
-      <span className={`absolute right-6 top-6 rounded-full px-3 py-1 font-display text-[10px] uppercase tracking-widest ${accent}`}>
-        {badge}
+      <span className="absolute right-6 top-6 rounded-full bg-prompt px-3 py-1 font-display text-[10px] uppercase tracking-widest text-canvas">
+        100% gratuito
       </span>
-      <h2 className="text-3xl lg:text-4xl">{title}</h2>
-      <p className="mt-3 text-ink/65">{subtitle}</p>
+      <h2 className="text-3xl lg:text-4xl">Free Audit</h2>
+      <p className="mt-3 text-ink/65">Una radiografía clara de tu visibilidad en Google y en motores con IA.</p>
 
       <div className="mt-8 flex items-end gap-3">
-        <div className="font-display font-black text-5xl text-prompt">{price}</div>
-        {priceNote && <div className="pb-2 text-xs text-ink/50">{priceNote}</div>}
+        <div className="font-display font-black text-5xl text-prompt">Gratis</div>
       </div>
 
-      <ul className="mt-8 space-y-3 text-ink/85">
-        {items.map((b) => (
+      <ul className="mt-8 grid gap-3 text-ink/85 sm:grid-cols-2">
+        {AUDIT_ITEMS.map((b) => (
           <li key={b} className="flex items-start gap-3 text-sm">
             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-prompt" />
             {b}
           </li>
         ))}
       </ul>
-
-      <div className="mt-auto pt-8 text-xs uppercase tracking-widest text-ink/50">
-        Entregable: <span className="text-ink/80">{deliverable}</span>
-      </div>
-
-      <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${active ? "text-prompt" : "text-ink/70"}`}>
-        {active ? "Seleccionado" : "Elegir este"} <span aria-hidden>→</span>
-      </div>
-    </motion.button>
+    </motion.div>
   );
 }
 
-function AuditForm({ tier, onSubmit }: { tier: Tier; onSubmit: () => void }) {
+function AuditForm({ onSubmit }: { onSubmit: () => void }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -204,12 +138,11 @@ function AuditForm({ tier, onSubmit }: { tier: Tier; onSubmit: () => void }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-wrap items-center gap-3">
-        <Eyebrow>Opción seleccionada</Eyebrow>
+        <Eyebrow>Solicitud</Eyebrow>
         <span className="rounded-full bg-prompt/10 px-3 py-1 font-display text-xs uppercase tracking-widest text-prompt">
-          {tier === "free" ? "Diagnóstico Gratuito" : "Auditoría SEO Completa · $497"}
+          Free Audit
         </span>
       </div>
-      <input type="hidden" name="tier" value={tier} />
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <Field label="Nombre completo" name="name" required />
@@ -253,7 +186,7 @@ function AuditForm({ tier, onSubmit }: { tier: Tier; onSubmit: () => void }) {
         disabled={loading}
         className="group mt-10 inline-flex items-center gap-3 rounded-full bg-prompt px-7 py-4 font-display text-sm uppercase tracking-wider text-primary-foreground transition-all hover:shadow-elegant disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {loading ? "Enviando…" : tier === "free" ? "Obtener mi diagnóstico gratuito" : "Solicitar auditoría completa"}
+        {loading ? "Enviando…" : "Obtener mi Free Audit"}
         {!loading && <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>}
       </button>
       <p className="mt-4 text-xs text-ink/50">
@@ -284,31 +217,12 @@ function Field({
   );
 }
 
-function ThankYou({ tier }: { tier: Tier }) {
-  if (tier === "full") {
-    return (
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-        <div className="font-display text-xs tracking-[0.3em] text-prompt">Confirmado</div>
-        <h2 className="mt-4 text-3xl lg:text-4xl">
-          Tu Auditoría SEO Completa <span className="accent-italic text-prompt">está en marcha.</span>
-        </h2>
-        <ol className="mt-8 space-y-4 text-ink/75">
-          <li><strong className="text-ink">1.</strong> Recibirás un enlace de pago por email (PayPal o Stripe).</li>
-          <li><strong className="text-ink">2.</strong> Una vez confirmado el pago, comenzamos la auditoría.</li>
-          <li><strong className="text-ink">3.</strong> Entregamos tu informe completo en 5 días hábiles.</li>
-          <li><strong className="text-ink">4.</strong> Programamos un video walkthrough de 30 minutos.</li>
-        </ol>
-        <p className="mt-6 rounded-xl border border-prompt/20 bg-prompt/5 p-4 text-sm text-ink/80">
-          Recuerda: los $497 son totalmente reembolsables si nos contratas en 30 días. Espera un email de <strong>julio@rankyourbrand.co</strong> con los detalles del pago.
-        </p>
-      </motion.div>
-    );
-  }
+function ThankYou() {
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
       <div className="font-display text-xs tracking-[0.3em] text-prompt">En camino</div>
       <h2 className="mt-4 text-3xl lg:text-4xl">
-        Tu diagnóstico gratuito llegará <span className="accent-italic text-prompt">en menos de 48 horas.</span>
+        Tu Free Audit <span className="accent-italic text-prompt">está en marcha.</span>
       </h2>
       <ol className="mt-8 space-y-4 text-ink/75">
         <li><strong className="text-ink">1.</strong> Analizamos tu sitio y competidores.</li>
