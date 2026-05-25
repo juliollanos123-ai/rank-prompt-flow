@@ -306,61 +306,6 @@ function Pillars() {
   );
 }
 
-function CaseStudyZero() {
-  const metrics = [
-    { label: "Days since launch", value: "42" },
-    { label: "Organic keywords ranking", value: "127" },
-    { label: "ChatGPT citations", value: "9" },
-    { label: "Perplexity mentions", value: "14" },
-    { label: "Google AI overviews", value: "6" },
-    { label: "Articles published", value: "23" },
-  ];
-  return (
-    <section className="bg-canvas py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
-          <Reveal>
-            <div>
-              <Eyebrow>Case Study #0</Eyebrow>
-              <h2 className="mt-6 text-4xl lg:text-6xl">
-                This website <span className="accent-italic text-prompt">is</span> our first case study.
-              </h2>
-              <p className="mt-6 max-w-md text-ink/70">
-                We don't just talk about AI-native SEO. We practice it on ourselves, in public. Every metric below comes from this exact site.
-              </p>
-              <div className="mt-8">
-                <CTA to="/methodology">See the methodology</CTA>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <div className="overflow-hidden rounded-3xl border border-ink/10 bg-ink text-canvas shadow-elegant">
-              <div className="flex items-center justify-between border-b border-canvas/10 px-6 py-4">
-                <div className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-prompt animate-pulse" />
-                  <span className="font-display text-xs tracking-widest text-canvas/70">RYB.CO · LIVE</span>
-                </div>
-                <span className="text-xs text-canvas/40">Updated 6 min ago</span>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-3">
-                {metrics.map((m) => (
-                  <div key={m.label} className="border-b border-r border-canvas/10 p-6 last:border-r-0">
-                    <div className="font-display font-black text-4xl text-canvas lg:text-5xl">{m.value}</div>
-                    <div className="mt-2 text-xs uppercase tracking-wider text-canvas/50">{m.label}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-canvas/10 bg-canvas/[0.04] px-6 py-4 text-xs text-canvas/50">
-                Source: GSC + DataForSEO + manual AI checks · Pulled hourly
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ServicesPreview() {
   const services = [
