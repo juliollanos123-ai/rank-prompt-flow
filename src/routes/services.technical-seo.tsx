@@ -22,8 +22,7 @@ export const Route = createFileRoute("/services/technical-seo")({
       secondaryCta={{ label: "Contact us", to: "/contact" }}
       forWho={[
         "B2B companies with existing websites (not brand new)",
-        "Annual revenue between $500k and $5M",
-        "Current organic traffic under 5,000 visits/month",
+        "Current organic traffic under 1,000 visits/month",
         "Ready to invest in growth but need a foundation first",
       ]}
       notFit={[
@@ -33,16 +32,16 @@ export const Route = createFileRoute("/services/technical-seo")({
       ]}
       includes={[
         ["Phase 1 — Audit", "Technical SEO audit, competitor landscape, keyword gaps and a GEO baseline across ChatGPT, Perplexity and Google AI."],
-        ["Phase 2 — Development", "Full website development (rebuild or fresh), information architecture, internal linking and schema (Organization, Product, FAQ)."],
-        ["Phase 3 — Optimization", "GA4, Search Console and Tag Manager setup, Core Web Vitals work, sitemap, robots.txt and conversion tracking."],
-        ["Strategy document", "PDF strategy doc with a 90-day growth roadmap and an optional training session."],
+        ["Phase 2 — Keywords & architecture", "Keyword research focused on the highest-volume opportunities and a value-driven transactional architecture that lays the foundation of a structured, functional website."],
+        ["Phase 3 — Development", "Full website development (rebuild or fresh), information architecture, internal linking and schema (Organization, Product, FAQ)."],
+        ["Phase 4 — Optimization", "GA4, Search Console and Tag Manager setup, Core Web Vitals work, sitemap, robots.txt and conversion tracking."],
       ]}
       timeline={[
-        ["Week 1", "Discovery & audit"],
-        ["Week 2–3", "Website development"],
-        ["Week 4", "Design & content architecture"],
-        ["Week 5", "Analytics & optimization"],
-        ["Week 6", "Testing & launch"],
+        ["01", "Discovery & audit"],
+        ["02", "Keywords & site architecture"],
+        ["03", "Design & content architecture"],
+        ["04", "Website development"],
+        ["05", "Analytics, measurement & launch"],
       ]}
       outcomes={[
         "Technical foundation ready for organic growth",

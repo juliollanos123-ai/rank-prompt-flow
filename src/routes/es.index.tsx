@@ -252,13 +252,13 @@ function Pillars() {
       tag: "01",
       title: "Arquitectura que convierte",
       body:
-        "Construimos sitios web B2B diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
+        "Construimos sitios web diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
     },
     {
       tag: "02",
       title: "Operaciones nativas de IA",
       body:
-        "Nuestros flujos de trabajo N8N + LLM producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor costo.",
+        "Nuestros flujos AI-Native producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor costo.",
     },
     {
       tag: "03",
@@ -277,6 +277,11 @@ function Pillars() {
           <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
             Construimos sistemas de visibilidad, <span className="accent-italic text-prompt">no campañas de SEO.</span>
           </h2>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="mt-8">
+            <CTA to="/es/metodologia" variant="outline-canvas">Ver la metodología</CTA>
+          </div>
         </Reveal>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
@@ -300,61 +305,6 @@ function Pillars() {
   );
 }
 
-function CaseStudyZero() {
-  const metrics = [
-    { label: "Días desde el lanzamiento", value: "42" },
-    { label: "Keywords orgánicas posicionadas", value: "127" },
-    { label: "Citas en ChatGPT", value: "9" },
-    { label: "Menciones en Perplexity", value: "14" },
-    { label: "Google AI overviews", value: "6" },
-    { label: "Artículos publicados", value: "23" },
-  ];
-  return (
-    <section className="bg-canvas py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
-          <Reveal>
-            <div>
-              <Eyebrow>Caso de Estudio #0</Eyebrow>
-              <h2 className="mt-6 text-4xl lg:text-6xl">
-                Este sitio web <span className="accent-italic text-prompt">es</span> nuestro primer caso de estudio.
-              </h2>
-              <p className="mt-6 max-w-md text-ink/70">
-                No solo hablamos de SEO nativo de IA. Lo practicamos en nosotros mismos, en público. Cada métrica que aparece a continuación viene de este mismo sitio.
-              </p>
-              <div className="mt-8">
-                <CTA to="/es/metodologia">Ver la metodología</CTA>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <div className="overflow-hidden rounded-3xl border border-ink/10 bg-ink text-canvas shadow-elegant">
-              <div className="flex items-center justify-between border-b border-canvas/10 px-6 py-4">
-                <div className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-prompt animate-pulse" />
-                  <span className="font-display text-xs tracking-widest text-canvas/70">RYB.CO · EN VIVO</span>
-                </div>
-                <span className="text-xs text-canvas/40">Actualizado hace 6 min</span>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-3">
-                {metrics.map((m) => (
-                  <div key={m.label} className="border-b border-r border-canvas/10 p-6 last:border-r-0">
-                    <div className="font-display font-black text-4xl text-canvas lg:text-5xl">{m.value}</div>
-                    <div className="mt-2 text-xs uppercase tracking-wider text-canvas/50">{m.label}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-canvas/10 bg-canvas/[0.04] px-6 py-4 text-xs text-canvas/50">
-                Fuente: GSC + DataForSEO + revisiones manuales de IA · Actualizado cada hora
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ServicesPreview() {
   const services = [
@@ -542,7 +492,7 @@ function HomeEs() {
       <Hero />
       <GeoGap />
       <Pillars />
-      <CaseStudyZero />
+      
       <ServicesPreview />
       <FAQ />
       <FinalCTA />

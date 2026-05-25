@@ -40,9 +40,9 @@ export const Route = createFileRoute("/es/servicios/seo-b2b")({
         ["Enfoque en generación de leads", "Seguimiento y atribución de leads cualificados. Analytics enfocado en resultados de negocio, no en tráfico vanidoso."],
       ]}
       timeline={[
-        ["Mes 1", "Onboarding + calendario de contenido + primeros artículos"],
-        ["Mes 2–6", "Producción compuesta + link building + CRO"],
-        ["Mes 6+", "Escalar lo que funciona, expandir a nuevos territorios de keywords"],
+        ["01", "Onboarding + calendario de contenido + primeros artículos"],
+        ["02", "Producción compuesta + link building + CRO"],
+        ["03", "Escalar lo que funciona, expandir a nuevos territorios de keywords"],
       ]}
       outcomes={[
         "Mes 3 — +20–30% de tráfico orgánico, momentum visible en movimiento de keywords",
