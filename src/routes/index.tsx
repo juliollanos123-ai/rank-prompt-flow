@@ -493,7 +493,7 @@ function Home() {
       <Hero />
       <GeoGap />
       <Pillars />
-      <CaseStudyZero />
+      
       <ServicesPreview />
       <FAQ />
       <FinalCTA />
