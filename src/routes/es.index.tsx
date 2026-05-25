@@ -252,13 +252,13 @@ function Pillars() {
       tag: "01",
       title: "Arquitectura que convierte",
       body:
-        "Construimos sitios web B2B diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
+        "Construimos sitios web diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
     },
     {
       tag: "02",
       title: "Operaciones nativas de IA",
       body:
-        "Nuestros flujos de trabajo N8N + LLM producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor costo.",
+        "Nuestros flujos AI-Native producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor costo.",
     },
     {
       tag: "03",
@@ -277,6 +277,11 @@ function Pillars() {
           <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
             Construimos sistemas de visibilidad, <span className="accent-italic text-prompt">no campañas de SEO.</span>
           </h2>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="mt-8">
+            <CTA to="/es/metodologia" variant="outline-canvas">Ver la metodología</CTA>
+          </div>
         </Reveal>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
