@@ -278,6 +278,12 @@ function Pillars() {
             We build visibility systems, <span className="accent-italic text-prompt">not SEO campaigns.</span>
           </h2>
         </Reveal>
+        <Reveal delay={0.15}>
+          <div className="mt-8">
+            <CTA to="/methodology" variant="outline-canvas">See the methodology</CTA>
+          </div>
+        </Reveal>
+
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {pillars.map((p, i) => (
