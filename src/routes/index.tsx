@@ -192,13 +192,13 @@ function GeoGap() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            The SEO you know <span className="accent-italic text-prompt">is already obsolete.</span>
+            There are new ways to show up in search. <span className="accent-italic text-prompt">We know how.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-6 max-w-2xl text-lg text-ink/70">
-            The game changed in 2024. Google doesn't just show links anymore — it
-            generates answers. And AI decides who gets cited.
+            Google doesn't just show links anymore — it generates answers.
+            And AI decides who gets cited. We help you stay on the right side of that shift.
           </p>
         </Reveal>
 
