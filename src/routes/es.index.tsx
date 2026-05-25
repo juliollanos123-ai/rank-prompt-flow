@@ -492,7 +492,7 @@ function HomeEs() {
       <Hero />
       <GeoGap />
       <Pillars />
-      <CaseStudyZero />
+      
       <ServicesPreview />
       <FAQ />
       <FinalCTA />
