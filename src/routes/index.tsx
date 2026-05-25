@@ -252,13 +252,13 @@ function Pillars() {
       tag: "01",
       title: "Architecture that converts",
       body:
-        "We build B2B websites designed to guide visitors from first click to contact. Not pretty pages — sales systems.",
+        "We build websites designed to guide visitors from first click to contact. Not pretty pages — sales systems.",
     },
     {
       tag: "02",
       title: "AI-native operations",
       body:
-        "Our N8N + LLM workflows produce strategic content at scale without sacrificing quality. More speed. Better results. Lower cost.",
+        "Our AI-Native workflows produce strategic content at scale without sacrificing quality. More speed. Better results. Lower cost.",
     },
     {
       tag: "03",
