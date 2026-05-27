@@ -192,13 +192,15 @@ function GeoGap() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            The SEO you know <span className="text-prompt italic">is already obsolete.</span>
+            There are new ways to show up in search.{" "}
+            <span className="text-prompt italic">We know how.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-6 max-w-2xl text-lg text-ink/70">
-            The game changed in 2024. Google doesn't just show links anymore — it
-            generates answers. And AI decides who gets cited.
+            AI systems now generate answers — not just lists of links. Your buyers
+            are getting cited brands as responses, before they ever click anything.
+            The question is whether your brand is one of them.
           </p>
         </Reveal>
 
@@ -252,13 +254,13 @@ function Pillars() {
       tag: "01",
       title: "Architecture that converts",
       body:
-        "We build B2B websites designed to guide visitors from first click to contact. Not pretty pages — sales systems.",
+        "We build websites designed to guide visitors from first click to contact. Not pretty pages — sales systems.",
     },
     {
       tag: "02",
       title: "AI-native operations",
       body:
-        "Our N8N + LLM workflows produce strategic content at scale without sacrificing quality. More speed. Better results. Lower cost.",
+        "Our AI-Native workflows produce strategic content at scale without sacrificing quality. More speed. Better results. Lower cost.",
     },
     {
       tag: "03",
@@ -295,6 +297,12 @@ function Pillars() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.35}>
+          <div className="mt-12">
+            <CTA to="/methodology" variant="outline-canvas">See the methodology</CTA>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -553,7 +561,6 @@ function Home() {
       <Hero />
       <GeoGap />
       <Pillars />
-      <CaseStudyZero />
       <ServicesPreview />
       <FAQ />
       <FinalCTA />

@@ -27,8 +27,7 @@ export const Route = createFileRoute("/es/servicios/seo-tecnico")({
       secondaryCta={{ label: "Contáctanos", to: "/es/contacto" }}
       forWho={[
         "Empresas B2B con sitios web existentes (no nuevas)",
-        "Ingresos anuales entre $500k y $5M",
-        "Tráfico orgánico actual menor a 5,000 visitas/mes",
+        "Tráfico orgánico actual menor a 1,000 visitas/mes",
         "Listas para invertir en crecimiento pero necesitan una base primero",
       ]}
       notFit={[
@@ -38,16 +37,16 @@ export const Route = createFileRoute("/es/servicios/seo-tecnico")({
       ]}
       includes={[
         ["Fase 1 — Auditoría", "Auditoría SEO técnica, panorama de competidores, brechas de keywords y una línea base GEO en ChatGPT, Perplexity y Google AI."],
-        ["Fase 2 — Desarrollo", "Desarrollo web completo (reconstrucción o nuevo), arquitectura de información, enlazado interno y schema (Organización, Producto, FAQ)."],
-        ["Fase 3 — Optimización", "Configuración de GA4, Search Console y Tag Manager, trabajo en Core Web Vitals, sitemap, robots.txt y seguimiento de conversiones."],
-        ["Documento de estrategia", "PDF de estrategia con una hoja de ruta de crecimiento de 90 días y una sesión de formación opcional."],
+        ["Fase 2 — Keywords y arquitectura", "Investigación de keywords con mayor volumen y construcción de una arquitectura transaccional de valor que sienta las bases de un sitio web estructurado y funcional."],
+        ["Fase 3 — Desarrollo", "Desarrollo web completo (reconstrucción o nuevo), arquitectura de información, enlazado interno y schema (Organización, Producto, FAQ)."],
+        ["Fase 4 — Optimización", "Configuración de GA4, Search Console y Tag Manager, trabajo en Core Web Vitals, sitemap, robots.txt y seguimiento de conversiones."],
       ]}
       timeline={[
-        ["Semana 1", "Descubrimiento y auditoría"],
-        ["Semana 2–3", "Desarrollo del sitio web"],
-        ["Semana 4", "Diseño y arquitectura de contenido"],
-        ["Semana 5", "Analytics y optimización"],
-        ["Semana 6", "Testing y lanzamiento"],
+        ["01", "Descubrimiento y auditoría"],
+        ["02", "Keywords y arquitectura del sitio"],
+        ["03", "Diseño y arquitectura de contenido"],
+        ["04", "Desarrollo del sitio web"],
+        ["05", "Analytics, medición y lanzamiento"],
       ]}
       outcomes={[
         "Base técnica lista para el crecimiento orgánico",

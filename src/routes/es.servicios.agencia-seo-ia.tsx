@@ -46,10 +46,10 @@ export const Route = createFileRoute("/es/servicios/agencia-seo-ia")({
         ["Servicio premium", "Account manager dedicado, llamadas de estrategia quincenales, acceso directo por Slack/WhatsApp y respuesta prioritaria en 24 horas."],
       ]}
       timeline={[
-        ["Q1", "Auditoría de marca y entidades + línea base de IA"],
-        ["Q2", "Knowledge graph + lanzamiento de liderazgo de pensamiento"],
-        ["Q3", "Ingeniería de citas + cobertura en superficies de IA"],
-        ["Q4", "Dominancia de categoría + expansión a nuevas geografías"],
+        ["01", "Auditoría de marca y entidades + línea base de IA"],
+        ["02", "Knowledge graph + lanzamiento de liderazgo de pensamiento"],
+        ["03", "Ingeniería de citas + cobertura en superficies de IA"],
+        ["04", "Dominancia de categoría + expansión a nuevas geografías"],
       ]}
       outcomes={[
         "Mes 6 — La marca aparece en respuestas de ChatGPT para consultas objetivo",

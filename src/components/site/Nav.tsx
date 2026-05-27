@@ -24,6 +24,7 @@ const enLinks = [
 
 const esLinks = [
   { to: "/es/metodologia" as const, label: "Metodologia" },
+  { to: "/es/blog" as const, label: "Blog" },
   { to: "/es/contacto" as const, label: "Contacto" },
 ];
 

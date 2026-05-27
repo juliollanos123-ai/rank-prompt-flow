@@ -61,8 +61,8 @@ function ContactoPage() {
         </div>
       </section>
 
-      <section className="bg-canvas pb-28 lg:pb-36">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.6fr_1fr] lg:px-10">
+      <section className="bg-canvas pt-16 pb-28 lg:pt-20 lg:pb-36">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-[1.6fr_1fr] lg:px-10">
           <Reveal>
             <div className="rounded-3xl border border-border bg-card p-8 lg:p-12 shadow-card">
               {submitted ? (
@@ -74,7 +74,7 @@ function ContactoPage() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <aside className="space-y-8">
+            <aside className="space-y-8 lg:pt-4">
               <InfoBlock label="Email" value="julio@rankyourbrand.co" href="mailto:julio@rankyourbrand.co" />
               <InfoBlock label="Servimos a" value="Empresas B2B en EE.UU., Europa y LATAM" />
               <InfoBlock label="Tiempo de respuesta" value="Normalmente en 24 horas hábiles." />

@@ -18,6 +18,7 @@ import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as EsIndexRouteImport } from './routes/es.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ServicesTechnicalSeoServicesRouteImport } from './routes/services.technical-seo-services'
 import { Route as ServicesTechnicalSeoRouteImport } from './routes/services.technical-seo'
 import { Route as ServicesSeoForB2bRouteImport } from './routes/services.seo-for-b2b'
@@ -29,14 +30,20 @@ import { Route as ServicesAiSeoAgencyRouteImport } from './routes/services.ai-se
 import { Route as EsServiciosRouteImport } from './routes/es.servicios'
 import { Route as EsMetodologiaRouteImport } from './routes/es.metodologia'
 import { Route as EsContactoRouteImport } from './routes/es.contacto'
+import { Route as EsBlogRouteImport } from './routes/es.blog'
 import { Route as EsAuditoriaRouteImport } from './routes/es.auditoria'
+import { Route as BlogCategoryRouteImport } from './routes/blog.$category'
 import { Route as EsServiciosIndexRouteImport } from './routes/es.servicios.index'
+import { Route as EsBlogIndexRouteImport } from './routes/es.blog.index'
 import { Route as EsServiciosSeoTecnicoRouteImport } from './routes/es.servicios.seo-tecnico'
 import { Route as EsServiciosSeoB2bRouteImport } from './routes/es.servicios.seo-b2b'
 import { Route as EsServiciosScaleRouteImport } from './routes/es.servicios.scale'
 import { Route as EsServiciosLandmarkRouteImport } from './routes/es.servicios.landmark'
 import { Route as EsServiciosBlueprintRouteImport } from './routes/es.servicios.blueprint'
 import { Route as EsServiciosAgenciaSeoIaRouteImport } from './routes/es.servicios.agencia-seo-ia'
+import { Route as EsBlogCategoryRouteImport } from './routes/es.blog.$category'
+import { Route as BlogCategorySlugRouteImport } from './routes/blog.$category.$slug'
+import { Route as EsBlogCategorySlugRouteImport } from './routes/es.blog.$category.$slug'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -82,6 +89,11 @@ const EsIndexRoute = EsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => EsRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
 } as any)
 const ServicesTechnicalSeoServicesRoute =
   ServicesTechnicalSeoServicesRouteImport.update({
@@ -139,15 +151,30 @@ const EsContactoRoute = EsContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => EsRoute,
 } as any)
+const EsBlogRoute = EsBlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => EsRoute,
+} as any)
 const EsAuditoriaRoute = EsAuditoriaRouteImport.update({
   id: '/auditoria',
   path: '/auditoria',
   getParentRoute: () => EsRoute,
 } as any)
+const BlogCategoryRoute = BlogCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => BlogRoute,
+} as any)
 const EsServiciosIndexRoute = EsServiciosIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => EsServiciosRoute,
+} as any)
+const EsBlogIndexRoute = EsBlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EsBlogRoute,
 } as any)
 const EsServiciosSeoTecnicoRoute = EsServiciosSeoTecnicoRouteImport.update({
   id: '/seo-tecnico',
@@ -179,16 +206,33 @@ const EsServiciosAgenciaSeoIaRoute = EsServiciosAgenciaSeoIaRouteImport.update({
   path: '/agencia-seo-ia',
   getParentRoute: () => EsServiciosRoute,
 } as any)
+const EsBlogCategoryRoute = EsBlogCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => EsBlogRoute,
+} as any)
+const BlogCategorySlugRoute = BlogCategorySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogCategoryRoute,
+} as any)
+const EsBlogCategorySlugRoute = EsBlogCategorySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => EsBlogCategoryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/blog/$category': typeof BlogCategoryRouteWithChildren
   '/es/auditoria': typeof EsAuditoriaRoute
+  '/es/blog': typeof EsBlogRouteWithChildren
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
   '/es/servicios': typeof EsServiciosRouteWithChildren
@@ -200,22 +244,27 @@ export interface FileRoutesByFullPath {
   '/services/seo-for-b2b': typeof ServicesSeoForB2bRoute
   '/services/technical-seo': typeof ServicesTechnicalSeoRoute
   '/services/technical-seo-services': typeof ServicesTechnicalSeoServicesRoute
+  '/blog/': typeof BlogIndexRoute
   '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/blog/$category/$slug': typeof BlogCategorySlugRoute
+  '/es/blog/$category': typeof EsBlogCategoryRouteWithChildren
   '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
   '/es/servicios/scale': typeof EsServiciosScaleRoute
   '/es/servicios/seo-b2b': typeof EsServiciosSeoB2bRoute
   '/es/servicios/seo-tecnico': typeof EsServiciosSeoTecnicoRoute
+  '/es/blog/': typeof EsBlogIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
+  '/es/blog/$category/$slug': typeof EsBlogCategorySlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
-  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/methodology': typeof MethodologyRoute
+  '/blog/$category': typeof BlogCategoryRouteWithChildren
   '/es/auditoria': typeof EsAuditoriaRoute
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
@@ -227,26 +276,33 @@ export interface FileRoutesByTo {
   '/services/seo-for-b2b': typeof ServicesSeoForB2bRoute
   '/services/technical-seo': typeof ServicesTechnicalSeoRoute
   '/services/technical-seo-services': typeof ServicesTechnicalSeoServicesRoute
+  '/blog': typeof BlogIndexRoute
   '/es': typeof EsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/blog/$category/$slug': typeof BlogCategorySlugRoute
+  '/es/blog/$category': typeof EsBlogCategoryRouteWithChildren
   '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
   '/es/servicios/scale': typeof EsServiciosScaleRoute
   '/es/servicios/seo-b2b': typeof EsServiciosSeoB2bRoute
   '/es/servicios/seo-tecnico': typeof EsServiciosSeoTecnicoRoute
+  '/es/blog': typeof EsBlogIndexRoute
   '/es/servicios': typeof EsServiciosIndexRoute
+  '/es/blog/$category/$slug': typeof EsBlogCategorySlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/es': typeof EsRouteWithChildren
   '/methodology': typeof MethodologyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/blog/$category': typeof BlogCategoryRouteWithChildren
   '/es/auditoria': typeof EsAuditoriaRoute
+  '/es/blog': typeof EsBlogRouteWithChildren
   '/es/contacto': typeof EsContactoRoute
   '/es/metodologia': typeof EsMetodologiaRoute
   '/es/servicios': typeof EsServiciosRouteWithChildren
@@ -258,15 +314,20 @@ export interface FileRoutesById {
   '/services/seo-for-b2b': typeof ServicesSeoForB2bRoute
   '/services/technical-seo': typeof ServicesTechnicalSeoRoute
   '/services/technical-seo-services': typeof ServicesTechnicalSeoServicesRoute
+  '/blog/': typeof BlogIndexRoute
   '/es/': typeof EsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/blog/$category/$slug': typeof BlogCategorySlugRoute
+  '/es/blog/$category': typeof EsBlogCategoryRouteWithChildren
   '/es/servicios/agencia-seo-ia': typeof EsServiciosAgenciaSeoIaRoute
   '/es/servicios/blueprint': typeof EsServiciosBlueprintRoute
   '/es/servicios/landmark': typeof EsServiciosLandmarkRoute
   '/es/servicios/scale': typeof EsServiciosScaleRoute
   '/es/servicios/seo-b2b': typeof EsServiciosSeoB2bRoute
   '/es/servicios/seo-tecnico': typeof EsServiciosSeoTecnicoRoute
+  '/es/blog/': typeof EsBlogIndexRoute
   '/es/servicios/': typeof EsServiciosIndexRoute
+  '/es/blog/$category/$slug': typeof EsBlogCategorySlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -278,7 +339,9 @@ export interface FileRouteTypes {
     | '/es'
     | '/methodology'
     | '/services'
+    | '/blog/$category'
     | '/es/auditoria'
+    | '/es/blog'
     | '/es/contacto'
     | '/es/metodologia'
     | '/es/servicios'
@@ -290,22 +353,27 @@ export interface FileRouteTypes {
     | '/services/seo-for-b2b'
     | '/services/technical-seo'
     | '/services/technical-seo-services'
+    | '/blog/'
     | '/es/'
     | '/services/'
+    | '/blog/$category/$slug'
+    | '/es/blog/$category'
     | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
     | '/es/servicios/scale'
     | '/es/servicios/seo-b2b'
     | '/es/servicios/seo-tecnico'
+    | '/es/blog/'
     | '/es/servicios/'
+    | '/es/blog/$category/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/audit'
-    | '/blog'
     | '/contact'
     | '/methodology'
+    | '/blog/$category'
     | '/es/auditoria'
     | '/es/contacto'
     | '/es/metodologia'
@@ -317,15 +385,20 @@ export interface FileRouteTypes {
     | '/services/seo-for-b2b'
     | '/services/technical-seo'
     | '/services/technical-seo-services'
+    | '/blog'
     | '/es'
     | '/services'
+    | '/blog/$category/$slug'
+    | '/es/blog/$category'
     | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
     | '/es/servicios/scale'
     | '/es/servicios/seo-b2b'
     | '/es/servicios/seo-tecnico'
+    | '/es/blog'
     | '/es/servicios'
+    | '/es/blog/$category/$slug'
   id:
     | '__root__'
     | '/'
@@ -335,7 +408,9 @@ export interface FileRouteTypes {
     | '/es'
     | '/methodology'
     | '/services'
+    | '/blog/$category'
     | '/es/auditoria'
+    | '/es/blog'
     | '/es/contacto'
     | '/es/metodologia'
     | '/es/servicios'
@@ -347,21 +422,26 @@ export interface FileRouteTypes {
     | '/services/seo-for-b2b'
     | '/services/technical-seo'
     | '/services/technical-seo-services'
+    | '/blog/'
     | '/es/'
     | '/services/'
+    | '/blog/$category/$slug'
+    | '/es/blog/$category'
     | '/es/servicios/agencia-seo-ia'
     | '/es/servicios/blueprint'
     | '/es/servicios/landmark'
     | '/es/servicios/scale'
     | '/es/servicios/seo-b2b'
     | '/es/servicios/seo-tecnico'
+    | '/es/blog/'
     | '/es/servicios/'
+    | '/es/blog/$category/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuditRoute: typeof AuditRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   EsRoute: typeof EsRouteWithChildren
   MethodologyRoute: typeof MethodologyRoute
@@ -432,6 +512,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/es/'
       preLoaderRoute: typeof EsIndexRouteImport
       parentRoute: typeof EsRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/services/technical-seo-services': {
       id: '/services/technical-seo-services'
@@ -510,6 +597,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsContactoRouteImport
       parentRoute: typeof EsRoute
     }
+    '/es/blog': {
+      id: '/es/blog'
+      path: '/blog'
+      fullPath: '/es/blog'
+      preLoaderRoute: typeof EsBlogRouteImport
+      parentRoute: typeof EsRoute
+    }
     '/es/auditoria': {
       id: '/es/auditoria'
       path: '/auditoria'
@@ -517,12 +611,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsAuditoriaRouteImport
       parentRoute: typeof EsRoute
     }
+    '/blog/$category': {
+      id: '/blog/$category'
+      path: '/$category'
+      fullPath: '/blog/$category'
+      preLoaderRoute: typeof BlogCategoryRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/es/servicios/': {
       id: '/es/servicios/'
       path: '/'
       fullPath: '/es/servicios/'
       preLoaderRoute: typeof EsServiciosIndexRouteImport
       parentRoute: typeof EsServiciosRoute
+    }
+    '/es/blog/': {
+      id: '/es/blog/'
+      path: '/'
+      fullPath: '/es/blog/'
+      preLoaderRoute: typeof EsBlogIndexRouteImport
+      parentRoute: typeof EsBlogRoute
     }
     '/es/servicios/seo-tecnico': {
       id: '/es/servicios/seo-tecnico'
@@ -566,8 +674,78 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsServiciosAgenciaSeoIaRouteImport
       parentRoute: typeof EsServiciosRoute
     }
+    '/es/blog/$category': {
+      id: '/es/blog/$category'
+      path: '/$category'
+      fullPath: '/es/blog/$category'
+      preLoaderRoute: typeof EsBlogCategoryRouteImport
+      parentRoute: typeof EsBlogRoute
+    }
+    '/blog/$category/$slug': {
+      id: '/blog/$category/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$category/$slug'
+      preLoaderRoute: typeof BlogCategorySlugRouteImport
+      parentRoute: typeof BlogCategoryRoute
+    }
+    '/es/blog/$category/$slug': {
+      id: '/es/blog/$category/$slug'
+      path: '/$slug'
+      fullPath: '/es/blog/$category/$slug'
+      preLoaderRoute: typeof EsBlogCategorySlugRouteImport
+      parentRoute: typeof EsBlogCategoryRoute
+    }
   }
 }
+
+interface BlogCategoryRouteChildren {
+  BlogCategorySlugRoute: typeof BlogCategorySlugRoute
+}
+
+const BlogCategoryRouteChildren: BlogCategoryRouteChildren = {
+  BlogCategorySlugRoute: BlogCategorySlugRoute,
+}
+
+const BlogCategoryRouteWithChildren = BlogCategoryRoute._addFileChildren(
+  BlogCategoryRouteChildren,
+)
+
+interface BlogRouteChildren {
+  BlogCategoryRoute: typeof BlogCategoryRouteWithChildren
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogCategoryRoute: BlogCategoryRouteWithChildren,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface EsBlogCategoryRouteChildren {
+  EsBlogCategorySlugRoute: typeof EsBlogCategorySlugRoute
+}
+
+const EsBlogCategoryRouteChildren: EsBlogCategoryRouteChildren = {
+  EsBlogCategorySlugRoute: EsBlogCategorySlugRoute,
+}
+
+const EsBlogCategoryRouteWithChildren = EsBlogCategoryRoute._addFileChildren(
+  EsBlogCategoryRouteChildren,
+)
+
+interface EsBlogRouteChildren {
+  EsBlogCategoryRoute: typeof EsBlogCategoryRouteWithChildren
+  EsBlogIndexRoute: typeof EsBlogIndexRoute
+}
+
+const EsBlogRouteChildren: EsBlogRouteChildren = {
+  EsBlogCategoryRoute: EsBlogCategoryRouteWithChildren,
+  EsBlogIndexRoute: EsBlogIndexRoute,
+}
+
+const EsBlogRouteWithChildren =
+  EsBlogRoute._addFileChildren(EsBlogRouteChildren)
 
 interface EsServiciosRouteChildren {
   EsServiciosAgenciaSeoIaRoute: typeof EsServiciosAgenciaSeoIaRoute
@@ -595,6 +773,7 @@ const EsServiciosRouteWithChildren = EsServiciosRoute._addFileChildren(
 
 interface EsRouteChildren {
   EsAuditoriaRoute: typeof EsAuditoriaRoute
+  EsBlogRoute: typeof EsBlogRouteWithChildren
   EsContactoRoute: typeof EsContactoRoute
   EsMetodologiaRoute: typeof EsMetodologiaRoute
   EsServiciosRoute: typeof EsServiciosRouteWithChildren
@@ -603,6 +782,7 @@ interface EsRouteChildren {
 
 const EsRouteChildren: EsRouteChildren = {
   EsAuditoriaRoute: EsAuditoriaRoute,
+  EsBlogRoute: EsBlogRouteWithChildren,
   EsContactoRoute: EsContactoRoute,
   EsMetodologiaRoute: EsMetodologiaRoute,
   EsServiciosRoute: EsServiciosRouteWithChildren,
@@ -642,7 +822,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuditRoute: AuditRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   EsRoute: EsRouteWithChildren,
   MethodologyRoute: MethodologyRoute,

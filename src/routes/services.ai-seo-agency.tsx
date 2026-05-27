@@ -89,10 +89,10 @@ function AISEOPage() {
           ["White-glove service", "Dedicated account manager, bi-weekly strategy calls, direct Slack/WhatsApp access and 24-hour priority response."],
         ]}
         timeline={[
-          ["Q1", "Brand & entity audit + AI baseline"],
-          ["Q2", "Knowledge graph + thought leadership launch"],
-          ["Q3", "Citation engineering + AI surface coverage"],
-          ["Q4", "Category dominance + scale to new geos"],
+          ["01", "Brand & entity audit + AI baseline"],
+          ["02", "Knowledge graph + thought leadership launch"],
+          ["03", "Citation engineering + AI surface coverage"],
+          ["04", "Category dominance + scale to new geos"],
         ]}
         outcomes={[
           "Month 6 — Brand appears in ChatGPT answers for target queries",

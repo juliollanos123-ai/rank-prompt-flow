@@ -192,13 +192,15 @@ function GeoGap() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            El SEO que conoces <span className="text-prompt italic">ya es obsoleto.</span>
+            Hay nuevas formas de aparecer en los motores de búsqueda.{" "}
+            <span className="text-prompt italic">Nosotros sabemos cómo.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-6 max-w-2xl text-lg text-ink/70">
-            El juego cambió en 2024. Google ya no solo muestra enlaces — genera respuestas.
-            Y la IA decide quién recibe las citas.
+            Los sistemas de IA ahora generan respuestas — no solo listas de enlaces. Tus compradores
+            reciben marcas citadas como respuesta antes de hacer clic en nada.
+            La pregunta es si tu marca es una de ellas.
           </p>
         </Reveal>
 
@@ -252,13 +254,13 @@ function Pillars() {
       tag: "01",
       title: "Arquitectura que convierte",
       body:
-        "Construimos sitios web B2B diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
+        "Construimos sitios web diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
     },
     {
       tag: "02",
       title: "Operaciones nativas de IA",
       body:
-        "Nuestros flujos de trabajo N8N + LLM producen contenido estratégico a escala sin sacrificar la calidad. Más velocidad. Mejores resultados. Menor costo.",
+        "Nuestros flujos AI-Native producen contenido estratégico a escala sin sacrificar calidad. Más velocidad. Mejores resultados. Menor costo.",
     },
     {
       tag: "03",
@@ -295,6 +297,12 @@ function Pillars() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.35}>
+          <div className="mt-12">
+            <CTA to="/es/metodologia" variant="outline-canvas">Ver la metodología</CTA>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -542,7 +550,6 @@ function HomeEs() {
       <Hero />
       <GeoGap />
       <Pillars />
-      <CaseStudyZero />
       <ServicesPreview />
       <FAQ />
       <FinalCTA />
