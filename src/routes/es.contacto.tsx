@@ -50,7 +50,7 @@ function ContactoPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-4xl text-5xl lg:text-[clamp(3.5rem,7vw,6rem)]">
-              Hablemos de cómo <span className="italic text-prompt">hacer crecer tu visibilidad.</span>
+              Hablemos de cómo <span className="accent-italic text-prompt">hacer crecer tu visibilidad.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -224,7 +224,7 @@ function ThankYou() {
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
       <div className="font-display text-xs tracking-[0.3em] text-prompt">Mensaje recibido</div>
       <h2 className="mt-4 text-3xl lg:text-4xl">
-        Gracias — te respondemos <span className="italic text-prompt">en menos de 24 horas.</span>
+        Gracias — te respondemos <span className="accent-italic text-prompt">en menos de 24 horas.</span>
       </h2>
       <ul className="mt-8 space-y-3 text-ink/75">
         <li>→ <a href="/es/auditoria" className="underline-offset-4 hover:text-prompt hover:underline">Obtén un diagnóstico web gratuito</a></li>

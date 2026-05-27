@@ -8,11 +8,11 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/es/servicios/")({
   head: () => ({
     meta: [
-      { title: "Servicios — Blueprint, Scale & Landmark | Rank Your Brand" },
+      { title: "Servicios — SEO Técnico, SEO para B2B y Agencia SEO IA | Rank Your Brand" },
       {
         name: "description",
         content:
-          "Tres niveles. Un objetivo: que te encuentren. Blueprint ($1,500), Scale ($2,500/mes) y Landmark ($3,500/mes).",
+          "Tres niveles. Un objetivo: que te encuentren. SEO Técnico, SEO para B2B y Agencia SEO IA.",
       },
       { property: "og:title", content: "Servicios — Rank Your Brand" },
       { property: "og:description", content: "Tres niveles. Un objetivo: que te encuentren." },
@@ -26,7 +26,8 @@ const tiers = [
   {
     tag: "SEO Técnico",
     to: "/es/servicios/seo-tecnico" as const,
-    kicker: "Fundación · Proyecto · 4–6 semanas",
+    kicker: "Fundación · Proyecto",
+    meta: "4–6 semanas",
     desc: "La base que tu sitio necesita para rankear. Desarrollo web completo + SEO técnico + analytics, listo para crecimiento orgánico y descubrimiento por IA.",
     bullets: [
       "Desarrollo web completo (desde cero o rediseño)",
@@ -40,7 +41,8 @@ const tiers = [
   {
     tag: "SEO para B2B",
     to: "/es/servicios/seo-b2b" as const,
-    kicker: "Crecimiento · Retainer mensual · Mínimo 6 meses",
+    kicker: "Crecimiento · Retainer mensual",
+    meta: "mínimo 6 meses",
     desc: "Crecimiento orgánico, mes a mes. Motor de contenido con IA + CRO + link building + dashboards enfocados en leads cualificados.",
     bullets: [
       "4–6 artículos de blog optimizados/mes",
@@ -54,7 +56,8 @@ const tiers = [
   {
     tag: "Agencia SEO IA",
     to: "/es/servicios/agencia-seo-ia" as const,
-    kicker: "Autoridad · Retainer premium · 12 meses · Solo por solicitud",
+    kicker: "Autoridad · Retainer premium",
+    meta: "compromiso 12 meses",
     desc: "La autoridad que la IA recomienda. Todo lo de SEO para B2B + GEO + liderazgo de pensamiento + servicio premium para líderes de categoría.",
     bullets: [
       "Todo lo de SEO para B2B",
@@ -82,7 +85,7 @@ function ServicesPageEs() {
           <Reveal delay={0.1}>
             <h1 className="mt-6 max-w-4xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               Tres niveles.<br />
-              <span className="italic text-prompt">Un objetivo: que te encuentren.</span>
+              <span className="accent-italic text-prompt">Un objetivo: que te encuentren.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -121,7 +124,10 @@ function ServicesPageEs() {
                       ))}
                     </ul>
                     <div className="text-right">
-                      <div className={`inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
+                      <div className={`text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
+                        {t.meta}
+                      </div>
+                      <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
                         Ver más <span aria-hidden>→</span>
                       </div>
                     </div>
@@ -139,7 +145,7 @@ function ServicesPageEs() {
             <div className="rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-16">
               <Eyebrow>¿No sabes cuál es el correcto?</Eyebrow>
               <h2 className="mt-6 max-w-3xl text-3xl lg:text-5xl">
-                Cada empresa es diferente. Obtén un diagnóstico gratuito y recomendaremos el <span className="italic text-prompt">punto de partida ideal.</span>
+                Cada empresa es diferente. Obtén un diagnóstico gratuito y recomendaremos el <span className="accent-italic text-prompt">punto de partida ideal.</span>
               </h2>
               <div className="mt-8 flex flex-wrap gap-3">
                 <CTA to="/es/auditoria">Diagnóstico gratuito</CTA>

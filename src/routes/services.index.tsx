@@ -8,13 +8,13 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "B2B SEO Services — Technical SEO, B2B SEO & AI SEO Agency | Rank Your Brand" },
+      { title: "Services — Technical SEO, SEO for B2B & AI SEO Agency | Rank Your Brand" },
       {
         name: "description",
         content:
-          "Three levels. One objective: make you findable. Technical SEO Services (starting at $1,200), B2B SEO Services (from $1,800/mo) and AI SEO Agency (from $3,500/mo).",
+          "Three levels. One objective: make you findable. Technical SEO, SEO for B2B and AI SEO Agency.",
       },
-      { property: "og:title", content: "B2B SEO Services — Rank Your Brand" },
+      { property: "og:title", content: "Services — Rank Your Brand" },
       { property: "og:description", content: "Three levels. One objective: make you findable." },
     ],
   }),
@@ -25,36 +25,39 @@ const tiers = [
   {
     tag: "Technical SEO",
     to: "/services/technical-seo" as const,
-    kicker: "Foundation · Project · 4–6 weeks",
-    desc: "The foundation your B2B site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
+    kicker: "Foundation · Project",
+    meta: "4–6 weeks",
+    desc: "The foundation your site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
     bullets: [
       "Full website development (from scratch or redesign)",
       "Technical SEO + Core Web Vitals optimization",
       "Schema markup + content architecture",
       "GA4, Search Console & Tag Manager setup",
     ],
-    ideal: "B2B companies launching new sites or rebuilding outdated ones.",
+    ideal: "Companies launching new sites or rebuilding outdated ones.",
     tone: "border-prompt/40 bg-prompt/5",
   },
   {
     tag: "SEO for B2B",
     to: "/services/seo-for-b2b" as const,
-    kicker: "Growth · Monthly retainer · 6-month minimum",
-    desc: "Monthly organic growth for B2B. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
+    kicker: "Growth · Monthly retainer",
+    meta: "6-month minimum",
+    desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
     bullets: [
       "4–6 SEO-optimized blog posts/month",
       "Conversion Rate Optimization (CRO)",
       "2–3 high-quality backlinks/month",
       "Real-time dashboard + monthly reporting",
     ],
-    ideal: "B2B companies ready to grow organic traffic and lead generation.",
+    ideal: "Companies ready to grow organic traffic and lead generation.",
     tone: "border-ink/15 bg-ink text-canvas",
   },
   {
     tag: "AI SEO Agency",
     to: "/services/ai-seo-agency" as const,
-    kicker: "Authority · Premium retainer · 12-month engagement",
-    desc: "Generative Engine Optimization for B2B. Everything in SEO for B2B + GEO + thought leadership + white-glove service for category leaders.",
+    kicker: "Authority · Premium retainer",
+    meta: "12-month engagement",
+    desc: "The authority AI recommends. Everything in SEO for B2B + GEO + thought leadership + white-glove service for category leaders.",
     bullets: [
       "Everything in SEO for B2B",
       "GEO optimization (ChatGPT, Perplexity citations)",
@@ -76,9 +79,12 @@ function ServicesPage() {
             <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Services" }]} />
           </Reveal>
           <Reveal delay={0.05}>
+            <div className="mt-8"><Eyebrow>Services</Eyebrow></div>
+          </Reveal>
+          <Reveal delay={0.1}>
             <h1 className="mt-6 max-w-4xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
               Three levels.<br />
-              <span className="italic text-prompt">One objective: make you findable.</span>
+              <span className="accent-italic text-prompt">One objective: make you findable.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -117,7 +123,10 @@ function ServicesPage() {
                       ))}
                     </ul>
                     <div className="text-right">
-                      <div className={`inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
+                      <div className={`text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
+                        {t.meta}
+                      </div>
+                      <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
                         Learn more <span aria-hidden>→</span>
                       </div>
                     </div>
@@ -135,7 +144,7 @@ function ServicesPage() {
             <div className="rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-16">
               <Eyebrow>Not sure which is right?</Eyebrow>
               <h2 className="mt-6 max-w-3xl text-3xl lg:text-5xl">
-                Every business is different. Get a free diagnosis and we'll <span className="italic text-prompt">recommend the right starting point.</span>
+                Every business is different. Get a free diagnosis and we'll <span className="accent-italic text-prompt">recommend the right starting point.</span>
               </h2>
               <div className="mt-8 flex flex-wrap gap-3">
                 <CTA to="/audit">Get free diagnosis</CTA>

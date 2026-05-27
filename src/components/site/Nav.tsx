@@ -5,15 +5,15 @@ import isotipo from "@/assets/brand/isotipo-nuevo.svg";
 import { isEsPath, getAlternateLang } from "@/i18n/langRoutes";
 
 const enServiceItems = [
-  { to: "/services/technical-seo" as const, label: "Technical SEO" },
-  { to: "/services/seo-for-b2b" as const, label: "SEO for B2B" },
-  { to: "/services/ai-seo-agency" as const, label: "AI SEO Agency" },
+  { to: "/services/technical-seo" as const, label: "Technical SEO", desc: "Foundation" },
+  { to: "/services/seo-for-b2b" as const, label: "SEO for B2B", desc: "Growth" },
+  { to: "/services/ai-seo-agency" as const, label: "AI SEO Agency", desc: "Authority" },
 ];
 
 const esServiceItems = [
-  { to: "/es/servicios/seo-tecnico" as const, label: "SEO Técnico" },
-  { to: "/es/servicios/seo-b2b" as const, label: "SEO para B2B" },
-  { to: "/es/servicios/agencia-seo-ia" as const, label: "Agencia SEO IA" },
+  { to: "/es/servicios/seo-tecnico" as const, label: "SEO Técnico", desc: "Fundacion" },
+  { to: "/es/servicios/seo-b2b" as const, label: "SEO para B2B", desc: "Crecimiento" },
+  { to: "/es/servicios/agencia-seo-ia" as const, label: "Agencia SEO IA", desc: "Autoridad" },
 ];
 
 const enLinks = [

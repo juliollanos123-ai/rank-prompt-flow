@@ -18,13 +18,13 @@ function NotFoundComponent() {
     <div className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden bg-canvas px-6 text-center">
       <div className="absolute inset-0 -z-10 bg-soft-glow" />
       <div className="absolute inset-0 -z-10 grid-overlay opacity-40" />
-      <div className="font-display text-[clamp(6rem,20vw,14rem)] leading-none text-prompt opacity-15 select-none">
+      <div className="font-display font-black text-[clamp(6rem,20vw,14rem)] leading-none text-prompt opacity-15 select-none">
         404
       </div>
       <div className="-mt-8 max-w-lg">
         <p className="font-display text-xs tracking-[0.3em] text-prompt uppercase">Page not found</p>
         <h1 className="mt-4 text-4xl lg:text-5xl">
-          This page <span className="italic text-prompt">doesn't exist.</span>
+          This page <span className="accent-italic text-prompt">doesn't exist.</span>
         </h1>
         <p className="mt-6 text-ink/65">
           The page you're looking for has been moved, renamed, or never existed.
