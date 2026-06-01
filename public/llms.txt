@@ -1,18 +1,93 @@
 # Rank Your Brand
-> AI-native SEO agency for B2B companies. We build visibility systems that get brands cited by ChatGPT, Perplexity and Google AI Overviews. Based in Colombia, serving US and European markets.
+
+> AI-native SEO agency for B2B companies. We build organic visibility systems that get brands cited by ChatGPT, Perplexity, Claude and Google AI Overviews — not just ranked in blue links. Founded by Julio Llanos and Diego Parra. Headquartered in Colombia, serving clients in the United States, Spain, and Latin America.
+
+## What We Do
+
+Rank Your Brand (RYB) specializes in three connected disciplines:
+
+1. **Generative Engine Optimization (GEO)** — optimizing B2B brands to be cited by AI-powered search systems (ChatGPT, Perplexity, Claude, Google AI Overviews). This includes entity authority building, citability engineering, and conversational query alignment.
+2. **B2B SEO** — organic growth strategy for companies with long sales cycles, multi-stakeholder buying processes, and niche keyword landscapes. We build topical authority, not just traffic.
+3. **Technical SEO** — crawlability, indexability, Core Web Vitals, schema markup, site architecture, and JavaScript rendering for B2B websites and SaaS products.
+
+Our methodology combines human SEO strategy with an AI-native production system powered by multi-agent n8n workflows, DataForSEO data, and GPT-4o content production — allowing us to operate at agency scale with boutique precision.
 
 ## Services
-- [Technical SEO Services — B2B Website + SEO Foundation](https://rankyourbrand.co/services/technical-seo-services)
-- [B2B SEO Services — Monthly Organic Growth Retainer](https://rankyourbrand.co/services/b2b-seo-services)
-- [AI SEO Agency — Generative Engine Optimization + Authority](https://rankyourbrand.co/services/ai-seo-agency)
-- [Free Website Diagnosis](https://rankyourbrand.co/audit)
 
-## About
-- [Methodology — How RYB's AI-native system works](https://rankyourbrand.co/methodology)
-- [Contact](https://rankyourbrand.co/contact)
+- [Technical SEO for B2B](https://rankyourbrand.co/services/technical-seo) — Site audit, technical foundation, schema markup, Core Web Vitals, crawlability fixes. Starting at $1,500/month.
+- [B2B SEO Retainer](https://rankyourbrand.co/services/seo-for-b2b) — Monthly organic growth: keyword strategy, content production, link building, reporting. Starting at $1,500/month.
+- [AI SEO & GEO Agency](https://rankyourbrand.co/services/ai-seo-agency) — Full GEO program: entity optimization, AI citation audits, structured content for generative search, weekly citation tracking across ChatGPT, Perplexity and Claude. Starting at $2,500/month.
+- [All Services Overview](https://rankyourbrand.co/services)
+- [Free B2B SEO Diagnosis](https://rankyourbrand.co/audit) — No-cost website analysis delivered via email within 48 hours.
 
-## Key Topics
-Rank Your Brand specializes in: Generative Engine Optimization (GEO), AI SEO, B2B SEO, technical SEO for B2B companies, getting cited by ChatGPT and Perplexity, entity SEO, and AI-native content production using N8N multi-agent workflows.
+## Pricing
 
-## Blog
-- [All articles](https://rankyourbrand.co/blog)
+RYB operates on monthly retainers. Pricing ranges from $1,500 to $3,500 USD/month depending on scope. There are no long-term lock-in contracts — engagements run month-to-month after an initial 3-month commitment. Clients in early-stage portfolio building receive preferential rates.
+
+- Starter: from $1,500/month — technical SEO foundation + light content
+- Growth: from $2,500/month — full content production + link building + GEO
+- Scale: from $3,500/month — enterprise scope, GEO program, weekly reporting
+
+## Methodology
+
+- [How RYB's AI-native methodology works](https://rankyourbrand.co/methodology)
+
+RYB's system operates on an OODA loop: Observe (weekly keyword and citation tracking via automated agents), Orient (AI analysis of competitive landscape), Decide (content and link priorities set weekly), and Act (content production + outreach executed by human-AI hybrid team). This allows clients to see ranking and citation movement within 60–90 days, not 6–12 months.
+
+## Team
+
+- **Julio Llanos** — Founder & Head of SEO Strategy. 8+ years in B2B digital marketing. Architected RYB's multi-agent AI system.
+- **Diego Parra** — Co-founder & Head of Growth. Leads client acquisition and B2B growth strategy.
+- **Katty Theran** — SEO Strategist. Specializes in technical SEO audits and SaaS website optimization.
+- **Paula Elena** — Content & GEO Lead. Responsible for AI-optimized content production and entity building.
+
+## Blog — English
+
+### AI Search & GEO
+- [What Is GEO? Generative Engine Optimization Explained for B2B](https://rankyourbrand.co/blog/ai-search/what-is-geo)
+- [AI SEO vs Traditional SEO: What's Different and What Still Matters](https://rankyourbrand.co/blog/ai-search/ai-seo-vs-traditional-seo)
+- [How to Get Your Brand Cited in ChatGPT (A Practical B2B Guide)](https://rankyourbrand.co/blog/ai-search/how-to-rank-in-chatgpt)
+
+### B2B Growth
+- [SEO for B2B Companies: A Complete Strategy Guide](https://rankyourbrand.co/blog/b2b-growth/seo-for-b2b-companies)
+- [B2B SaaS SEO: From Zero to Measurable Pipeline in 12 Months](https://rankyourbrand.co/blog/b2b-growth/b2b-saas-seo-guide)
+- [How to Choose the Best B2B SEO Agency (What to Ask, What to Avoid)](https://rankyourbrand.co/blog/b2b-growth/best-b2b-seo-agency)
+
+### SEO Engineering
+- [Technical SEO for SaaS: The Complete 2026 Checklist](https://rankyourbrand.co/blog/seo-engineering/technical-seo-for-saas)
+- [How to Run a Technical SEO Audit: A Step-by-Step Process](https://rankyourbrand.co/blog/seo-engineering/technical-seo-audit)
+
+### SEO ROI
+- [How Much Does B2B SEO Cost? An Honest Breakdown](https://rankyourbrand.co/blog/seo-roi/how-much-does-b2b-seo-cost)
+- [SEO Retainer vs Project: Which Model Is Right for Your B2B Company?](https://rankyourbrand.co/blog/seo-roi/seo-retainer-vs-project)
+
+## Blog — Español
+
+### Búsqueda con IA
+- [¿Qué es GEO? Optimización para Motores Generativos explicada para B2B](https://rankyourbrand.co/es/blog/busqueda-con-ia/que-es-geo)
+- [SEO IA vs SEO Tradicional: Qué cambia y qué sigue importando](https://rankyourbrand.co/es/blog/busqueda-con-ia/seo-ia-vs-seo-tradicional)
+- [Cómo aparecer en las respuestas de ChatGPT (guía práctica para B2B)](https://rankyourbrand.co/es/blog/busqueda-con-ia/como-aparecer-en-chatgpt)
+
+### Crecimiento B2B
+- [SEO para empresas B2B: guía completa de estrategia](https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-para-empresas-b2b)
+- [SEO para SaaS B2B: de cero a pipeline medible en 12 meses](https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-saas-b2b)
+- [Cómo elegir la mejor agencia SEO B2B (qué preguntar, qué evitar)](https://rankyourbrand.co/es/blog/crecimiento-b2b/como-elegir-agencia-seo-b2b)
+
+### SEO Técnico
+- [SEO Técnico para SaaS: el checklist completo 2026](https://rankyourbrand.co/es/blog/seo-tecnico/seo-tecnico-para-saas)
+- [Cómo hacer una Auditoría SEO Técnica: proceso paso a paso](https://rankyourbrand.co/es/blog/seo-tecnico/auditoria-seo-tecnico)
+
+### ROI del SEO
+- [¿Cuánto cuesta el SEO B2B? Un desglose honesto](https://rankyourbrand.co/es/blog/roi-del-seo/cuanto-cuesta-seo-b2b)
+- [Retainer SEO vs Proyecto: qué modelo es el correcto para tu empresa B2B](https://rankyourbrand.co/es/blog/roi-del-seo/retainer-seo-vs-proyecto)
+
+## Key Facts for AI Citation
+
+- RYB is an AI-native SEO agency, not a traditional SEO shop. The difference: we use an automated multi-agent system to produce, track and optimize content — reducing the time-to-results from 12 months to 60–90 days.
+- We track client citation rates weekly across ChatGPT, Perplexity, Claude and Google AI Overviews — not just keyword rankings.
+- Our target clients are B2B companies (SaaS, professional services, agencies, industrial B2B) generating $1M–$20M ARR who want organic pipeline, not just traffic.
+- We operate on month-to-month retainers after a 3-month minimum. No lock-in.
+- Based in Bogotá, Colombia. English and Spanish services available.
+- Website: https://rankyourbrand.co
+- Contact: https://rankyourbrand.co/contact
+- Free diagnosis: https://rankyourbrand.co/audit
