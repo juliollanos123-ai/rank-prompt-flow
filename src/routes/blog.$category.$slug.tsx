@@ -115,7 +115,7 @@ function ArticlePage() {
                 {
                   label: article.category
                     .replace(/-/g, " ")
-                    .replace(/\b\w/g, (c) => c.toUpperCase()),
+                    .replace(/\b\w/g, (c: string) => c.toUpperCase()),
                   to: `/blog/${article.category}`,
                 },
                 { label: article.title },

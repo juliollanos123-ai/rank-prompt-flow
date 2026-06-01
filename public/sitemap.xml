@@ -2,164 +2,399 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ══════════════════════════════════════════════════
+       PÁGINAS ESTÁTICAS — ENGLISH / ESPAÑOL
+       ══════════════════════════════════════════════════ -->
+
   <!-- Homepage -->
   <url>
     <loc>https://rankyourbrand.co/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
     <loc>https://rankyourbrand.co/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <!-- Services hub -->
   <url>
     <loc>https://rankyourbrand.co/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
     <loc>https://rankyourbrand.co/es/servicios</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
-  <!-- Technical SEO Services -->
+  <!-- Technical SEO -->
   <url>
-    <loc>https://rankyourbrand.co/services/technical-seo-services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/technical-seo-services"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/blueprint"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://rankyourbrand.co/services/technical-seo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services/technical-seo"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services/technical-seo"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios/seo-tecnico"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
-    <loc>https://rankyourbrand.co/es/servicios/blueprint</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/technical-seo-services"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/blueprint"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://rankyourbrand.co/es/servicios/seo-tecnico</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services/technical-seo"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services/technical-seo"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios/seo-tecnico"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <!-- B2B SEO Services -->
   <url>
-    <loc>https://rankyourbrand.co/services/b2b-seo-services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/b2b-seo-services"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/scale"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://rankyourbrand.co/services/seo-for-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services/seo-for-b2b"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services/seo-for-b2b"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios/seo-b2b"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
-    <loc>https://rankyourbrand.co/es/servicios/scale</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/b2b-seo-services"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/scale"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://rankyourbrand.co/es/servicios/seo-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services/seo-for-b2b"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services/seo-for-b2b"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios/seo-b2b"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <!-- AI SEO Agency -->
   <url>
     <loc>https://rankyourbrand.co/services/ai-seo-agency</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/ai-seo-agency"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/landmark"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services/ai-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services/ai-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios/agencia-seo-ia"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
-    <loc>https://rankyourbrand.co/es/servicios/landmark</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/ai-seo-agency"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/landmark"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://rankyourbrand.co/es/servicios/agencia-seo-ia</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/services/ai-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/services/ai-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/servicios/agencia-seo-ia"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <!-- Methodology -->
   <url>
     <loc>https://rankyourbrand.co/methodology</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/methodology"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/metodologia"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/methodology"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/methodology"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/metodologia"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
     <loc>https://rankyourbrand.co/es/metodologia</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/methodology"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/metodologia"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/methodology"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/methodology"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/metodologia"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
-  <!-- Audit / Diagnosis -->
+  <!-- Free SEO Audit -->
   <url>
     <loc>https://rankyourbrand.co/audit</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/audit"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/auditoria"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/audit"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/audit"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/auditoria"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
     <loc>https://rankyourbrand.co/es/auditoria</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/audit"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/auditoria"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/audit"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/audit"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/auditoria"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <!-- Contact -->
   <url>
     <loc>https://rankyourbrand.co/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/contact"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/contacto"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/contact"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/contact"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/contacto"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
   <url>
     <loc>https://rankyourbrand.co/es/contacto</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/contact"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/contacto"/>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/contact"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/contact"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/contacto"/>
+    <lastmod>2026-05-27</lastmod>
   </url>
 
-  <!-- Blog -->
+  <!-- Blog hub -->
   <url>
     <loc>https://rankyourbrand.co/blog</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog"/>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog"/>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+
+  <!-- Category: AI Search -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/ai-search</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia"/>
+    <lastmod>2026-05-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/busqueda-con-ia</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia"/>
+    <lastmod>2026-05-10</lastmod>
+  </url>
+
+  <!-- Category: B2B Growth -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/b2b-growth</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b"/>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/crecimiento-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b"/>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+
+  <!-- Category: SEO Engineering -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/seo-engineering</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-engineering"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-engineering"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/seo-tecnico"/>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/seo-tecnico</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-engineering"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-engineering"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/seo-tecnico"/>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+
+  <!-- Category: SEO ROI -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/seo-roi</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-roi"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-roi"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/roi-del-seo"/>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/roi-del-seo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-roi"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-roi"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/roi-del-seo"/>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+
+  <!-- Article: What Is GEO? -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/ai-search/what-is-geo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search/what-is-geo"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search/what-is-geo"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia/que-es-geo"/>
+    <lastmod>2026-05-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/busqueda-con-ia/que-es-geo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search/what-is-geo"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search/what-is-geo"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia/que-es-geo"/>
+    <lastmod>2026-05-10</lastmod>
+  </url>
+
+  <!-- Article: AI SEO vs Traditional SEO -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/ai-search/ai-seo-vs-traditional-seo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search/ai-seo-vs-traditional-seo"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search/ai-seo-vs-traditional-seo"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia/seo-ia-vs-seo-tradicional"/>
+    <lastmod>2026-05-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/busqueda-con-ia/seo-ia-vs-seo-tradicional</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search/ai-seo-vs-traditional-seo"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search/ai-seo-vs-traditional-seo"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia/seo-ia-vs-seo-tradicional"/>
+    <lastmod>2026-05-03</lastmod>
+  </url>
+
+  <!-- Article: How to Rank in ChatGPT -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/ai-search/how-to-rank-in-chatgpt</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search/how-to-rank-in-chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search/how-to-rank-in-chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia/como-aparecer-en-chatgpt"/>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/busqueda-con-ia/como-aparecer-en-chatgpt</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/ai-search/how-to-rank-in-chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/ai-search/how-to-rank-in-chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/busqueda-con-ia/como-aparecer-en-chatgpt"/>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <!-- Article: SEO for B2B Companies -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/b2b-growth/seo-for-b2b-companies</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth/seo-for-b2b-companies"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth/seo-for-b2b-companies"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-para-empresas-b2b"/>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-para-empresas-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth/seo-for-b2b-companies"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth/seo-for-b2b-companies"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-para-empresas-b2b"/>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+
+  <!-- Article: B2B SaaS SEO Guide -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/b2b-growth/b2b-saas-seo-guide</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth/b2b-saas-seo-guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth/b2b-saas-seo-guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-saas-b2b"/>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-saas-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth/b2b-saas-seo-guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth/b2b-saas-seo-guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b/seo-saas-b2b"/>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+
+  <!-- Article: Best B2B SEO Agency -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/b2b-growth/best-b2b-seo-agency</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth/best-b2b-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth/best-b2b-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b/como-elegir-agencia-seo-b2b"/>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/crecimiento-b2b/como-elegir-agencia-seo-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/b2b-growth/best-b2b-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/b2b-growth/best-b2b-seo-agency"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/crecimiento-b2b/como-elegir-agencia-seo-b2b"/>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+
+  <!-- Article: Technical SEO for SaaS -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/seo-engineering/technical-seo-for-saas</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-for-saas"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-for-saas"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/seo-tecnico/seo-tecnico-para-saas"/>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/seo-tecnico/seo-tecnico-para-saas</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-for-saas"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-for-saas"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/seo-tecnico/seo-tecnico-para-saas"/>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+
+  <!-- Article: Technical SEO Audit -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/seo-engineering/technical-seo-audit</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/seo-tecnico/auditoria-seo-tecnico"/>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/seo-tecnico/auditoria-seo-tecnico</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-engineering/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/seo-tecnico/auditoria-seo-tecnico"/>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+
+  <!-- Article: How Much Does B2B SEO Cost? -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/seo-roi/how-much-does-b2b-seo-cost</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-roi/how-much-does-b2b-seo-cost"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-roi/how-much-does-b2b-seo-cost"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/roi-del-seo/cuanto-cuesta-seo-b2b"/>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/roi-del-seo/cuanto-cuesta-seo-b2b</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-roi/how-much-does-b2b-seo-cost"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-roi/how-much-does-b2b-seo-cost"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/roi-del-seo/cuanto-cuesta-seo-b2b"/>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+
+  <!-- Article: SEO Retainer vs Project -->
+  <url>
+    <loc>https://rankyourbrand.co/blog/seo-roi/seo-retainer-vs-project</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-roi/seo-retainer-vs-project"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-roi/seo-retainer-vs-project"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/roi-del-seo/retainer-seo-vs-proyecto"/>
+    <lastmod>2026-03-28</lastmod>
+  </url>
+
+  <url>
+    <loc>https://rankyourbrand.co/es/blog/roi-del-seo/retainer-seo-vs-proyecto</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankyourbrand.co/blog/seo-roi/seo-retainer-vs-project"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://rankyourbrand.co/blog/seo-roi/seo-retainer-vs-project"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://rankyourbrand.co/es/blog/roi-del-seo/retainer-seo-vs-proyecto"/>
+    <lastmod>2026-03-28</lastmod>
   </url>
 
 </urlset>
