@@ -6,9 +6,12 @@ const enCols = [
   {
     heading: "Services",
     links: [
-      { to: "/services/technical-seo" as const, label: "Technical SEO" },
-      { to: "/services/seo-for-b2b" as const, label: "SEO for B2B" },
-      { to: "/services/ai-seo-agency" as const, label: "AI SEO Agency" },
+      { to: "/services/seo-geo" as const, label: "SEO & GEO" },
+      { to: "/services/mega-ads" as const, label: "Mega Ads" },
+      { to: "/services/ai-automation" as const, label: "AI Automation" },
+      { to: "/services/web-development" as const, label: "Web Development" },
+      { to: "/services/branding" as const, label: "Branding" },
+      { to: "/services/digital-foundations" as const, label: "Digital Foundations" },
     ],
   },
   {
@@ -16,6 +19,7 @@ const enCols = [
     links: [
       { to: "/audit" as const, label: "Free Diagnosis" },
       { to: "/methodology" as const, label: "Methodology" },
+      { to: "/proof" as const, label: "Proof" },
       { to: "/blog" as const, label: "Blog" },
     ],
   },
@@ -32,9 +36,12 @@ const esCols = [
   {
     heading: "Servicios",
     links: [
-      { to: "/es/servicios/seo-tecnico" as const, label: "SEO Técnico" },
-      { to: "/es/servicios/seo-b2b" as const, label: "SEO para B2B" },
-      { to: "/es/servicios/agencia-seo-ia" as const, label: "Agencia SEO IA" },
+      { to: "/es/servicios/seo-geo" as const, label: "SEO & GEO" },
+      { to: "/es/servicios/mega-ads" as const, label: "Mega Ads" },
+      { to: "/es/servicios/automatizacion-ia" as const, label: "Automatización con IA" },
+      { to: "/es/servicios/desarrollo-web" as const, label: "Desarrollo Web" },
+      { to: "/es/servicios/branding" as const, label: "Branding" },
+      { to: "/es/servicios/fundamentos-digitales" as const, label: "Fundamentos Digitales" },
     ],
   },
   {
@@ -42,7 +49,8 @@ const esCols = [
     links: [
       { to: "/es/auditoria" as const, label: "Diagnóstico gratuito" },
       { to: "/es/metodologia" as const, label: "Metodología" },
-      { to: "/blog" as const, label: "Blog" },
+      { to: "/es/resultados" as const, label: "Resultados" },
+      { to: "/es/blog" as const, label: "Blog" },
     ],
   },
   {

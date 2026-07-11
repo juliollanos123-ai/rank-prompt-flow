@@ -5,25 +5,33 @@ import isotipo from "@/assets/brand/isotipo-nuevo.svg";
 import { isEsPath, getAlternateLang } from "@/i18n/langRoutes";
 
 const enServiceItems = [
-  { to: "/services/technical-seo" as const, label: "Technical SEO", desc: "Foundation" },
-  { to: "/services/seo-for-b2b" as const, label: "SEO for B2B", desc: "Growth" },
-  { to: "/services/ai-seo-agency" as const, label: "AI SEO Agency", desc: "Authority" },
+  { to: "/services/seo-geo" as const, label: "SEO & GEO" },
+  { to: "/services/mega-ads" as const, label: "Mega Ads" },
+  { to: "/services/ai-automation" as const, label: "AI Automation" },
+  { to: "/services/web-development" as const, label: "Web Development" },
+  { to: "/services/branding" as const, label: "Branding" },
+  { to: "/services/digital-foundations" as const, label: "Digital Foundations" },
 ];
 
 const esServiceItems = [
-  { to: "/es/servicios/seo-tecnico" as const, label: "SEO Técnico", desc: "Fundacion" },
-  { to: "/es/servicios/seo-b2b" as const, label: "SEO para B2B", desc: "Crecimiento" },
-  { to: "/es/servicios/agencia-seo-ia" as const, label: "Agencia SEO IA", desc: "Autoridad" },
+  { to: "/es/servicios/seo-geo" as const, label: "SEO & GEO" },
+  { to: "/es/servicios/mega-ads" as const, label: "Mega Ads" },
+  { to: "/es/servicios/automatizacion-ia" as const, label: "Automatización con IA" },
+  { to: "/es/servicios/desarrollo-web" as const, label: "Desarrollo Web" },
+  { to: "/es/servicios/branding" as const, label: "Branding" },
+  { to: "/es/servicios/fundamentos-digitales" as const, label: "Fundamentos Digitales" },
 ];
 
 const enLinks = [
   { to: "/methodology" as const, label: "Methodology" },
+  { to: "/proof" as const, label: "Proof" },
   { to: "/blog" as const, label: "Blog" },
   { to: "/contact" as const, label: "Contact" },
 ];
 
 const esLinks = [
   { to: "/es/metodologia" as const, label: "Metodologia" },
+  { to: "/es/resultados" as const, label: "Resultados" },
   { to: "/es/blog" as const, label: "Blog" },
   { to: "/es/contacto" as const, label: "Contacto" },
 ];
@@ -78,7 +86,7 @@ function ServicesDropdown({ isEs }: { isEs: boolean }) {
             transition={{ duration: 0.18, ease: "easeOut" }}
             onMouseEnter={show}
             onMouseLeave={hide}
-            className="absolute left-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-2xl border border-border bg-canvas shadow-card"
+            className="absolute left-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-border bg-canvas shadow-card"
           >
             {items.map((item) => (
               <Link
