@@ -14,11 +14,18 @@ Our methodology combines human SEO strategy with an AI-native production system 
 
 ## Services
 
-- [Technical SEO for B2B](https://rankyourbrand.co/services/technical-seo) — Site audit, technical foundation, schema markup, Core Web Vitals, crawlability fixes. Starting at $1,500/month.
-- [B2B SEO Retainer](https://rankyourbrand.co/services/seo-for-b2b) — Monthly organic growth: keyword strategy, content production, link building, reporting. Starting at $1,500/month.
-- [AI SEO & GEO Agency](https://rankyourbrand.co/services/ai-seo-agency) — Full GEO program: entity optimization, AI citation audits, structured content for generative search, weekly citation tracking across ChatGPT, Perplexity and Claude. Starting at $2,500/month.
+- [SEO & GEO](https://rankyourbrand.co/services/seo-geo) — Organic visibility across Google and AI answer engines. Three tiers below.
+  - [Technical SEO](https://rankyourbrand.co/services/technical-seo) — Foundation project (4–6 weeks): architecture, Core Web Vitals, schema, analytics.
+  - [SEO for B2B](https://rankyourbrand.co/services/seo-for-b2b) — Monthly retainer (6-month minimum): content, CRO, link building, lead-focused dashboards.
+  - [AI SEO Agency](https://rankyourbrand.co/services/ai-seo-agency) — Premium retainer (12 months): GEO, entity authority, thought leadership.
+- [Mega Ads](https://rankyourbrand.co/services/mega-ads) — Paid acquisition systems (Meta / Google) built for measurable demand generation.
+- [AI Automation](https://rankyourbrand.co/services/ai-automation) — AI-Native automation for marketing, sales and operations.
+- [Web Development](https://rankyourbrand.co/services/web-development) — Strategic websites built for ranking, converting and scaling.
+- [Branding](https://rankyourbrand.co/services/branding) — Positioning, verbal identity and visual system for B2B brands.
+- [Digital Foundations](https://rankyourbrand.co/services/digital-foundations) — Minimum viable digital base for early-stage businesses.
 - [All Services Overview](https://rankyourbrand.co/services)
-- [Free B2B SEO Diagnosis](https://rankyourbrand.co/audit) — No-cost website analysis delivered via email within 48 hours.
+- [Free Diagnosis](https://rankyourbrand.co/audit) — No-cost analysis delivered within 48 hours.
+- [Proof / Case applications](https://rankyourbrand.co/proof)
 
 ## Pricing
 

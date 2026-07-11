@@ -8,63 +8,63 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Technical SEO, SEO for B2B & AI SEO Agency | Rank Your Brand" },
-      {
-        name: "description",
-        content:
-          "Three levels. One objective: make you findable. Technical SEO, SEO for B2B and AI SEO Agency.",
-      },
+      { title: "Services — SEO, GEO, AI, Branding & Web Development | Rank Your Brand" },
+      { name: "description", content: "Premium services to build, position and scale brands: SEO, GEO, Mega Ads, AI automation, web development and strategic branding." },
       { property: "og:title", content: "Services — Rank Your Brand" },
-      { property: "og:description", content: "Three levels. One objective: make you findable." },
+      { property: "og:description", content: "Services designed to build, position and scale brands with system." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/services" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/services" },
+      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services" },
+      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios" },
     ],
   }),
   component: ServicesPage,
 });
 
-const tiers = [
+const categories = [
   {
-    tag: "Technical SEO",
-    to: "/services/technical-seo" as const,
-    kicker: "Foundation · Project",
-    meta: "4–6 weeks",
-    desc: "The foundation your site needs to rank. Full website development + technical SEO + analytics setup, ready for organic growth and AI discovery.",
-    bullets: [
-      "Full website development (from scratch or redesign)",
-      "Technical SEO + Core Web Vitals optimization",
-      "Schema markup + content architecture",
-      "GA4, Search Console & Tag Manager setup",
-    ],
-    ideal: "Companies launching new sites or rebuilding outdated ones.",
+    tag: "SEO & GEO",
+    to: "/services/seo-geo" as const,
+    kicker: "Organic visibility",
+    desc: "We build organic visibility with strategy. Transactional SEO architectures, content with commercial intent and optimization for AI-powered engines like ChatGPT, Perplexity and Google AI.",
     tone: "border-prompt/40 bg-prompt/5",
   },
   {
-    tag: "SEO for B2B",
-    to: "/services/seo-for-b2b" as const,
-    kicker: "Growth · Monthly retainer",
-    meta: "6-month minimum",
-    desc: "Organic growth, month after month. AI-native content engine + CRO + link building + dashboards focused on qualified leads.",
-    bullets: [
-      "4–6 SEO-optimized blog posts/month",
-      "Conversion Rate Optimization (CRO)",
-      "2–3 high-quality backlinks/month",
-      "Real-time dashboard + monthly reporting",
-    ],
-    ideal: "Companies ready to grow organic traffic and lead generation.",
+    tag: "Mega Ads",
+    to: "/services/mega-ads" as const,
+    kicker: "Paid acquisition",
+    desc: "We create and optimize advertising systems for brands that need to accelerate results, validate offers or scale demand with well-structured campaigns across Meta, Google and other paid channels.",
     tone: "border-ink/15 bg-ink text-canvas",
   },
   {
-    tag: "AI SEO Agency",
-    to: "/services/ai-seo-agency" as const,
-    kicker: "Authority · Premium retainer",
-    meta: "12-month engagement",
-    desc: "The authority AI recommends. Everything in SEO for B2B + GEO + thought leadership + white-glove service for category leaders.",
-    bullets: [
-      "Everything in SEO for B2B",
-      "GEO optimization (ChatGPT, Perplexity citations)",
-      "Executive thought leadership program",
-      "Dedicated account manager + bi-weekly strategy",
-    ],
-    ideal: "Established B2B brands with $5M+ revenue ready to dominate.",
+    tag: "AI Automation",
+    to: "/services/ai-automation" as const,
+    kicker: "Operational leverage",
+    desc: "We turn manual processes into intelligent systems. Automations for marketing, sales follow-up, content generation, lead classification and internal operations.",
+    tone: "border-flow/40 bg-flow/[0.06]",
+  },
+  {
+    tag: "Web Development",
+    to: "/services/web-development" as const,
+    kicker: "Digital infrastructure",
+    desc: "We build websites ready to sell, rank and scale. Not decorative pages: digital assets that connect structure, experience and conversion.",
+    tone: "border-prompt/40 bg-prompt/5",
+  },
+  {
+    tag: "Branding",
+    to: "/services/branding" as const,
+    kicker: "Positioning & identity",
+    desc: "We define brands with strategic clarity. From naming, narrative and message to visual identity, tone and guidelines to grow with consistency.",
+    tone: "border-ink/15 bg-ink text-canvas",
+  },
+  {
+    tag: "Digital Foundations",
+    to: "/services/digital-foundations" as const,
+    kicker: "Early-stage base",
+    desc: "We help businesses starting out to build their online presence: social channels, brand base, initial assets and a minimum viable system to grow.",
     tone: "border-flow/40 bg-flow/[0.06]",
   },
 ];
@@ -82,73 +82,94 @@ function ServicesPage() {
             <div className="mt-8"><Eyebrow>Services</Eyebrow></div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 max-w-4xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
-              Three levels.<br />
-              <span className="accent-italic text-prompt">One objective: make you findable.</span>
+            <h1 className="mt-6 max-w-5xl text-5xl lg:text-[clamp(3.5rem,7vw,6.5rem)]">
+              Services designed to build, position<br />
+              <span className="accent-italic text-prompt">and scale brands with system.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-8 max-w-2xl text-lg text-ink/70">
-              Whether you're building from scratch, scaling organic growth, or dominating your category — we have a path for you.
+            <p className="mt-8 max-w-3xl text-lg text-ink/70">
+              We don't solve isolated tasks. We design the digital structure a company needs to exist with authority, generate demand and grow with smarter processes.
+            </p>
+          </Reveal>
+          <Reveal delay={0.3}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <CTA to="/audit">Request a strategic diagnosis</CTA>
+              <CTA to="/contact" variant="outline">Book a strategy call</CTA>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="pb-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <Reveal>
+            <p className="max-w-3xl text-lg text-ink/70">
+              Every RYB service resolves a real stage of a company's growth: from building a solid brand and initial digital presence, to scaling acquisition, automation, organic positioning and authority in traditional search engines and AI answer engines.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 max-w-3xl text-lg text-ink/70">
+              This isn't a menu of disconnected tasks — it's an ecosystem of connected solutions. Enter with one specific need and evolve toward an integral growth system.
             </p>
           </Reveal>
         </div>
       </section>
 
       <section className="pb-24 lg:pb-32">
-        <div className="mx-auto max-w-7xl space-y-6 px-6 lg:px-10">
-          {tiers.map((t, i) => {
-            const dark = t.tone.includes("text-canvas");
-            return (
-              <Reveal key={t.tag} delay={i * 0.08}>
-                <Link to={t.to} className="block">
-                  <motion.article
-                    whileHover={{ y: -4 }}
-                    className={`group grid gap-8 rounded-3xl border p-8 lg:grid-cols-[1.2fr_1fr_auto] lg:items-center lg:p-12 ${t.tone}`}
-                  >
-                    <div>
-                      <div className={`font-display text-xs tracking-[0.3em] ${dark ? "text-canvas/60" : "text-ink/50"}`}>{t.kicker}</div>
-                      <h2 className="mt-3 text-4xl lg:text-5xl">{t.tag}</h2>
-                      <p className={`mt-4 max-w-md ${dark ? "text-canvas/75" : "text-ink/70"}`}>{t.desc}</p>
-                      <p className={`mt-4 text-sm ${dark ? "text-canvas/55" : "text-ink/55"}`}>
-                        <span className={dark ? "text-canvas/80" : "text-ink/80"}>Ideal for:</span> {t.ideal}
-                      </p>
-                    </div>
-                    <ul className={`grid gap-2 text-sm ${dark ? "text-canvas/85" : "text-ink/85"}`}>
-                      {t.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-3">
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-prompt" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="text-right">
-                      <div className={`text-xs uppercase tracking-widest ${dark ? "text-canvas/50" : "text-ink/50"}`}>
-                        {t.meta}
-                      </div>
-                      <div className={`mt-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
+        <div className="mx-auto max-w-7xl px-6 pt-16 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {categories.map((c, i) => {
+              const dark = c.tone.includes("text-canvas");
+              return (
+                <Reveal key={c.tag} delay={i * 0.06}>
+                  <Link to={c.to} className="block h-full">
+                    <motion.article
+                      whileHover={{ y: -4 }}
+                      className={`group h-full rounded-3xl border p-8 lg:p-10 ${c.tone}`}
+                    >
+                      <div className={`font-display text-xs tracking-[0.3em] ${dark ? "text-canvas/60" : "text-ink/50"}`}>{c.kicker}</div>
+                      <h2 className="mt-3 text-3xl lg:text-4xl">{c.tag}</h2>
+                      <p className={`mt-4 ${dark ? "text-canvas/75" : "text-ink/70"}`}>{c.desc}</p>
+                      <div className={`mt-8 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
                         Learn more <span aria-hidden>→</span>
                       </div>
-                    </div>
-                  </motion.article>
-                </Link>
-              </Reveal>
-            );
-          })}
+                    </motion.article>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      <section className="bg-canvas pb-28 lg:pb-36">
+      <section className="bg-ink/[0.02] py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <Reveal><Eyebrow>How to choose</Eyebrow></Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-6 max-w-4xl text-3xl lg:text-5xl">
+              Not every business needs to start with SEO. Some need a clear brand first. Others, a web that converts. Others already have a base and need to accelerate with Ads or automate operations.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="mt-6 max-w-3xl text-lg text-ink/70">
+              The right first step isn't hiring a service. It's understanding the real bottleneck of the business.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-canvas py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
             <div className="rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-16">
-              <Eyebrow>Not sure which is right?</Eyebrow>
+              <Eyebrow>Not sure which service?</Eyebrow>
               <h2 className="mt-6 max-w-3xl text-3xl lg:text-5xl">
-                Every business is different. Get a free diagnosis and we'll <span className="accent-italic text-prompt">recommend the right starting point.</span>
+                Let's talk about the stage your company is in and define the <span className="accent-italic text-prompt">right structure to grow.</span>
               </h2>
               <div className="mt-8 flex flex-wrap gap-3">
-                <CTA to="/audit">Get free diagnosis</CTA>
-                <CTA to="/contact" variant="ghost">Talk to us</CTA>
+                <CTA to="/contact">Book a strategy call</CTA>
+                <CTA to="/audit" variant="outline">Get a free diagnosis</CTA>
               </div>
             </div>
           </Reveal>
