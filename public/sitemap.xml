@@ -397,4 +397,21 @@
     <lastmod>2026-03-28</lastmod>
   </url>
 
+  <!-- New service categories -->
+  <url><loc>https://rankyourbrand.co/services/seo-geo</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/seo-geo"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/seo-geo"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/servicios/seo-geo</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/seo-geo"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/seo-geo"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/services/mega-ads</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/mega-ads"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/mega-ads"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/servicios/mega-ads</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/mega-ads"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/mega-ads"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/services/ai-automation</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/ai-automation"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/automatizacion-ia"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/servicios/automatizacion-ia</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/ai-automation"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/automatizacion-ia"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/services/web-development</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/web-development"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/desarrollo-web"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/servicios/desarrollo-web</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/web-development"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/desarrollo-web"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/services/branding</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/branding"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/branding"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/servicios/branding</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/branding"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/branding"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/services/digital-foundations</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/digital-foundations"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/fundamentos-digitales"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/servicios/fundamentos-digitales</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/services/digital-foundations"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/servicios/fundamentos-digitales"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/proof</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/proof"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/resultados"/><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://rankyourbrand.co/es/resultados</loc><xhtml:link rel="alternate" hreflang="en" href="https://rankyourbrand.co/proof"/><xhtml:link rel="alternate" hreflang="es" href="https://rankyourbrand.co/es/resultados"/><lastmod>2026-07-11</lastmod></url>
+
 </urlset>
+
