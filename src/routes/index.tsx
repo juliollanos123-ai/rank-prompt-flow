@@ -142,54 +142,72 @@ function ShiftNarrative() {
 }
 
 function GrowthSystem() {
-  const stages = [
-    { n: "01", name: "Diagnosis", body: "Context, stage, objective, bottleneck and the real opportunity." },
-    { n: "02", name: "Structure design", body: "What must be built first so growth has a solid base." },
-    { n: "03", name: "Implementation", body: "Assets, processes and improvements executed on the priority front." },
-    { n: "04", name: "Optimization", body: "Continuous measurement and iteration with market and business data." },
-    { n: "05", name: "Scaling", body: "Turn what works into a repeatable, scalable, compounding system." },
+  const phases = [
+    {
+      n: "Diagnose",
+      body: "We map your context, stage and real bottleneck — before proposing anything. No cookie-cutter deck.",
+      note: "Weeks 1–2",
+    },
+    {
+      n: "Build",
+      body: "We ship the priority front — brand, web, SEO, content, Ads or automation — with the rest of the system in mind.",
+      note: "Weeks 3–8",
+    },
+    {
+      n: "Scale",
+      body: "What works turns into a repeatable engine. New fronts plug in without breaking the ones already running.",
+      note: "Month 3+",
+    },
   ];
   return (
     <section className="bg-ink py-28 text-canvas lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <Eyebrow tone="canvas">The system</Eyebrow>
+          <Eyebrow tone="canvas">How we work</Eyebrow>
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
-            From diagnosis to <span className="italic text-prompt">a scalable system.</span>
+            Diagnose. Build. <span className="italic text-prompt">Scale.</span>
           </h2>
         </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-6 max-w-2xl text-lg text-canvas/70">
+            Three phases you actually experience as a client. Underneath sits a
+            structured methodology — but you don't need to run it, we do.
+          </p>
+        </Reveal>
 
-        <div className="mt-16 grid gap-4 lg:grid-cols-5">
-          {stages.map((s, i) => (
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {phases.map((p, i) => (
             <motion.div
-              key={s.n}
+              key={p.n}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="relative rounded-2xl border border-canvas/10 bg-canvas/[0.04] p-6"
+              transition={{ delay: i * 0.12, duration: 0.6 }}
+              className="relative rounded-3xl border border-canvas/10 bg-canvas/[0.04] p-8"
             >
-              <div className="font-display text-xs tracking-[0.3em] text-prompt">{s.n}</div>
-              <div className="mt-4 font-display text-xl">{s.name}</div>
-              <p className="mt-3 text-sm text-canvas/70">{s.body}</p>
-              {i < stages.length - 1 && (
-                <div className="absolute right-[-1rem] top-1/2 hidden h-px w-4 bg-flow lg:block" />
-              )}
+              <div className="flex items-center justify-between">
+                <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
+                <div className="mono-light text-xs uppercase tracking-widest text-canvas/40">{p.note}</div>
+              </div>
+              <h3 className="h3-soft mt-6 text-3xl text-canvas">{p.n}</h3>
+              <p className="mt-4 text-canvas/70">{p.body}</p>
             </motion.div>
           ))}
         </div>
 
         <Reveal delay={0.4}>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap items-center gap-4">
             <CTA to="/methodology" variant="outline-canvas">See the full methodology</CTA>
+            <span className="mono-light text-sm text-canvas/50">5 stages · multi-agent operating system</span>
           </div>
         </Reveal>
       </div>
     </section>
   );
 }
+
 
 function ServicesPreview() {
   const services = [
