@@ -142,54 +142,72 @@ function ShiftNarrative() {
 }
 
 function GrowthSystem() {
-  const stages = [
-    { n: "01", name: "Diagnóstico", body: "Contexto, etapa, objetivo, cuello de botella y oportunidad principal." },
-    { n: "02", name: "Diseño de estructura", body: "Qué debe construirse primero para que el crecimiento tenga base." },
-    { n: "03", name: "Implementación", body: "Ejecución de activos, procesos y mejoras en el frente priorizado." },
-    { n: "04", name: "Optimización", body: "Medición e iteración continua con datos del mercado y del negocio." },
-    { n: "05", name: "Escalamiento", body: "Convertimos lo que funciona en un sistema repetible y escalable." },
+  const phases = [
+    {
+      n: "Diagnosticar",
+      body: "Mapeamos contexto, etapa y cuello de botella real — antes de proponer nada. Nada de plantillas genéricas.",
+      note: "Semanas 1–2",
+    },
+    {
+      n: "Construir",
+      body: "Ejecutamos el frente prioritario — marca, web, SEO, contenido, Ads o automatización — pensando en el resto del sistema.",
+      note: "Semanas 3–8",
+    },
+    {
+      n: "Escalar",
+      body: "Lo que funciona se convierte en un motor repetible. Los nuevos frentes se conectan sin romper los que ya están corriendo.",
+      note: "Mes 3+",
+    },
   ];
   return (
     <section className="bg-ink py-28 text-canvas lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <Eyebrow tone="canvas">El sistema</Eyebrow>
+          <Eyebrow tone="canvas">Cómo trabajamos</Eyebrow>
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
-            Del diagnóstico al <span className="italic text-prompt">sistema escalable.</span>
+            Diagnosticar. Construir. <span className="italic text-prompt">Escalar.</span>
           </h2>
         </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-6 max-w-2xl text-lg text-canvas/70">
+            Tres fases que vives como cliente. Debajo corre una metodología
+            estructurada — pero no tienes que operarla, la operamos nosotros.
+          </p>
+        </Reveal>
 
-        <div className="mt-16 grid gap-4 lg:grid-cols-5">
-          {stages.map((s, i) => (
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {phases.map((p, i) => (
             <motion.div
-              key={s.n}
+              key={p.n}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="relative rounded-2xl border border-canvas/10 bg-canvas/[0.04] p-6"
+              transition={{ delay: i * 0.12, duration: 0.6 }}
+              className="relative rounded-3xl border border-canvas/10 bg-canvas/[0.04] p-8"
             >
-              <div className="font-display text-xs tracking-[0.3em] text-prompt">{s.n}</div>
-              <div className="mt-4 font-display text-xl">{s.name}</div>
-              <p className="mt-3 text-sm text-canvas/70">{s.body}</p>
-              {i < stages.length - 1 && (
-                <div className="absolute right-[-1rem] top-1/2 hidden h-px w-4 bg-flow lg:block" />
-              )}
+              <div className="flex items-center justify-between">
+                <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
+                <div className="mono-light text-xs uppercase tracking-widest text-canvas/40">{p.note}</div>
+              </div>
+              <h3 className="h3-soft mt-6 text-3xl text-canvas">{p.n}</h3>
+              <p className="mt-4 text-canvas/70">{p.body}</p>
             </motion.div>
           ))}
         </div>
 
         <Reveal delay={0.4}>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap items-center gap-4">
             <CTA to="/es/metodologia" variant="outline-canvas">Ver la metodología completa</CTA>
+            <span className="mono-light text-sm text-canvas/50">5 etapas · sistema operativo multi-agente</span>
           </div>
         </Reveal>
       </div>
     </section>
   );
 }
+
 
 function ServicesPreview() {
   const services = [
