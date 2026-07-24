@@ -9,27 +9,30 @@ import isotipo from "@/assets/brand/isotipo-color.svg";
 export const Route = createFileRoute("/es/")({
   head: () => ({
     meta: [
-      { title: "Rank Your Brand — Sé la respuesta que tus compradores encuentran en ChatGPT" },
+      { title: "Rank Your Brand — Sistemas de crecimiento para marcas modernas" },
       {
         name: "description",
         content:
-          "SEO nativo de IA para B2B. Construimos sistemas de visibilidad citados por ChatGPT, Perplexity y Google AI. Diagnóstico web gratuito en 48 horas.",
+          "No vendemos tareas sueltas. Construimos sistemas de crecimiento: estrategia, marca, web, SEO, GEO, Ads y automatización con IA — conectados para que la empresa escale con orden.",
       },
-      { property: "og:title", content: "Rank Your Brand — SEO Nativo de IA para B2B" },
+      { property: "og:title", content: "Rank Your Brand — Sistemas de crecimiento" },
       {
         property: "og:description",
-        content: "Sé la respuesta que tus compradores encuentran. Diagnóstico web gratuito en 48 horas.",
+        content: "Estrategia, marca, web, SEO/GEO, Ads y automatización con IA — un sistema de crecimiento conectado.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/" }],
+    links: [
+      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/es" },
+      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/" },
+      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es" },
+    ],
   }),
   component: HomeEs,
 });
 
-const headlineWords = [
-  "Tus", "compradores", "ya", "te", "buscaron",
-  "en", "ChatGPT.",
-];
+const headlineWords = ["No", "vendemos", "tareas", "sueltas."];
 
 function Hero() {
   return (
@@ -37,7 +40,6 @@ function Hero() {
       <div className="absolute inset-0 -z-10 bg-soft-glow" />
       <div className="absolute inset-0 -z-10 grid-overlay opacity-60" />
 
-      {/* Floating diagonal gradient blob bottom-right */}
       <motion.div
         aria-hidden
         className="absolute -bottom-40 -right-40 -z-10 h-[640px] w-[640px] rounded-full opacity-70 blur-3xl"
@@ -48,7 +50,7 @@ function Hero() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <Eyebrow>SEO Nativo de IA · USA + Europa</Eyebrow>
+          <Eyebrow>Agencia de sistemas de crecimiento · USA + Europa + LATAM</Eyebrow>
         </Reveal>
 
         <h1 className="mt-8 max-w-5xl text-balance text-5xl leading-[0.95] sm:text-6xl lg:text-[clamp(4rem,8vw,7.5rem)]">
@@ -71,37 +73,22 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            ¿Te encontraron?
+            Construimos sistemas de crecimiento.
           </motion.span>
         </h1>
 
         <Reveal delay={0.8}>
           <p className="mt-8 max-w-2xl text-pretty text-lg text-ink/75 lg:text-xl">
-            El 68% de los compradores B2B usan motores de búsqueda con IA antes de visitar cualquier sitio web.
-            Si no estás optimizado para ChatGPT, Perplexity y Google AI, no existes para tu próximo cliente.
+            Estrategia, marca, web, SEO, GEO, adquisición pagada y automatización
+            con IA — conectados como un único sistema operativo para que tu
+            empresa crezca con orden, autoridad y resultados previsibles.
           </p>
         </Reveal>
 
         <Reveal delay={1}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <CTA to="/es/auditoria">Obtén tu diagnóstico web gratuito</CTA>
-            <CTA to="/es/metodologia" variant="ghost">Ve cómo lo hacemos</CTA>
-          </div>
-        </Reveal>
-
-        {/* Split visual */}
-        <Reveal delay={1.2}>
-          <div className="mt-20 grid gap-4 lg:grid-cols-2">
-            <SearchMock
-              kind="google"
-              title="google.com"
-              query="mejor software de logística B2B"
-            />
-            <SearchMock
-              kind="chatgpt"
-              title="chatgpt.com"
-              query="¿Cuál es el mejor software de logística B2B en 2026?"
-            />
+            <CTA to="/es/auditoria">Diagnóstico gratuito</CTA>
+            <CTA to="/es/metodologia" variant="ghost">Ver la metodología</CTA>
           </div>
         </Reveal>
       </div>
@@ -109,132 +96,231 @@ function Hero() {
   );
 }
 
-function SearchMock({
-  kind,
-  title,
-  query,
-}: {
-  kind: "google" | "chatgpt";
-  title: string;
-  query: string;
-}) {
-  const isAI = kind === "chatgpt";
-  return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      className={`relative overflow-hidden rounded-3xl border shadow-card ${
-        isAI ? "border-flow/30 bg-ink text-canvas" : "border-border bg-card"
-      }`}
-    >
-      <div className={`flex items-center gap-2 border-b px-5 py-3 text-xs ${isAI ? "border-canvas/10 text-canvas/60" : "border-border text-ink/60"}`}>
-        <span className="h-2.5 w-2.5 rounded-full bg-prompt/60" />
-        <span className="h-2.5 w-2.5 rounded-full bg-flow/40" />
-        <span className="h-2.5 w-2.5 rounded-full bg-current/20" />
-        <span className="ml-3 font-display tracking-wider">{title}</span>
-      </div>
-      <div className="p-6">
-        <div className={`mb-5 rounded-full px-4 py-2 text-sm ${isAI ? "bg-canvas/10" : "bg-muted"}`}>
-          {query}
-        </div>
-
-        {isAI ? (
-          <>
-            <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-widest text-flow">
-              <span className="h-1.5 w-1.5 rounded-full bg-flow animate-pulse" />
-              Respuesta IA
-            </div>
-            <p className="text-sm leading-relaxed text-canvas/85">
-              Para el mercado medio B2B, las plataformas líderes incluyen{" "}
-              <span className="rounded bg-prompt/20 px-1 text-prompt">CompetidorUno</span>,{" "}
-              <span className="rounded bg-prompt/20 px-1 text-prompt">CompetidorDos</span>{" "}
-              y <span className="rounded bg-prompt/20 px-1 text-prompt">CompetidorTres</span>.
-              Cada una ofrece routing automatizado, seguimiento en tiempo real e integraciones EDI.
-            </p>
-            <div className="mt-5 flex items-center gap-2 text-xs text-canvas/50">
-              Fuentes: 3 citadas · <span className="text-prompt">Tu marca: no mencionada</span>
-            </div>
-          </>
-        ) : (
-          <>
-            <ul className="space-y-4 text-sm">
-              {[
-                "competidoruno.com — Top 10 plataformas de logística B2B",
-                "g2.com — Mejor software de logística 2026",
-                "gartner.com — Magic Quadrant para logística",
-                "competidordos.com — Por qué lideramos el mercado",
-              ].map((r) => (
-                <li key={r} className="border-b border-border/60 pb-3 last:border-0">
-                  <div className="text-flow underline-offset-4 hover:underline">{r}</div>
-                  <div className="mt-1 text-xs text-ink/50">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
-    </motion.div>
-  );
-}
-
-function GeoGap() {
-  const milestones = [
-    { year: "2020", label: "Google SERP clásico", note: "10 enlaces azules" },
-    { year: "2023", label: "Aparecen snippets SGE", note: "Las vistas previas de IA van a beta" },
-    { year: "2024", label: "ChatGPT se convierte en herramienta de investigación", note: "200M usuarios semanales" },
-    { year: "2026", label: "La búsqueda con IA es el estándar", note: "68% de la investigación B2B" },
-  ];
+function ShiftNarrative() {
   return (
     <section className="relative bg-canvas py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <Eyebrow>La Brecha GEO</Eyebrow>
+          <Eyebrow>El cambio</Eyebrow>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Hay nuevas formas de aparecer en los motores de búsqueda.{" "}
-            <span className="text-prompt italic">Nosotros sabemos cómo.</span>
+          <h2 className="mt-6 max-w-4xl text-4xl lg:text-6xl">
+            Una agencia tradicional opera en silos.{" "}
+            <span className="text-prompt italic">Un sistema de crecimiento conecta todo.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="mt-6 max-w-2xl text-lg text-ink/70">
-            Los sistemas de IA ahora generan respuestas — no solo listas de enlaces. Tus compradores
-            reciben marcas citadas como respuesta antes de hacer clic en nada.
-            La pregunta es si tu marca es una de ellas.
+          <p className="mt-6 max-w-3xl text-lg text-ink/70">
+            Marca, web, contenido, SEO, GEO, Ads y reporting solían vivir en
+            equipos y herramientas separadas. Por eso el crecimiento se sentía
+            desconectado: cada pieza optimizada para sí misma, ninguna para el
+            negocio. Reconstruimos el sistema operativo completo para que cada
+            parte refuerce a la siguiente.
           </p>
         </Reveal>
 
-        <div className="relative mt-20">
-          <div className="absolute left-0 right-0 top-6 h-px bg-ink/15" />
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="absolute left-0 top-6 h-px origin-left"
-            style={{ right: 0, background: "var(--gradient-diagonal)" }}
-          />
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {milestones.map((m, i) => (
-              <Reveal key={m.year} delay={0.1 * i}>
-                <div className="relative pt-12">
-                  <div className="absolute left-0 top-3.5 h-6 w-6 rounded-full border-2 border-prompt bg-canvas" />
-                  <div className="font-display text-2xl text-prompt">{m.year}</div>
-                  <div className="mt-2 text-lg font-semibold">{m.label}</div>
-                  <div className="mt-1 text-sm text-ink/60">{m.note}</div>
+        <Reveal delay={0.35}>
+          <div className="mt-16 grid gap-6 lg:grid-cols-3">
+            {[
+              { k: "Estrategia primero", v: "Cada entregable responde a una pregunta de negocio, no a un checklist de canal." },
+              { k: "Operaciones AI-Native", v: "Flujos multi-agente que producen, monitorean y reportan a una velocidad imposible manualmente." },
+              { k: "Activos que componen", v: "Marca, web, SEO y contenido diseñados para revalorizarse, no expirar con la campaña." },
+            ].map((b, i) => (
+              <Reveal key={b.k} delay={0.1 * i}>
+                <div className="h-full rounded-3xl border border-border bg-card p-8">
+                  <div className="font-display text-xs tracking-[0.3em] text-prompt">0{i + 1}</div>
+                  <h3 className="h3-soft mt-4 text-2xl">{b.k}</h3>
+                  <p className="mt-4 text-ink/70">{b.v}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function GrowthSystem() {
+  const stages = [
+    { n: "01", name: "Diagnóstico", body: "Contexto, etapa, objetivo, cuello de botella y oportunidad principal." },
+    { n: "02", name: "Diseño de estructura", body: "Qué debe construirse primero para que el crecimiento tenga base." },
+    { n: "03", name: "Implementación", body: "Ejecución de activos, procesos y mejoras en el frente priorizado." },
+    { n: "04", name: "Optimización", body: "Medición e iteración continua con datos del mercado y del negocio." },
+    { n: "05", name: "Escalamiento", body: "Convertimos lo que funciona en un sistema repetible y escalable." },
+  ];
+  return (
+    <section className="bg-ink py-28 text-canvas lg:py-36">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal>
+          <Eyebrow tone="canvas">El sistema</Eyebrow>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
+            Del diagnóstico al <span className="italic text-prompt">sistema escalable.</span>
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid gap-4 lg:grid-cols-5">
+          {stages.map((s, i) => (
+            <motion.div
+              key={s.n}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="relative rounded-2xl border border-canvas/10 bg-canvas/[0.04] p-6"
+            >
+              <div className="font-display text-xs tracking-[0.3em] text-prompt">{s.n}</div>
+              <div className="mt-4 font-display text-xl">{s.name}</div>
+              <p className="mt-3 text-sm text-canvas/70">{s.body}</p>
+              {i < stages.length - 1 && (
+                <div className="absolute right-[-1rem] top-1/2 hidden h-px w-4 bg-flow lg:block" />
+              )}
+            </motion.div>
+          ))}
         </div>
 
         <Reveal delay={0.4}>
-          <div className="mt-20 overflow-hidden rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-14">
+          <div className="mt-12">
+            <CTA to="/es/metodologia" variant="outline-canvas">Ver la metodología completa</CTA>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ServicesPreview() {
+  const services = [
+    {
+      tag: "SEO & GEO",
+      to: "/es/servicios/seo-geo" as const,
+      kicker: "Visibilidad orgánica",
+      desc: "Arquitectura SEO transaccional, contenido comercial y optimización para motores de IA como ChatGPT, Perplexity y Google AI.",
+      tone: "border-prompt/40 bg-prompt/5",
+    },
+    {
+      tag: "Mega Ads",
+      to: "/es/servicios/mega-ads" as const,
+      kicker: "Adquisición pagada",
+      desc: "Sistemas publicitarios en Meta, Google y otros canales para acelerar resultados, validar ofertas o escalar demanda.",
+      tone: "border-ink/15 bg-ink text-canvas",
+    },
+    {
+      tag: "Automatización IA",
+      to: "/es/servicios/automatizacion-ia" as const,
+      kicker: "Palanca operativa",
+      desc: "Procesos manuales convertidos en sistemas inteligentes: marketing, seguimiento comercial, contenido, clasificación de leads.",
+      tone: "border-flow/40 bg-flow/[0.06]",
+    },
+    {
+      tag: "Desarrollo Web",
+      to: "/es/servicios/desarrollo-web" as const,
+      kicker: "Infraestructura digital",
+      desc: "Sitios web listos para vender, rankear y escalar. Activos digitales que conectan estructura, experiencia y conversión.",
+      tone: "border-prompt/40 bg-prompt/5",
+    },
+    {
+      tag: "Branding",
+      to: "/es/servicios/branding" as const,
+      kicker: "Posicionamiento e identidad",
+      desc: "Naming, narrativa, mensaje, sistema visual, tono y guidelines para crecer con consistencia.",
+      tone: "border-ink/15 bg-ink text-canvas",
+    },
+    {
+      tag: "Fundamentos Digitales",
+      to: "/es/servicios/fundamentos-digitales" as const,
+      kicker: "Base para empezar",
+      desc: "Base de marca, canales, web mínima viable y mensajes — para empresas que arrancan con la estructura correcta.",
+      tone: "border-flow/40 bg-flow/[0.06]",
+    },
+  ];
+  return (
+    <section className="py-28 lg:py-36">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal>
+          <Eyebrow>Servicios</Eyebrow>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-6 max-w-4xl text-4xl lg:text-6xl">
+            Seis servicios conectados. <span className="italic text-prompt">Un sistema de crecimiento.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-6 max-w-3xl text-lg text-ink/70">
+            Entra con una necesidad específica y evoluciona hacia el sistema
+            integrado. Cada servicio está diseñado para reforzar a los demás —
+            no para venderse como táctica aislada.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {services.map((s, i) => {
+            const dark = s.tone.includes("text-canvas");
+            return (
+              <Reveal key={s.tag} delay={i * 0.06}>
+                <Link to={s.to} className="block h-full">
+                  <motion.article
+                    whileHover={{ y: -6 }}
+                    className={`group h-full rounded-3xl border p-8 transition-shadow hover:shadow-card ${s.tone}`}
+                  >
+                    <div className={`font-display text-xs tracking-[0.3em] ${dark ? "text-canvas/60" : "text-ink/50"}`}>
+                      {s.kicker}
+                    </div>
+                    <h3 className="h3-soft mt-3 text-2xl lg:text-3xl">{s.tag}</h3>
+                    <p className={`mt-4 ${dark ? "text-canvas/75" : "text-ink/70"}`}>{s.desc}</p>
+                    <div className={`mt-8 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider ${dark ? "text-canvas" : "text-ink"} group-hover:text-prompt`}>
+                      Conocer más <span aria-hidden>→</span>
+                    </div>
+                  </motion.article>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        <Reveal delay={0.4}>
+          <div className="mt-12 flex flex-wrap gap-3">
+            <CTA to="/es/servicios">Explorar todos los servicios</CTA>
+            <CTA to="/es/contacto" variant="outline">Hablar con nosotros</CTA>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function GeoGap() {
+  return (
+    <section className="relative bg-ink/[0.02] py-28 lg:py-36">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal>
+          <Eyebrow>Por qué ahora</Eyebrow>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
+            Hay nuevas formas de aparecer en las búsquedas.{" "}
+            <span className="text-prompt italic">Y una nueva forma de construir agencias.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-6 max-w-2xl text-lg text-ink/70">
+            Los motores de IA generan respuestas en lugar de listas de enlaces.
+            Los compradores reciben marcas citadas antes de hacer clic en nada.
+            Al mismo tiempo, las agencias tradicionales siguen entregando tareas
+            desconectadas en ciclos mensuales. Ambas realidades están cambiando —
+            estamos construidos para las dos.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.4}>
+          <div className="mt-16 overflow-hidden rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-14">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <div className="font-display text-7xl text-prompt lg:text-9xl">68%</div>
                 <p className="mt-3 max-w-md text-ink/70">
-                  de los compradores B2B inician la investigación de productos con un asistente de IA — no con un motor de búsqueda.
+                  de los compradores B2B inician su investigación con un asistente de IA — no con un buscador.
                 </p>
               </div>
               <div className="text-right text-xs uppercase tracking-widest text-ink/50">
@@ -248,218 +334,30 @@ function GeoGap() {
   );
 }
 
-function Pillars() {
-  const pillars = [
-    {
-      tag: "01",
-      title: "Arquitectura que convierte",
-      body:
-        "Construimos sitios web diseñados para guiar a los visitantes desde el primer clic hasta el contacto. No páginas bonitas — sistemas de ventas.",
-    },
-    {
-      tag: "02",
-      title: "Operaciones nativas de IA",
-      body:
-        "Nuestros flujos AI-Native producen contenido estratégico a escala sin sacrificar calidad. Más velocidad. Mejores resultados. Menor costo.",
-    },
-    {
-      tag: "03",
-      title: "Optimización GEO",
-      body:
-        "Optimizamos tu marca para que sea citada por ChatGPT, Perplexity y Google AI — la nueva capa de búsqueda donde los compradores deciden.",
-    },
-  ];
-  return (
-    <section className="bg-ink py-28 text-canvas lg:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal>
-          <Eyebrow tone="canvas">El sistema</Eyebrow>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h2 className="mt-6 max-w-4xl text-4xl text-canvas lg:text-6xl">
-            Construimos sistemas de visibilidad, <span className="italic text-prompt">no campañas de SEO.</span>
-          </h2>
-        </Reveal>
-
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
-          {pillars.map((p, i) => (
-            <Reveal key={p.tag} delay={0.1 * i}>
-              <motion.div
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 200, damping: 18 }}
-                className="group relative h-full overflow-hidden rounded-3xl border border-canvas/10 bg-canvas/[0.03] p-8 transition-colors hover:border-flow/40"
-              >
-                <div className="font-display text-xs tracking-[0.3em] text-prompt">{p.tag}</div>
-                <h3 className="h3-soft mt-6 text-2xl text-canvas lg:text-3xl">{p.title}</h3>
-                <p className="mt-4 text-canvas/70">{p.body}</p>
-                <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-flow/0 blur-3xl transition-all group-hover:bg-flow/30" />
-              </motion.div>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={0.35}>
-          <div className="mt-12">
-            <CTA to="/es/metodologia" variant="outline-canvas">Ver la metodología</CTA>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function CaseStudyZero() {
-  const metrics = [
-    { label: "Días desde el lanzamiento", value: "42" },
-    { label: "Keywords orgánicas posicionadas", value: "127" },
-    { label: "Citas en ChatGPT", value: "9" },
-    { label: "Menciones en Perplexity", value: "14" },
-    { label: "Google AI overviews", value: "6" },
-    { label: "Artículos publicados", value: "23" },
-  ];
-  return (
-    <section className="bg-canvas py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
-          <Reveal>
-            <div>
-              <Eyebrow>Caso de Estudio #0</Eyebrow>
-              <h2 className="mt-6 text-4xl lg:text-6xl">
-                Este sitio web <span className="italic text-prompt">es</span> nuestro primer caso de estudio.
-              </h2>
-              <p className="mt-6 max-w-md text-ink/70">
-                No solo hablamos de SEO nativo de IA. Lo practicamos en nosotros mismos, en público. Cada métrica que aparece a continuación viene de este mismo sitio.
-              </p>
-              <div className="mt-8">
-                <CTA to="/es/metodologia">Ver la metodología</CTA>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <div className="overflow-hidden rounded-3xl border border-ink/10 bg-ink text-canvas shadow-elegant">
-              <div className="flex items-center justify-between border-b border-canvas/10 px-6 py-4">
-                <div className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-prompt animate-pulse" />
-                  <span className="font-display text-xs tracking-widest text-canvas/70">RYB.CO · EN VIVO</span>
-                </div>
-                <span className="text-xs text-canvas/40">Actualizado hace 6 min</span>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-3">
-                {metrics.map((m) => (
-                  <div key={m.label} className="border-b border-r border-canvas/10 p-6 last:border-r-0">
-                    <div className="font-display text-4xl text-canvas lg:text-5xl">{m.value}</div>
-                    <div className="mt-2 text-xs uppercase tracking-wider text-canvas/50">{m.label}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-canvas/10 bg-canvas/[0.04] px-6 py-4 text-xs text-canvas/50">
-                Fuente: GSC + DataForSEO + revisiones manuales de IA · Actualizado cada hora
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ServicesPreview() {
-  const services = [
-    {
-      tag: "SEO Técnico",
-      to: "/es/servicios/seo-tecnico" as const,
-      kicker: "Fundación",
-      meta: "Proyecto · 4–6 semanas",
-      desc: "Desarrollo web completo + base técnica SEO. Lista para crecimiento orgánico y descubrimiento por IA.",
-      tone: "border-prompt/40 bg-prompt/5",
-    },
-    {
-      tag: "SEO para B2B",
-      to: "/es/servicios/seo-b2b" as const,
-      kicker: "Crecimiento",
-      meta: "Retainer mensual · Mínimo 6 meses",
-      desc: "Crecimiento orgánico, mes a mes. Motor de contenido con IA + CRO + link building + dashboards.",
-      tone: "border-ink/15 bg-ink text-canvas",
-    },
-    {
-      tag: "Agencia SEO IA",
-      to: "/es/servicios/agencia-seo-ia" as const,
-      kicker: "Autoridad",
-      meta: "Retainer premium · 12 meses",
-      desc: "La autoridad que la IA recomienda. Todo lo de SEO para B2B + GEO + liderazgo de pensamiento.",
-      tone: "border-flow/40 bg-flow/[0.06]",
-    },
-  ];
-  return (
-    <section className="py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal>
-          <Eyebrow>Servicios</Eyebrow>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Tres niveles. Un objetivo: <span className="italic text-prompt">que te encuentren.</span>
-          </h2>
-        </Reveal>
-
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.tag} delay={0.1 * i}>
-              <Link to={s.to} className="block h-full">
-                <motion.div
-                  whileHover={{ y: -6 }}
-                  className={`relative flex h-full flex-col rounded-3xl border p-8 transition-shadow hover:shadow-card ${s.tone}`}
-                >
-                  <div className={`font-display text-xs tracking-[0.3em] ${s.tone.includes("text-canvas") ? "text-canvas/60" : "text-ink/50"}`}>
-                    {s.kicker}
-                  </div>
-                  <h3 className="h3-soft mt-3 text-3xl lg:text-4xl">{s.tag}</h3>
-                  <p className={`mt-5 ${s.tone.includes("text-canvas") ? "text-canvas/75" : "text-ink/70"}`}>
-                    {s.desc}
-                  </p>
-                  <div className="mt-auto pt-10">
-                    <div className={`mono-light text-xs uppercase tracking-widest ${s.tone.includes("text-canvas") ? "text-canvas/50" : "text-ink/50"}`}>
-                      {s.meta}
-                    </div>
-                    <div className="mt-4 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider">
-                      Ver más <span aria-hidden>→</span>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 const faqs = [
   {
-    q: "¿Qué es GEO y por qué importa para B2B?",
-    a: "GEO (Optimización para Motores Generativos) es la práctica de optimizar tu contenido para que sistemas de IA como ChatGPT, Perplexity y Google AI Overview citen tu marca cuando responden preguntas de compradores. En B2B, el 68% de los compradores inicia su investigación con un asistente de IA — si no apareces citado, no existes en esa etapa crítica.",
+    q: "¿Qué es exactamente un sistema de crecimiento?",
+    a: "Es el conjunto conectado de piezas que una empresa moderna necesita para crecer: estrategia, marca, web, SEO/GEO, adquisición pagada, automatización con IA y reporting — diseñadas para reforzarse. En vez de contratar cinco proveedores para cinco tácticas, obtienes un sistema operativo donde cada activo compone.",
   },
   {
-    q: "¿En qué se diferencia del SEO tradicional?",
-    a: "El SEO tradicional apunta a los 10 enlaces azules de Google. GEO apunta a las respuestas generadas por IA que ahora aparecen antes de esos enlaces — y que en muchos casos los reemplazan por completo. Optimizamos ambas capas: SEO técnico clásico para el ranking Y arquitectura de contenido que hace que los sistemas de IA te citen.",
+    q: "¿Tengo que contratar todo al mismo tiempo?",
+    a: "No. La mayoría empieza con un servicio específico — normalmente el cuello de botella actual — y evoluciona hacia el sistema integrado a medida que aparecen resultados. Cada servicio está diseñado para conectar con el siguiente.",
   },
   {
-    q: "¿Cuánto tiempo tarda en ver resultados?",
-    a: "Las correcciones técnicas y mejoras de contenido suelen mostrar movimiento inicial en 6–12 semanas. Los resultados de citación GEO (menciones en ChatGPT, Perplexity) suelen aparecer en 8–16 semanas. Blueprint crea la base; Scale y Landmark construyen la visibilidad compuesta en 6–12 meses.",
+    q: "¿En qué se diferencia de una agencia tradicional?",
+    a: "Las agencias tradicionales venden entregables aislados en silos. Nosotros construimos sistemas. Eso significa estrategia compartida, datos compartidos, operaciones AI-Native y cada activo diseñado para fortalecer al siguiente — no para justificar un fee mensual.",
   },
   {
-    q: "¿Trabajan con empresas fuera de EE.UU.?",
-    a: "Sí. Trabajamos con empresas B2B en EE.UU., Europa y LATAM. Nuestro equipo opera en múltiples zonas horarias y hemos optimizado para mercados en inglés y español.",
+    q: "¿Qué significa 'AI-Native' en la práctica?",
+    a: "Que la IA es parte de cómo operamos, no un buzzword que vendemos. Flujos multi-agente que ejecutan investigación, producción de contenido, monitoreo y reportes a una velocidad y costo imposibles manualmente — para que más de tu presupuesto vaya a estrategia y calidad.",
   },
   {
-    q: "¿Por qué el diagnóstico gratuito es realmente gratis?",
-    a: "Analizamos tu sitio, hacemos benchmarks de competidores y verificamos tu presencia actual en Google AI, ChatGPT y Perplexity — luego entregamos un PDF de 5–7 páginas con hallazgos accionables. Sin trampa. Lo hacemos porque los mejores clientes llegan al ver valor real primero.",
+    q: "¿Qué incluye el diagnóstico gratuito?",
+    a: "Una revisión estructurada de tu sitio, posicionamiento, canales, presencia en Google y motores de IA, y una recomendación priorizada de próximos pasos. Sin obligación. Es como iniciamos conversaciones que terminan en proyectos reales.",
   },
   {
-    q: "¿Qué incluye la auditoría completa de $497?",
-    a: "Un PDF de 20 páginas con 50+ puntos de control técnico, benchmarks de 3–5 competidores, 100+ oportunidades de keywords, auditoría de perfil de backlinks, hoja de ruta de optimización GEO y un plan de implementación de 90 días. Más una sesión de video de 30 minutos con nuestro equipo. El pago es totalmente reembolsable si nos contratas en 30 días.",
+    q: "¿Trabajan fuera de LATAM?",
+    a: "Sí. Atendemos empresas en LATAM, USA y Europa, en español e inglés, a través de varias zonas horarias.",
   },
 ];
 
@@ -473,7 +371,7 @@ function FAQ() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-6 max-w-3xl text-4xl lg:text-6xl">
-            Las preguntas que <span className="italic text-prompt">siempre nos hacen.</span>
+            Preguntas que <span className="italic text-prompt">siempre nos hacen.</span>
           </h2>
         </Reveal>
 
@@ -530,13 +428,14 @@ function FinalCTA() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mt-10 max-w-4xl text-balance text-4xl text-canvas lg:text-7xl">
-            ¿Sabes cómo aparece tu marca cuando un comprador te busca en ChatGPT hoy?
+            Si quieres resultados más previsibles, necesitas más que ejecución.{" "}
+            <span className="italic text-prompt">Necesitas un sistema.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <CTA to="/es/auditoria" variant="outline-canvas">Descúbrelo gratis en 48h</CTA>
-            <CTA to="/es/contacto" variant="outline-canvas">Háblanos</CTA>
+            <CTA to="/es/auditoria" variant="outline-canvas">Diagnóstico gratuito</CTA>
+            <CTA to="/es/contacto" variant="outline-canvas">Agendar llamada</CTA>
           </div>
         </Reveal>
       </div>
@@ -544,13 +443,25 @@ function FinalCTA() {
   );
 }
 
+const homepageFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 function HomeEs() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }} />
       <Hero />
-      <GeoGap />
-      <Pillars />
+      <ShiftNarrative />
+      <GrowthSystem />
       <ServicesPreview />
+      <GeoGap />
       <FAQ />
       <FinalCTA />
     </>
