@@ -112,18 +112,6 @@ const diego: Author = {
   initials: "DP",
 };
 
-const katty: Author = {
-  name: "Katty Theran",
-  role: "Estratega SEO",
-  initials: "KT",
-};
-
-const paula: Author = {
-  name: "Paula Elena",
-  role: "Líder de Contenido y GEO",
-  initials: "PE",
-};
-
 // ─── Artículos ──────────────────────────────────────────────────────────────
 
 const articlesEs: ArticleEs[] = [
@@ -237,7 +225,7 @@ const articlesEs: ArticleEs[] = [
       },
       {
         type: "callout",
-        text: "Probamos más de 50 consultas semanalmente en ChatGPT, Perplexity y Claude para cada cliente. Las marcas que se citan con mayor consistencia comparten un rasgo: han publicado contenido autorizado y estructurado en un cluster de temas bien definido — no contenido generalista disperso.",
+        text: "Seguimos cada semana las consultas de nuestros clientes en ChatGPT, Perplexity y Claude. Las marcas que se citan con mayor consistencia comparten un rasgo: han publicado contenido autorizado y estructurado en un cluster de temas bien definido — no contenido generalista disperso.",
       },
       {
         type: "h2",
@@ -303,7 +291,7 @@ const articlesEs: ArticleEs[] = [
       },
       {
         type: "p",
-        text: "El SEO tradicional es un juego de posicionamiento: rankear lo más alto posible en la lista ordenada de resultados para una consulta. La tasa de clics cae drásticamente después de la posición 3. La posición 1 obtiene aproximadamente el 40% de los clics. Todo lo demás lucha por las migajas restantes.",
+        text: "El SEO tradicional es un juego de posicionamiento: rankear lo más alto posible en la lista ordenada de resultados para una consulta. La tasa de clics cae drásticamente después de la posición 3. La posición 1 concentra la mayor parte de los clics. Todo lo demás lucha por las migajas restantes.",
       },
       {
         type: "p",
@@ -355,7 +343,7 @@ const articlesEs: ArticleEs[] = [
     categoryEs: "busqueda-con-ia",
     excerpt: "Ser mencionado en las respuestas de ChatGPT se está convirtiendo en una fuente principal de leads para empresas B2B. Aquí está el enfoque sistemático que usamos para aumentar las tasas de citación de nuestros clientes.",
     publishedAt: "2026-04-25",
-    author: katty,
+    author: julio,
     body: [
       {
         type: "p",
@@ -424,7 +412,7 @@ const articlesEs: ArticleEs[] = [
     categoryEs: "crecimiento-b2b",
     excerpt: "El SEO para B2B es fundamentalmente diferente al B2C. Los ciclos de compra largos, las decisiones en comité y las keywords de nicho requieren un enfoque distinto. Aquí te mostramos cómo construirlo.",
     publishedAt: "2026-05-15",
-    author: paula,
+    author: diego,
     body: [
       {
         type: "p",
@@ -615,7 +603,7 @@ const articlesEs: ArticleEs[] = [
     categoryEs: "seo-tecnico",
     excerpt: "Los sitios web de SaaS tienen desafíos únicos de SEO técnico: renderizado JavaScript, estrategia de subdominios, contenido dinámico y Core Web Vitals. Aquí te explicamos cómo abordar cada uno.",
     publishedAt: "2026-05-08",
-    author: katty,
+    author: julio,
     body: [
       {
         type: "p",
@@ -676,7 +664,7 @@ const articlesEs: ArticleEs[] = [
     categoryEs: "seo-tecnico",
     excerpt: "Una auditoría de SEO técnico es el punto de partida de cualquier engagement SEO serio. Aquí está el proceso exacto de 4 fases que usamos con cada cliente B2B.",
     publishedAt: "2026-04-02",
-    author: paula,
+    author: diego,
     body: [
       {
         type: "p",

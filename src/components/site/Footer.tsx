@@ -102,7 +102,7 @@ export function Footer() {
               julio@rankyourbrand.co
             </a>
             <p className="text-canvas/60">
-              {isEs ? "Servimos a empresas B2B en EE.UU., Europa y LATAM" : "Serving B2B companies in USA, Europe & LATAM"}
+              {isEs ? "Servimos a empresas B2B en Colombia y EE.UU." : "Serving B2B companies in Colombia & the USA"}
             </p>
           </div>
           <div className="mt-6 flex items-center gap-3">

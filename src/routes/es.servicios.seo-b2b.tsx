@@ -50,9 +50,9 @@ export const Route = createFileRoute("/es/servicios/seo-b2b")({
         ["03", "Escalar lo que funciona, expandir a nuevos territorios de keywords"],
       ]}
       outcomes={[
-        "Mes 3 — +20–30% de tráfico orgánico, momentum visible en movimiento de keywords",
-        "Mes 6 — +50–80% de tráfico orgánico, 3–5 keywords en el top 10",
-        "Mes 12 — 2–3× tráfico orgánico con generación de leads predecible",
+        "Mes 3 — base técnica corregida, producción de contenido en marcha y primer movimiento de keywords medido",
+        "Mes 6 — keywords prioritarias entrando al top 10 y primeros leads orgánicos medidos",
+        "Mes 12 — crecimiento orgánico acumulativo con un flujo de leads predecible",
       ]}
       faqs={[
         ["¿Necesito SEO Técnico antes de SEO para B2B?", "No siempre. Auditamos tu sitio primero. Si existen problemas técnicos, los corregimos en el Mes 1 de SEO para B2B (o recomendamos SEO Técnico primero)."],

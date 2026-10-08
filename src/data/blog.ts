@@ -76,18 +76,6 @@ const diego: Author = {
   initials: "DP",
 };
 
-const katty: Author = {
-  name: "Katty Theran",
-  role: "SEO Strategist",
-  initials: "KT",
-};
-
-const paula: Author = {
-  name: "Paula Elena",
-  role: "Content & GEO Lead",
-  initials: "PE",
-};
-
 // ─── Articles ──────────────────────────────────────────────────────────────────
 
 const articles: Article[] = [
@@ -199,7 +187,7 @@ const articles: Article[] = [
       },
       {
         type: "callout",
-        text: "We test 50+ queries weekly across ChatGPT, Perplexity and Claude for each client. The brands that get cited most consistently share one trait: they've published authoritative, structured content on a tight topic cluster — not scattered generalist content.",
+        text: "We track client queries every week across ChatGPT, Perplexity and Claude. The brands that get cited most consistently share one trait: they've published authoritative, structured content on a tight topic cluster — not scattered generalist content.",
       },
       {
         type: "h2",
@@ -271,7 +259,7 @@ const articles: Article[] = [
       },
       {
         type: "p",
-        text: "Traditional SEO is a placement game: rank as high as possible in the ordered list of results for a query. Click-through rate drops sharply after position 3. Position 1 gets roughly 40% of clicks. Everything else fights over the remaining crumbs.",
+        text: "Traditional SEO is a placement game: rank as high as possible in the ordered list of results for a query. Click-through rate drops sharply after position 3. Position 1 captures the largest share of clicks. Everything else fights over the remaining crumbs.",
       },
       {
         type: "p",
@@ -321,7 +309,7 @@ const articles: Article[] = [
     category: "ai-search",
     excerpt: "Being mentioned in ChatGPT answers is becoming a primary lead source for B2B companies. Here's the systematic approach we use to increase citation rates for our clients.",
     publishedAt: "2026-04-25",
-    author: katty,  // 3 — Katty Theran
+    author: julio,  // 3 — Julio Llanos
     body: [
       {
         type: "p",
@@ -392,7 +380,7 @@ const articles: Article[] = [
     category: "b2b-growth",
     excerpt: "B2B SEO is fundamentally different from B2C. Long buying cycles, committee decisions and niche keywords require a different approach. Here's how to build one.",
     publishedAt: "2026-05-15",
-    author: paula,  // 4 — Paula Elena
+    author: diego,  // 4 — Diego Parra
     body: [
       {
         type: "p",
@@ -577,7 +565,7 @@ const articles: Article[] = [
     category: "seo-engineering",
     excerpt: "SaaS websites have unique technical SEO challenges — JavaScript rendering, subdomain strategy, dynamic content and Core Web Vitals. Here's how to tackle each.",
     publishedAt: "2026-05-08",
-    author: katty,  // 7 — Katty Theran
+    author: julio,  // 7 — Julio Llanos
     body: [
       {
         type: "p",
@@ -636,7 +624,7 @@ const articles: Article[] = [
     category: "seo-engineering",
     excerpt: "A technical SEO audit is the starting point for any serious SEO engagement. Here's the exact 4-phase process we use for every new B2B client.",
     publishedAt: "2026-04-02",
-    author: paula,  // 8 — Paula Elena
+    author: diego,  // 8 — Diego Parra
     body: [
       {
         type: "p",
