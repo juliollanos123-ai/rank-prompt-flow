@@ -9,12 +9,12 @@ export const Route = createFileRoute("/services/digital-foundations")({
       { property: "og:title", content: "Digital Foundations — Rank Your Brand" },
       { property: "og:description", content: "Digital foundations for brands that need to start well from day one." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/services/digital-foundations" },
+      { property: "og:url", content: "https://rankyourbrand.co/services/digital-foundations" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/services/digital-foundations" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/digital-foundations" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/fundamentos-digitales" },
+      { rel: "canonical", href: "https://rankyourbrand.co/services/digital-foundations" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/digital-foundations" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/fundamentos-digitales" },
     ],
   }),
   component: () => (

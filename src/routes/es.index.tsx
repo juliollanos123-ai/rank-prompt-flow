@@ -24,9 +24,9 @@ export const Route = createFileRoute("/es/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/es" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es" },
+      { rel: "canonical", href: "https://rankyourbrand.co/es" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es" },
     ],
   }),
   component: HomeEs,

@@ -9,12 +9,12 @@ export const Route = createFileRoute("/es/servicios/fundamentos-digitales")({
       { property: "og:title", content: "Fundamentos Digitales — Rank Your Brand" },
       { property: "og:description", content: "Fundamentos digitales para marcas que necesitan empezar bien desde el día uno." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/es/servicios/fundamentos-digitales" },
+      { property: "og:url", content: "https://rankyourbrand.co/es/servicios/fundamentos-digitales" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/es/servicios/fundamentos-digitales" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/digital-foundations" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/fundamentos-digitales" },
+      { rel: "canonical", href: "https://rankyourbrand.co/es/servicios/fundamentos-digitales" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/digital-foundations" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/fundamentos-digitales" },
     ],
   }),
   component: () => (

@@ -9,12 +9,12 @@ export const Route = createFileRoute("/services/ai-automation")({
       { property: "og:title", content: "AI Automation — Rank Your Brand" },
       { property: "og:description", content: "AI-Native automation for companies that want to scale without breaking their operation." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/services/ai-automation" },
+      { property: "og:url", content: "https://rankyourbrand.co/services/ai-automation" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/services/ai-automation" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/ai-automation" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/automatizacion-ia" },
+      { rel: "canonical", href: "https://rankyourbrand.co/services/ai-automation" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/ai-automation" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/automatizacion-ia" },
     ],
   }),
   component: () => (
