@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/proof")({
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Proof — Results & Applications of the System | Rank Your Brand" },
       { name: "description", content: "Explore how we apply SEO, GEO, branding, web development, automation and strategy to build real growth systems." },
       { property: "og:title", content: "Proof — Rank Your Brand" },
