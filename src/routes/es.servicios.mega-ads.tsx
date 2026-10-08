@@ -9,12 +9,12 @@ export const Route = createFileRoute("/es/servicios/mega-ads")({
       { property: "og:title", content: "Mega Ads — Rank Your Brand" },
       { property: "og:description", content: "Campañas diseñadas para generar demanda, no solo clics." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/es/servicios/mega-ads" },
+      { property: "og:url", content: "https://rankyourbrand.co/es/servicios/mega-ads" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/es/servicios/mega-ads" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/mega-ads" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/mega-ads" },
+      { rel: "canonical", href: "https://rankyourbrand.co/es/servicios/mega-ads" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/mega-ads" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/mega-ads" },
     ],
   }),
   component: () => (

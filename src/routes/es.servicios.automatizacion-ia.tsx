@@ -9,12 +9,12 @@ export const Route = createFileRoute("/es/servicios/automatizacion-ia")({
       { property: "og:title", content: "Automatización con IA — Rank Your Brand" },
       { property: "og:description", content: "Automatización AI-Native para empresas que quieren escalar sin romper su operación." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/es/servicios/automatizacion-ia" },
+      { property: "og:url", content: "https://rankyourbrand.co/es/servicios/automatizacion-ia" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/es/servicios/automatizacion-ia" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/ai-automation" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/automatizacion-ia" },
+      { rel: "canonical", href: "https://rankyourbrand.co/es/servicios/automatizacion-ia" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/ai-automation" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/automatizacion-ia" },
     ],
   }),
   component: () => (

@@ -9,12 +9,12 @@ export const Route = createFileRoute("/es/servicios/desarrollo-web")({
       { property: "og:title", content: "Desarrollo Web — Rank Your Brand" },
       { property: "og:description", content: "Sitios que convierten tu presencia digital en un activo de crecimiento." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/es/servicios/desarrollo-web" },
+      { property: "og:url", content: "https://rankyourbrand.co/es/servicios/desarrollo-web" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/es/servicios/desarrollo-web" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/web-development" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/desarrollo-web" },
+      { rel: "canonical", href: "https://rankyourbrand.co/es/servicios/desarrollo-web" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/web-development" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/desarrollo-web" },
     ],
   }),
   component: () => (

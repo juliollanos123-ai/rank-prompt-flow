@@ -9,12 +9,12 @@ export const Route = createFileRoute("/services/web-development")({
       { property: "og:title", content: "Web Development — Rank Your Brand" },
       { property: "og:description", content: "Websites that turn your digital presence into a growth asset." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rank-prompt-flow.lovable.app/services/web-development" },
+      { property: "og:url", content: "https://rankyourbrand.co/services/web-development" },
     ],
     links: [
-      { rel: "canonical", href: "https://rank-prompt-flow.lovable.app/services/web-development" },
-      { rel: "alternate", hrefLang: "en", href: "https://rank-prompt-flow.lovable.app/services/web-development" },
-      { rel: "alternate", hrefLang: "es", href: "https://rank-prompt-flow.lovable.app/es/servicios/desarrollo-web" },
+      { rel: "canonical", href: "https://rankyourbrand.co/services/web-development" },
+      { rel: "alternate", hrefLang: "en", href: "https://rankyourbrand.co/services/web-development" },
+      { rel: "alternate", hrefLang: "es", href: "https://rankyourbrand.co/es/servicios/desarrollo-web" },
     ],
   }),
   component: () => (
