@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/es/resultados")({
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, nofollow" },
       { title: "Resultados, casos y aplicaciones del sistema | Rank Your Brand" },
       { name: "description", content: "Explora cómo aplicamos SEO, GEO, branding, desarrollo web, automatización y estrategia para construir sistemas reales de crecimiento." },
       { property: "og:title", content: "Resultados — Rank Your Brand" },

@@ -48,7 +48,7 @@ Para una landing que no encaje en `ServiceDetail` (campaña, lead magnet), pedir
 ## 5. Estado actual y pendientes conocidos (7 oct 2026)
 
 1. **Canonical incorrecto en ~20 rutas.** Home, servicios nuevos, metodología y proof usan `https://rank-prompt-flow.lovable.app/...` en `canonical`, `og:url` y `hreflang` en vez de `https://rankyourbrand.co/...`. Las rutas de blog, contacto, auditoría y las 3 páginas SEO originales sí lo tienen bien. Corregir antes de publicar nada más.
-2. **`/proof` y `/es/resultados` no están publicadas** y su contenido es genérico (4 bloques tipo "de X a Y" sin clientes, cifras ni logos). Publicar solo cuando tengan casos reales (cliente, problema, qué se hizo, resultado medible y permiso de uso).
+2. **`/proof` y `/es/resultados` están ocultas a propósito** (7 oct 2026): sin enlace en Nav ni Footer, fuera del sitemap y de `llms.txt`, y con `noindex`. La URL directa sigue abriendo. Su contenido es genérico (sin clientes ni cifras). Para reactivarla: reemplazar los casos por casos reales con permiso de uso, quitar el `noindex` de ambas rutas y devolver los enlaces en Nav, Footer, sitemap y `llms.txt`.
 3. Verificar qué diferencias hay entre lo publicado en producción y `main` antes del próximo Publish (la home publicada no muestra "Proof" en el menú).
 4. El `sitemap.xml` es manual; hay que actualizarlo con cada página.
 5. El nombre del proyecto en `package.json` y `wrangler.jsonc` sigue siendo el de la plantilla (`tanstack_start_ts`, `tanstack-start-app`). No tocar sin necesidad: puede afectar el despliegue.
