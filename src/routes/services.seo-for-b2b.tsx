@@ -93,9 +93,9 @@ function SEOForB2BPage() {
           ["03", "Scale what works, expand to new keyword territories"],
         ]}
         outcomes={[
-          "Month 3 — +20–30% organic traffic, momentum visible in keyword movement",
-          "Month 6 — +50–80% organic traffic, 3–5 keywords in top 10",
-          "Month 12 — 2–3× organic traffic with predictable lead generation",
+          "Month 3 — technical base fixed, content engine running, first keyword movement tracked",
+          "Month 6 — priority keywords entering the top 10 and the first organic leads measured",
+          "Month 12 — compounding organic growth with a predictable lead pipeline",
         ]}
         faqs={[
           ["Do I need Technical SEO before this?", "Not always. We audit your site first. If technical issues exist, we fix them in Month 1 (or recommend Technical SEO first)."],

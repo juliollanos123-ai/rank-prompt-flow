@@ -50,7 +50,7 @@ function Hero() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <Eyebrow>Growth System Agency · USA + Europe + LATAM</Eyebrow>
+          <Eyebrow>Growth System Agency · Colombia + USA</Eyebrow>
         </Reveal>
 
         <h1 className="mt-8 max-w-5xl text-balance text-5xl leading-[0.95] sm:text-6xl lg:text-[clamp(4rem,8vw,7.5rem)]">
@@ -330,22 +330,6 @@ function GeoGap() {
             cycles. Both realities are shifting — we're built for both.
           </p>
         </Reveal>
-
-        <Reveal delay={0.4}>
-          <div className="mt-16 overflow-hidden rounded-3xl border border-prompt/20 bg-prompt/5 p-10 lg:p-14">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <div className="font-display text-7xl text-prompt lg:text-9xl">68%</div>
-                <p className="mt-3 max-w-md text-ink/70">
-                  of B2B buyers start product research with an AI assistant — not a search engine.
-                </p>
-              </div>
-              <div className="text-right text-xs uppercase tracking-widest text-ink/50">
-                Source: Gartner, 2025
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
@@ -373,8 +357,8 @@ const faqs = [
     a: "A structured review of your site, positioning, current channels, presence in Google and AI engines, and a prioritized recommendation of the next steps. No obligation. It's how we start conversations that lead to real work.",
   },
   {
-    q: "Do you work outside the US?",
-    a: "Yes. We serve companies in the US, Europe and LATAM, in English and Spanish, across time zones.",
+    q: "Which markets do you serve?",
+    a: "We are based in Colombia and serve B2B companies in Colombia and the US, in English and Spanish, across time zones.",
   },
 ];
 

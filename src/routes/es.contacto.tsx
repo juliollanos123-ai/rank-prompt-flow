@@ -76,7 +76,7 @@ function ContactoPage() {
           <Reveal delay={0.15}>
             <aside className="space-y-8 lg:pt-4">
               <InfoBlock label="Email" value="julio@rankyourbrand.co" href="mailto:julio@rankyourbrand.co" />
-              <InfoBlock label="Servimos a" value="Empresas B2B en EE.UU., Europa y LATAM" />
+              <InfoBlock label="Servimos a" value="Empresas B2B en Colombia y EE.UU." />
               <InfoBlock label="Tiempo de respuesta" value="Normalmente en 24 horas hábiles." />
               <div className="rounded-2xl border border-prompt/20 bg-prompt/5 p-6">
                 <div className="font-display text-xs tracking-[0.3em] text-prompt">Camino más rápido</div>

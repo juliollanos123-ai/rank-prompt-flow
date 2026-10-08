@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Rank Your Brand — AI SEO Agency for B2B" },
-      { name: "description", content: "We build visibility systems that get your brand cited by Google, ChatGPT and Perplexity. AI-native SEO for B2B companies in the US and Europe." },
+      { name: "description", content: "We build visibility systems that get your brand cited by Google, ChatGPT and Perplexity. AI-native SEO for B2B companies in Colombia and the US." },
       { name: "author", content: "Rank Your Brand" },
       { property: "og:title", content: "Rank Your Brand — AI SEO Agency for B2B" },
       { property: "og:description", content: "We build visibility systems that get B2B brands cited by ChatGPT, Perplexity and Google AI. Technical SEO + GEO + content strategy." },
@@ -131,7 +131,7 @@ const organizationSchema = {
   description: "AI-native SEO agency for B2B companies. We build visibility systems that get brands cited by ChatGPT, Perplexity and Google AI.",
   foundingDate: "2024",
   priceRange: "$$$",
-  areaServed: ["US", "Europe", "LATAM"],
+  areaServed: ["CO", "US"],
   knowsLanguage: ["en", "es"],
   serviceType: ["SEO", "Technical SEO", "AI SEO", "Generative Engine Optimization", "B2B SEO"],
   sameAs: [
